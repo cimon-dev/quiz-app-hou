@@ -31,15 +31,43 @@ let memoryDb: DbData = {
   scores: []
 };
 
-// Vercel KV / Upstash Redis support via REST
-const KV_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-const KV_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+// Dynamic credential resolution for Vercel KV / Upstash Redis with any prefix (KV, STORAGE, etc.)
+function getKvCredentials(): { url?: string; token?: string } {
+  const directUrl =
+    process.env.KV_REST_API_URL ||
+    process.env.STORAGE_REST_API_URL ||
+    process.env.STORAGE_KV_REST_API_URL ||
+    process.env.UPSTASH_REDIS_REST_URL;
+
+  const directToken =
+    process.env.KV_REST_API_TOKEN ||
+    process.env.STORAGE_REST_API_TOKEN ||
+    process.env.STORAGE_KV_REST_API_TOKEN ||
+    process.env.UPSTASH_REDIS_REST_TOKEN;
+
+  if (directUrl && directToken) {
+    return { url: directUrl, token: directToken };
+  }
+
+  for (const [key, val] of Object.entries(process.env)) {
+    if (key.endsWith('_REST_API_URL') && val) {
+      const prefix = key.replace('_REST_API_URL', '');
+      const tokenKey = `${prefix}_REST_API_TOKEN`;
+      if (process.env[tokenKey]) {
+        return { url: val, token: process.env[tokenKey] };
+      }
+    }
+  }
+
+  return {};
+}
 
 async function kvGet<T>(key: string): Promise<T | null> {
-  if (!KV_URL || !KV_TOKEN) return null;
+  const { url, token } = getKvCredentials();
+  if (!url || !token) return null;
   try {
-    const res = await fetch(`${KV_URL}/get/${key}`, {
-      headers: { Authorization: `Bearer ${KV_TOKEN}` },
+    const res = await fetch(`${url}/get/${key}`, {
+      headers: { Authorization: `Bearer ${token}` },
       cache: 'no-store'
     });
     if (res.ok) {
@@ -55,12 +83,13 @@ async function kvGet<T>(key: string): Promise<T | null> {
 }
 
 async function kvSet(key: string, value: any): Promise<void> {
-  if (!KV_URL || !KV_TOKEN) return;
+  const { url, token } = getKvCredentials();
+  if (!url || !token) return;
   try {
-    await fetch(`${KV_URL}/set/${key}`, {
+    await fetch(`${url}/set/${key}`, {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${KV_TOKEN}`,
+        Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(typeof value === 'string' ? value : JSON.stringify(value)),
@@ -112,7 +141,8 @@ function saveLocalDb(data: DbData) {
 }
 
 export async function getDbData(): Promise<DbData> {
-  if (KV_URL && KV_TOKEN) {
+  const { url, token } = getKvCredentials();
+  if (url && token) {
     const cloudDb = await kvGet<DbData>('quiz_master_db');
     if (cloudDb) return cloudDb;
   }
@@ -120,7 +150,8 @@ export async function getDbData(): Promise<DbData> {
 }
 
 export async function saveDbData(data: DbData): Promise<void> {
-  if (KV_URL && KV_TOKEN) {
+  const { url, token } = getKvCredentials();
+  if (url && token) {
     await kvSet('quiz_master_db', data);
   }
   saveLocalDb(data);
