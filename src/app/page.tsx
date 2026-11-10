@@ -1,69 +1,452 @@
-import Image from "next/image";
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import {
+  Trophy,
+  History,
+  User,
+  Zap,
+  BookOpen,
+  Shuffle,
+  Clock,
+  Layers,
+  ChevronRight
+} from 'lucide-react';
+import { BLOCKS_METADATA, QuizBlock, formatTime } from '@/lib/quiz';
+import UserModal from '@/components/UserModal';
+import LeaderboardModal from '@/components/LeaderboardModal';
+import HistoryModal, { HistoryItem } from '@/components/HistoryModal';
+import CustomCountModal from '@/components/CustomCountModal';
+import QuizPlay from '@/components/QuizPlay';
+import ReviewView from '@/components/ReviewView';
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+  const [username, setUsername] = useState<string>('');
+  const [showUserModal, setShowUserModal] = useState<boolean>(false);
+  const [quizMode, setQuizMode] = useState<'instant' | 'exam'>('instant');
+
+  const [showLeaderboard, setShowLeaderboard] = useState<boolean>(false);
+  const [selectedLeaderboardBlock, setSelectedLeaderboardBlock] = useState<string>('1');
+  const [showHistory, setShowHistory] = useState<boolean>(false);
+  const [showCustomModal, setShowCustomModal] = useState<boolean>(false);
+
+  const [activeBlock, setActiveBlock] = useState<QuizBlock | null>(null);
+  const [customQuestionCount, setCustomQuestionCount] = useState<number>(30);
+  const [reviewItem, setReviewItem] = useState<HistoryItem | null>(null);
+
+  const [bestScores, setBestScores] = useState<
+    Record<string, { bestScore: number; totalQuestions: number; bestTimeSeconds: number }>
+  >({});
+
+  useEffect(() => {
+    const savedUser = localStorage.getItem('quiz_username');
+    if (savedUser) {
+      setUsername(savedUser);
+      loadBestScores(savedUser);
+    } else {
+      setShowUserModal(true);
+    }
+
+    const savedMode = localStorage.getItem('quiz_mode');
+    if (savedMode === 'exam' || savedMode === 'instant') {
+      setQuizMode(savedMode);
+    }
+  }, []);
+
+  const loadBestScores = async (user: string) => {
+    if (!user) return;
+    try {
+      const res = await fetch(`/api/scores/best?username=${encodeURIComponent(user)}`);
+      let serverBest: Record<string, any> = {};
+      if (res.ok) {
+        const data = await res.json();
+        serverBest = data.best || {};
+      }
+
+      const localRaw = localStorage.getItem('quiz_history');
+      if (localRaw) {
+        try {
+          const localList: HistoryItem[] = JSON.parse(localRaw);
+          for (const item of localList) {
+            const curr = serverBest[item.blockId];
+            if (!curr) {
+              serverBest[item.blockId] = {
+                bestScore: item.score,
+                totalQuestions: item.totalQuestions,
+                bestTimeSeconds: item.timeSeconds
+              };
+            } else {
+              if (
+                item.score > curr.bestScore ||
+                (item.score === curr.bestScore && item.timeSeconds < curr.bestTimeSeconds)
+              ) {
+                serverBest[item.blockId] = {
+                  bestScore: item.score,
+                  totalQuestions: item.totalQuestions,
+                  bestTimeSeconds: item.timeSeconds
+                };
+              }
+            }
+          }
+        } catch (e) {}
+      }
+
+      setBestScores(serverBest);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const handleUserSelected = (name: string) => {
+    setUsername(name);
+    localStorage.setItem('quiz_username', name);
+    loadBestScores(name);
+  };
+
+  const handleModeChange = (mode: 'instant' | 'exam') => {
+    setQuizMode(mode);
+    localStorage.setItem('quiz_mode', mode);
+  };
+
+  const handleBlockClick = (block: QuizBlock) => {
+    if (!username) {
+      setShowUserModal(true);
+      return;
+    }
+
+    if (block.id === 'custom') {
+      setShowCustomModal(true);
+    } else {
+      setActiveBlock(block);
+    }
+  };
+
+  const handleStartCustom = (count: number) => {
+    setCustomQuestionCount(count);
+    const customBlock = BLOCKS_METADATA.find(b => b.id === 'custom')!;
+    setActiveBlock({
+      ...customBlock,
+      count
+    });
+  };
+
+  if (activeBlock) {
+    return (
+      <main className="min-h-screen bg-slate-50 text-slate-900 pb-12">
+        <QuizPlay
+          blockId={activeBlock.id}
+          blockTitle={
+            activeBlock.id === 'custom'
+              ? `Tùy chọn (${customQuestionCount} câu)`
+              : activeBlock.title
+          }
+          mode={quizMode}
+          username={username}
+          count={activeBlock.id === 'custom' ? customQuestionCount : activeBlock.count}
+          onExit={() => {
+            setActiveBlock(null);
+            loadBestScores(username);
+          }}
+          onScoreSaved={() => {
+            loadBestScores(username);
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
       </main>
-    </div>
+    );
+  }
+
+  if (reviewItem) {
+    return (
+      <main className="min-h-screen bg-slate-50 text-slate-900 pb-12">
+        <ReviewView
+          blockTitle={reviewItem.blockTitle}
+          score={reviewItem.score}
+          totalQuestions={reviewItem.totalQuestions}
+          timeSeconds={reviewItem.timeSeconds}
+          questions={reviewItem.questions}
+          userAnswers={reviewItem.userAnswers}
+          onReplay={() => {
+            const block = BLOCKS_METADATA.find(b => b.id === reviewItem.blockId) || {
+              id: reviewItem.blockId,
+              title: reviewItem.blockTitle,
+              subtitle: '',
+              count: reviewItem.totalQuestions,
+              type: 'section' as const
+            };
+            setReviewItem(null);
+            setActiveBlock(block);
+          }}
+          onHome={() => setReviewItem(null)}
+        />
+      </main>
+    );
+  }
+
+  const fullBlock = BLOCKS_METADATA.find(b => b.id === 'full')!;
+  const customBlock = BLOCKS_METADATA.find(b => b.id === 'custom')!;
+  const bestFull = bestScores['full'];
+  const bestCustom = bestScores['custom'];
+
+  return (
+    <main className="min-h-screen bg-slate-50 text-slate-900 pb-16">
+      {/* Top Header */}
+      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-base shadow-sm">
+              TN
+            </div>
+            <div>
+              <h1 className="font-bold text-gray-900 text-base leading-none">
+                Ôn Tập Trắc Nghiệm
+              </h1>
+              <p className="text-[11px] text-gray-500 mt-0.5">Fintech</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <button
+              onClick={() => {
+                setSelectedLeaderboardBlock('1');
+                setShowLeaderboard(true);
+              }}
+              className="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 text-gray-700 text-xs font-semibold flex items-center gap-1.5 transition-colors"
+            >
+              <Trophy className="w-4 h-4 text-amber-500" />
+              <span className="hidden sm:inline">Xếp Hạng</span>
+            </button>
+
+            <button
+              onClick={() => setShowHistory(true)}
+              className="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 text-gray-700 text-xs font-semibold flex items-center gap-1.5 transition-colors"
+            >
+              <History className="w-4 h-4 text-emerald-600" />
+              <span className="hidden sm:inline">Lịch Sử</span>
+            </button>
+
+            <button
+              onClick={() => setShowUserModal(true)}
+              className="px-2.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-900 text-xs font-semibold flex items-center gap-1.5 transition-colors max-w-[130px] sm:max-w-[180px] truncate"
+            >
+              <User className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+              <span className="truncate">{username || 'Nhập tên'}</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Container */}
+      <div className="max-w-5xl mx-auto px-4 pt-5 space-y-6">
+        {/* Mode Selector */}
+        <div className="bg-white rounded-2xl p-4 border border-gray-200 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span className="text-xs font-bold text-gray-700 block mb-1">
+              Chế độ xem đáp án:
+            </span>
+            <p className="text-xs text-gray-500">
+              {quizMode === 'instant'
+                ? 'Hiển thị kết quả ngay sau khi chọn đáp án.'
+                : 'Làm xong toàn bộ và nộp bài để xem điểm.'}
+            </p>
+          </div>
+
+          <div className="flex bg-gray-100 p-1 rounded-xl shrink-0 self-start sm:self-center">
+            <button
+              onClick={() => handleModeChange('instant')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
+                quizMode === 'instant'
+                  ? 'bg-white text-blue-700 shadow-xs'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <Zap className="w-3.5 h-3.5 text-amber-500" />
+              <span>Xem trực tiếp</span>
+            </button>
+            <button
+              onClick={() => handleModeChange('exam')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
+                quizMode === 'exam'
+                  ? 'bg-white text-blue-700 shadow-xs'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <BookOpen className="w-3.5 h-3.5 text-blue-600" />
+              <span>Làm xong mới xem</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Synthesis Blocks */}
+        <div>
+          <div className="flex items-center gap-2 mb-3">
+            <Layers className="w-4 h-4 text-indigo-600" />
+            <h2 className="text-sm font-bold text-gray-800">
+              Tổng hợp
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            {/* Block 1: Full */}
+            <div
+              onClick={() => handleBlockClick(fullBlock)}
+              className="bg-white rounded-2xl p-4 sm:p-5 border border-indigo-200 hover:border-indigo-500 hover:shadow-xs cursor-pointer transition-all flex flex-col justify-between group active:scale-[0.99]"
+            >
+              <div className="mb-4">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-indigo-600 transition-colors">
+                    {fullBlock.title}
+                  </h3>
+                  <span className="text-xs font-semibold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full">
+                    180 câu
+                  </span>
+                </div>
+              </div>
+
+              <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                {bestFull ? (
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-emerald-600">
+                      Tốt nhất: {bestFull.bestScore}/{bestFull.totalQuestions}
+                    </span>
+                    <span className="text-gray-300">•</span>
+                    <span className="text-gray-500 font-mono flex items-center gap-1">
+                      <Clock className="w-3 h-3 text-gray-400" />
+                      <span>{formatTime(bestFull.bestTimeSeconds)}</span>
+                    </span>
+                  </div>
+                ) : (
+                  <span className="text-gray-400">Chưa làm</span>
+                )}
+
+                <span className="text-indigo-600 font-semibold group-hover:translate-x-0.5 transition-transform flex items-center">
+                  Vào ôn <ChevronRight className="w-4 h-4" />
+                </span>
+              </div>
+            </div>
+
+            {/* Block 2: Custom */}
+            <div
+              onClick={() => handleBlockClick(customBlock)}
+              className="bg-white rounded-2xl p-4 sm:p-5 border border-amber-200 hover:border-amber-500 hover:shadow-xs cursor-pointer transition-all flex flex-col justify-between group active:scale-[0.99]"
+            >
+              <div className="mb-4">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-amber-600 transition-colors">
+                    {customBlock.title}
+                  </h3>
+                  <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                    <Shuffle className="w-3 h-3" />
+                    <span>Tùy chọn số câu</span>
+                  </span>
+                </div>
+              </div>
+
+              <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                {bestCustom ? (
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-emerald-600">
+                      Tốt nhất: {bestCustom.bestScore}/{bestCustom.totalQuestions}
+                    </span>
+                    <span className="text-gray-300">•</span>
+                    <span className="text-gray-500 font-mono flex items-center gap-1">
+                      <Clock className="w-3 h-3 text-gray-400" />
+                      <span>{formatTime(bestCustom.bestTimeSeconds)}</span>
+                    </span>
+                  </div>
+                ) : (
+                  <span className="text-gray-400">Chưa làm</span>
+                )}
+
+                <span className="text-amber-600 font-semibold group-hover:translate-x-0.5 transition-transform flex items-center">
+                  Chọn số câu <ChevronRight className="w-4 h-4" />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 15 Section Blocks */}
+        <div>
+          <div className="flex items-center gap-2 mb-3">
+            <BookOpen className="w-4 h-4 text-blue-600" />
+            <h2 className="text-sm font-bold text-gray-800">
+              Ôn tập theo phần
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {BLOCKS_METADATA.filter(b => b.type === 'section').map(block => {
+              const best = bestScores[block.id];
+
+              return (
+                <div
+                  key={block.id}
+                  onClick={() => handleBlockClick(block)}
+                  className="bg-white rounded-2xl p-4 border border-gray-200 hover:border-blue-500 hover:shadow-xs cursor-pointer transition-all flex flex-col justify-between group active:scale-[0.99]"
+                >
+                  <div className="mb-3">
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="font-bold text-gray-900 text-base group-hover:text-blue-600 transition-colors">
+                        {block.title}
+                      </h3>
+                      <span className="text-xs text-gray-400 font-medium">
+                        12 câu
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2.5 border-t border-gray-100 flex items-center justify-between text-xs">
+                    {best ? (
+                      <div className="flex items-center gap-1.5">
+                        <span className="font-bold text-emerald-600">
+                          {best.bestScore}/{best.totalQuestions}
+                        </span>
+                        <span className="text-gray-300">•</span>
+                        <span className="text-gray-500 font-mono flex items-center gap-0.5 text-[11px]">
+                          <Clock className="w-3 h-3 text-gray-400" />
+                          <span>{formatTime(best.bestTimeSeconds)}</span>
+                        </span>
+                      </div>
+                    ) : (
+                      <span className="text-gray-400 text-[11px]">Chưa làm</span>
+                    )}
+
+                    <span className="text-gray-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all">
+                      <ChevronRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <UserModal
+        isOpen={showUserModal}
+        onClose={() => setShowUserModal(false)}
+        currentUser={username}
+        onUserSelected={handleUserSelected}
+      />
+
+      <CustomCountModal
+        isOpen={showCustomModal}
+        onClose={() => setShowCustomModal(false)}
+        onStart={handleStartCustom}
+      />
+
+      <LeaderboardModal
+        isOpen={showLeaderboard}
+        onClose={() => setShowLeaderboard(false)}
+        initialBlockId={selectedLeaderboardBlock}
+        currentUser={username}
+      />
+
+      <HistoryModal
+        isOpen={showHistory}
+        onClose={() => setShowHistory(false)}
+        onSelectReview={item => setReviewItem(item)}
+      />
+    </main>
   );
 }

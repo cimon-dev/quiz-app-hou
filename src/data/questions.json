@@ -1,0 +1,2522 @@
+[
+  {
+    "id": "q_1_1",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "“Giá trị cung cấp” của một sản phẩm Fintech nên tập trung vào điều gì?",
+    "options": [
+      "Lợi ích và vấn đề của khách hàng mà sản phẩm giải quyết",
+      "Giao diện hiện đại",
+      "Tích hợp càng nhiều ứng dụng càng tốt",
+      "Đem lại nhiều doanh thu"
+    ],
+    "answer": 0,
+    "explanation": "Giá trị cung cấp (Value Proposition) tập trung vào việc giải quyết nỗi đau hoặc đem lại lợi ích thiết thực cho khách hàng."
+  },
+  {
+    "id": "q_1_2",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "Trong blockchain, “hash” thường được hiểu là gì?",
+    "options": [
+      "Giá trị đầu ra có độ dài cố định được tạo từ dữ liệu đầu vào",
+      "Một hình thức bảo hiểm",
+      "Tên của một loại tiền mã hóa",
+      "Một thiết bị IoT"
+    ],
+    "answer": 0,
+    "explanation": "Hàm băm mã hóa chuyển đổi dữ liệu đầu vào có độ dài tùy ý thành chuỗi ký tự có độ dài cố định."
+  },
+  {
+    "id": "q_1_3",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "Phương pháp nào phù hợp để phát hiện các nhóm khách hàng khi dữ liệu chưa có nhãn?",
+    "options": [
+      "Học không giám sát",
+      "Học tăng cường",
+      "Mã hóa đầu cuối",
+      "Học có giám sát"
+    ],
+    "answer": 0,
+    "explanation": "Học không giám sát (Unsupervised learning) như clustering (K-Means) dùng để tìm cụm/nhóm tự nhiên khi chưa có nhãn."
+  },
+  {
+    "id": "q_1_4",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "Đâu là điểm khác nhau cơ bản giữa P2P Lending và equity crowdfunding?",
+    "options": [
+      "Equity crowdfunding luôn là tiền gửi ngân hàng",
+      "P2P tạo quan hệ vay - cho vay, còn equity crowdfunding gắn với quyền sở hữu cổ phần",
+      "Cả hai đều là hình thức quyên góp",
+      "P2P luôn phát hành cổ phần"
+    ],
+    "answer": 1,
+    "explanation": "P2P Lending là quan hệ vay - nợ (debt), còn Equity Crowdfunding là phát hành và nhận quyền sở hữu cổ phần (equity)."
+  },
+  {
+    "id": "q_1_5",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "Giai đoạn Fintech 3.5 được đặc trưng bởi sự phát triển vượt bậc tại khu vực nào?",
+    "options": [
+      "Bắc Mỹ",
+      "Tây Âu",
+      "Các thị trường mới nổi (Châu Á, Châu Phi)",
+      "Châu Úc"
+    ],
+    "answer": 2,
+    "explanation": "Fintech 3.5 đặc trưng bởi sự bùng nổ vượt trội tại các nền kinh tế đang phát triển và mới nổi ở Châu Á và Châu Phi."
+  },
+  {
+    "id": "q_1_6",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "Vì sao các tổ chức tài chính truyền thống vẫn quan trọng trong hệ sinh thái Fintech?",
+    "options": [
+      "Vì chỉ họ mới được sử dụng Internet",
+      "Vì họ không chịu quy định",
+      "Vì họ không có rủi ro vận hành",
+      "Họ có khách hàng, giấy phép, kinh nghiệm và hạ tầng tài chính"
+    ],
+    "answer": 3,
+    "explanation": "Tổ chức tài chính truyền thống nắm giữ giấy phép, kinh nghiệm tuân thủ, tệp khách hàng lớn và hạ tầng thanh toán cốt lõi."
+  },
+  {
+    "id": "q_1_7",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "AML tập trung vào mục tiêu nào?",
+    "options": [
+      "Tối ưu màu giao diện",
+      "Phòng, phát hiện và ngăn chặn hành vi rửa tiền",
+      "Thay thế mọi quy trình KYC",
+      "Tăng doanh số bằng mọi giá"
+    ],
+    "answer": 1,
+    "explanation": "AML (Anti-Money Laundering) là các quy trình phòng ngừa, phát hiện và ngăn chặn hành vi rửa tiền."
+  },
+  {
+    "id": "q_1_8",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "Đâu là lợi ích mà Fintech có thể mang lại cho người tiêu dùng?",
+    "options": [
+      "Tăng chi phí giao dịch bắt buộc",
+      "Tiếp cận thuận tiện hơn, chi phí thấp hơn và trải nghiệm tốt hơn",
+      "Giảm tính minh bạch",
+      "Tăng số lần phải đến chi nhánh"
+    ],
+    "answer": 1,
+    "explanation": "Fintech giúp giảm chi phí, tăng tốc độ, tạo sự tiện lợi 24/7 và cải thiện trải nghiệm người dùng."
+  },
+  {
+    "id": "q_1_9",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "Rủi ro hoạt động có thể bao gồm yếu tố nào?",
+    "options": [
+      "Con người, quy trình nội bộ, hệ thống và sự kiện bên ngoài.",
+      "Rủi ro lãi suất, rủi ro tỷ giá và rủi ro thanh khoản.",
+      "Rủi ro biến động giá chứng khoán trên thị trường tài chính.",
+      "Rủi ro thay đổi chính sách vĩ mô dài hạn của Chính phủ."
+    ],
+    "answer": 0,
+    "explanation": "Theo chuẩn Basel, rủi ro hoạt động (Operational Risk) bao gồm con người, quy trình, công nghệ/hệ thống và sự kiện bên ngoài."
+  },
+  {
+    "id": "q_1_10",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "Đâu là một thành phần của hệ sinh thái Fintech?",
+    "options": [
+      "Các tổ chức phi chính phủ về môi trường toàn cầu",
+      "Các cơ quan quản lý Nhà nước và chính phủ",
+      "Các hợp tác xã sản xuất nông nghiệp truyền thống",
+      "Các công ty khai thác khoáng sản và tài nguyên thiên nhiên"
+    ],
+    "answer": 1,
+    "explanation": "Cơ quan quản lý (Regulators) là 1 trong 5 trụ cột cốt lõi của hệ sinh thái Fintech."
+  },
+  {
+    "id": "q_1_11",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "Mục tiêu nổi bật của tài chính toàn diện là gì?",
+    "options": [
+      "Loại bỏ hoàn toàn tiền mặt trong nền kinh tế",
+      "Giới hạn dịch vụ tài chính ở khu vực đô thị",
+      "Chỉ cung cấp sản phẩm cao cấp cho khách hàng giàu",
+      "Mở rộng khả năng tiếp cận và sử dụng dịch vụ tài chính phù hợp"
+    ],
+    "answer": 3,
+    "explanation": "Tài chính toàn diện (Financial Inclusion) nhằm phổ cập dịch vụ tài chính tới tất cả mọi người, đặc biệt nhóm yếu thế."
+  },
+  {
+    "id": "q_1_12",
+    "section": 1,
+    "sectionTitle": "Ôn tập 1",
+    "question": "InsurTech tập trung vào lĩnh vực nào?",
+    "options": [
+      "Ứng dụng công nghệ vào chuỗi giá trị sản xuất",
+      "Ứng dụng công nghệ vào chuỗi giá trị bảo hiểm",
+      "Phát triển hệ thống quản trị nhân sự cho ngân hàng",
+      "Giao dịch chứng khoán và quản lý danh mục đầu tư"
+    ],
+    "answer": 1,
+    "explanation": "InsurTech (Insurance Technology) là việc áp dụng công nghệ số vào toàn bộ chuỗi giá trị bảo hiểm."
+  },
+  {
+    "id": "q_2_1",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Tại sao chi phí và đầu tư trong Fintech cần gắn với rủi ro?",
+    "options": [
+      "Đầu tư công nghệ và tăng trưởng có thể tạo rủi ro tài chính, vận hành và tuân thủ",
+      "Vì công nghệ không cần bảo trì",
+      "Vì rủi ro không liên quan đến kinh doanh",
+      "Vì mọi chi phí đều cố định"
+    ],
+    "answer": 0,
+    "explanation": "Mở rộng quy mô công nghệ và thị trường luôn song hành với rủi ro vận hành, bảo mật và tuân thủ quy chế."
+  },
+  {
+    "id": "q_2_2",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Crowdfunding dựa trên cổ phần mang lại điều gì cho nhà đầu tư?",
+    "options": [
+      "Không có bất kỳ quyền lợi nào",
+      "Chỉ quà tặng hiện vật",
+      "Quyền sở hữu/cổ phần theo điều kiện của đợt gọi vốn",
+      "Chỉ phiếu giảm giá"
+    ],
+    "answer": 2,
+    "explanation": "Equity crowdfunding trao cổ phần (equity/ownership) cho các nhà đầu tư tham gia góp vốn."
+  },
+  {
+    "id": "q_2_3",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Rủi ro tín dụng là gì?",
+    "options": [
+      "Vi phạm quy định dữ liệu",
+      "Biến động giá thị trường",
+      "Khả năng đối tác hoặc người vay không thực hiện nghĩa vụ thanh toán",
+      "Khả năng hệ thống bị mất điện"
+    ],
+    "answer": 2,
+    "explanation": "Rủi ro tín dụng (Credit Risk) là rủi ro người vay vỡ nợ hoặc không thanh toán đúng hạn."
+  },
+  {
+    "id": "q_2_4",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Xác thực đa yếu tố yêu cầu điều gì?",
+    "options": [
+      "Chỉ dùng tên đăng nhập",
+      "Tắt toàn bộ thông báo bảo mật",
+      "Sử dụng từ hai yếu tố xác minh độc lập trở lên",
+      "Chỉ dùng một mật khẩu dài"
+    ],
+    "answer": 2,
+    "explanation": "Xác thực đa yếu tố (MFA) kết hợp ít nhất 2 trong 3 yếu tố: hiểu biết (mật khẩu), sở hữu (OTP/token), đặc điểm sinh trắc học."
+  },
+  {
+    "id": "q_2_5",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Yếu tố nào góp phần thúc đẩy Fintech 3.0 sau năm 2008?",
+    "options": [
+      "Sự biến mất của thương mại điện tử",
+      "Việc quay lại sử dụng hoàn toàn hồ sơ giấy",
+      "Sự chấm dứt của Internet",
+      "Khủng hoảng tài chính, công nghệ di động và sự gia nhập của các startup"
+    ],
+    "answer": 3,
+    "explanation": "Khủng hoảng 2008 làm suy giảm niềm tin vào ngân hàng truyền thống, mở đường cho startup công nghệ di động Fintech 3.0."
+  },
+  {
+    "id": "q_2_6",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Một hệ sinh thái Fintech bền vững cần điều gì?",
+    "options": [
+      "Cân bằng đổi mới, cạnh tranh, bảo vệ người tiêu dùng và ổn định hệ thống",
+      "Không cho ngân hàng truyền thống tham gia",
+      "Chỉ tối đa hóa số startup",
+      "Loại bỏ hoàn toàn quy định"
+    ],
+    "answer": 0,
+    "explanation": "Hệ sinh thái bền vững cần hài hòa giữa việc thúc đẩy đổi mới công nghệ và duy trì an toàn hệ thống, bảo vệ người dùng."
+  },
+  {
+    "id": "q_2_7",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Ưu điểm chính của thanh toán số đối với người dùng là gì?",
+    "options": [
+      "Không tạo được lịch sử giao dịch",
+      "Chỉ hoạt động tại quầy",
+      "Tốc độ, thuận tiện và khả năng giao dịch từ xa",
+      "Bắt buộc dùng tiền mặt"
+    ],
+    "answer": 2,
+    "explanation": "Thanh toán số giúp người dùng chuyển tiền tức thì từ xa mà không cần tiền mặt hay đến quầy."
+  },
+  {
+    "id": "q_2_8",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Đâu là một đặc trưng thường dùng để mô tả Big Data?",
+    "options": [
+      "Khối lượng, tốc độ và sự đa dạng của dữ liệu",
+      "Chỉ có kích thước tệp nhỏ",
+      "Không cần xử lý bằng máy tính",
+      "Chỉ gồm dữ liệu dạng bảng"
+    ],
+    "answer": 0,
+    "explanation": "Mô hình 3V kinh điển của Big Data: Volume (Khối lượng), Velocity (Tốc độ) và Variety (Đa dạng)."
+  },
+  {
+    "id": "q_2_9",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Yếu tố nào giúp hình thành một trung tâm Fintech mạnh?",
+    "options": [
+      "Chỉ giá bất động sản",
+      "Nhân lực, vốn, thị trường, công nghệ và môi trường pháp lý hỗ trợ",
+      "Chỉ số lượng chi nhánh ngân hàng",
+      "Chỉ số lượng máy ATM"
+    ],
+    "answer": 1,
+    "explanation": "Một Fintech Hub cần đầy đủ: nguồn nhân lực chất lượng, nguồn vốn mạo hiểm, thị trường tiêu thụ và chính sách hỗ trợ."
+  },
+  {
+    "id": "q_2_10",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Lợi ích của sandbox đối với cơ quan quản lý là gì?",
+    "options": [
+      "Không cần đặt điều kiện thử nghiệm",
+      "Loại bỏ nhu cầu bảo vệ người dùng",
+      "Không cần giám sát doanh nghiệp",
+      "Quan sát thực tế để hiểu rủi ro và hoàn thiện cách tiếp cận quản lý"
+    ],
+    "answer": 3,
+    "explanation": "Sandbox giúp cơ quan quản lý kiểm nghiệm mô hình mới trong môi trường kiểm soát, từ đó ban hành luật pháp phù hợp."
+  },
+  {
+    "id": "q_2_11",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Fintech là viết tắt của cụm từ nào?",
+    "options": [
+      "Financial Telecommunication",
+      "Financial Technique",
+      "Finance Technology System",
+      "Financial Technology"
+    ],
+    "answer": 3,
+    "explanation": "Fintech là từ ghép của Financial Technology (Công nghệ tài chính)."
+  },
+  {
+    "id": "q_2_12",
+    "section": 2,
+    "sectionTitle": "Ôn tập 2",
+    "question": "Mô hình Business Model Canvas được dùng chủ yếu để làm gì?",
+    "options": [
+      "Thiết kế chip bán dẫn",
+      "Mã hóa dữ liệu",
+      "Mô tả các thành phần cốt lõi của mô hình kinh doanh và mối liên hệ giữa chúng",
+      "Tính lương tự động"
+    ],
+    "answer": 2,
+    "explanation": "Business Model Canvas (BMC) gồm 9 khối giúp trực quan hóa toàn bộ mô hình kinh doanh trên một trang."
+  },
+  {
+    "id": "q_3_1",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "WealthTech tập trung vào dịch vụ nào?",
+    "options": [
+      "Tự động hóa quy trình sản xuất và logistics",
+      "Quản lý tài sản, tư vấn và tối ưu hóa đầu tư tài chính",
+      "Thẩm định, phê duyệt và giải ngân các khoản vay thế chấp",
+      "Phát hành, phân phối các sản phẩm bảo hiểm nhân thọ trực tuyến"
+    ],
+    "answer": 1,
+    "explanation": "WealthTech (Wealth Technology) cung cấp các giải pháp quản lý tài sản, tư vấn và tối ưu hóa danh mục đầu tư."
+  },
+  {
+    "id": "q_3_2",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "Tiếp cận lấy khách hàng làm trung tâm nhấn mạnh điều gì?",
+    "options": [
+      "Chỉ tăng số hợp đồng giấy",
+      "Thiết kế trải nghiệm dựa trên nhu cầu và hành trình của khách hàng",
+      "Chỉ giảm số nhân viên",
+      "Chỉ tối đa hóa số tính năng"
+    ],
+    "answer": 1,
+    "explanation": "Customer-centricity chú trọng nghiên cứu hành trình khách hàng để giải quyết đúng nhu cầu và mang lại trải nghiệm tối ưu."
+  },
+  {
+    "id": "q_3_3",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "Lợi ích quan trọng của điện toán đám mây đối với startup Fintech là gì?",
+    "options": [
+      "Bắt buộc xây trung tâm dữ liệu riêng",
+      "Loại bỏ hoàn toàn rủi ro an ninh mạng",
+      "Giảm đầu tư hạ tầng ban đầu và hỗ trợ mở rộng linh hoạt",
+      "Làm giảm khả năng truy cập từ xa"
+    ],
+    "answer": 2,
+    "explanation": "Cloud computing chuyển vốn đầu tư CapEx thành chi phí vận hành OpEx và cho phép mở rộng nhanh chóng (scalability)."
+  },
+  {
+    "id": "q_3_4",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "Rủi ro bên thứ ba trong Fintech có thể đến từ đâu?",
+    "options": [
+      "Sự thay đổi trong cấu trúc nhân sự nội bộ của chính công ty Fintech đó",
+      "Các lỗi hệ thống do lập trình viên của công ty tự phát triển và vận hành",
+      "Sự cố từ nhà cung cấp dịch vụ đám mây hoặc đối tác tích hợp API bên ngoài",
+      "Chỉ từ cơ quan thuế"
+    ],
+    "answer": 2,
+    "explanation": "Third-party risk xuất phát từ việc phụ thuộc vào nhà cung cấp hạ tầng đám mây, cổng thanh toán hoặc đối tác API."
+  },
+  {
+    "id": "q_3_5",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "Nhà đầu tư góp phần vào hệ sinh thái Fintech chủ yếu bằng cách nào?",
+    "options": [
+      "Cung cấp vốn và hỗ trợ tăng trưởng cho doanh nghiệp",
+      "Ban hành chính sách tiền tệ",
+      "Thay cơ quan quản lý cấp phép",
+      "Quản lý dữ liệu dân cư quốc gia"
+    ],
+    "answer": 0,
+    "explanation": "Nhà đầu tư mạo hiểm (VCs, Angels) rót vốn, kinh nghiệm và mạng lưới kết nối giúp startup tăng tốc phát triển."
+  },
+  {
+    "id": "q_3_6",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "Nguồn doanh thu của một Fintech nên được thiết kế dựa trên điều gì?",
+    "options": [
+      "Chỉ dựa trên phí cao nhất có thể",
+      "Giá trị cung cấp, hành vi khách hàng và tính bền vững của mô hình",
+      "Chỉ dựa trên số nhân viên",
+      "Không cần xét nhu cầu khách hàng"
+    ],
+    "answer": 1,
+    "explanation": "Dòng doanh thu phải tương xứng với giá trị tạo ra, phù hợp với thói quen trả tiền của khách hàng và duy trì sự bền vững."
+  },
+  {
+    "id": "q_3_7",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "Công nghệ AI nào thường được dùng để hiểu nội dung hội thoại của chatbot?",
+    "options": [
+      "NFC",
+      "Mã QR",
+      "Điện toán biên",
+      "Xử lý ngôn ngữ tự nhiên (NLP)"
+    ],
+    "answer": 3,
+    "explanation": "NLP (Natural Language Processing) giúp máy tính hiểu, phân tích và phản hồi ngôn ngữ con người trong chatbot."
+  },
+  {
+    "id": "q_3_8",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "Việc các quy trình số tạo ra “dấu vết dữ liệu” có thể hỗ trợ mục tiêu nào?",
+    "options": [
+      "Buộc mọi khách hàng dùng cùng một sản phẩm",
+      "Ngăn doanh nghiệp cải tiến sản phẩm",
+      "Loại bỏ nhu cầu bảo mật dữ liệu",
+      "Phân tích khách hàng, quản lý rủi ro và tuân thủ"
+    ],
+    "answer": 3,
+    "explanation": "Dấu vết dữ liệu số (digital footprint) là nguồn tài nguyên quý giá để chấm điểm tín dụng, phát hiện gian lận và tuân thủ."
+  },
+  {
+    "id": "q_3_9",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "Nhà phát triển công nghệ trong hệ sinh thái Fintech có thể cung cấp gì?",
+    "options": [
+      "Nền tảng, hạ tầng và công cụ công nghệ",
+      "Chỉ xác định lãi suất chính sách",
+      "Chỉ cấp giấy phép ngân hàng",
+      "Chỉ thu thuế"
+    ],
+    "answer": 0,
+    "explanation": "Tech developers cung cấp hạ tầng phần mềm, API, đám mây, an ninh mạng và các công cụ phân tích."
+  },
+  {
+    "id": "q_3_10",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "Mã QR trong thanh toán có vai trò nào?",
+    "options": [
+      "Mã hóa thông tin giao dịch giúp thực hiện thanh toán nhanh chóng, chính xác",
+      "Tự động thẩm định điểm tín dụng của người mua hàng trước khi thanh toán",
+      "Thay thế hoàn toàn các thuật toán bảo mật cốt lõi của ngân hàng trung ương",
+      "Lưu trữ dữ liệu lịch sử mua sắm của khách hàng trong thời gian dài hạn"
+    ],
+    "answer": 0,
+    "explanation": "QR Code mã hóa tài khoản nhận tiền, số tiền và thông tin giao dịch, giúp quét và thanh toán tức thì mà không nhập tay."
+  },
+  {
+    "id": "q_3_11",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "Theo lý thuyết đổi mới đột phá, một con đường đột phá thường bắt đầu ở đâu?",
+    "options": [
+      "Thị trường đã bị độc quyền tuyệt đối",
+      "Chỉ trong khu vực công",
+      "Phân khúc cao cấp nhất với giá cao nhất",
+      "Phân khúc cấp thấp hoặc thị trường mới bị bỏ ngỏ"
+    ],
+    "answer": 3,
+    "explanation": "Theo Clayton Christensen, đổi mới đột phá bắt đầu từ phân khúc bình dân hoặc thị trường mới mà các doanh nghiệp lớn bỏ qua."
+  },
+  {
+    "id": "q_3_12",
+    "section": 3,
+    "sectionTitle": "Ôn tập 3",
+    "question": "“Khẩu vị rủi ro” của doanh nghiệp phản ánh điều gì?",
+    "options": [
+      "Số lượng khách hàng",
+      "Danh sách mật khẩu nhân viên",
+      "Mức rủi ro doanh nghiệp sẵn sàng chấp nhận để theo đuổi mục tiêu",
+      "Chi phí quảng cáo tháng"
+    ],
+    "answer": 2,
+    "explanation": "Khẩu vị rủi ro (Risk Appetite) là mức độ rủi ro tối đa mà tổ chức sẵn sàng chấp nhận để đạt mục tiêu chiến lược."
+  },
+  {
+    "id": "q_4_1",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "Trong mô hình Fintech, công nghệ thường thuộc nhóm nào?",
+    "options": [
+      "Thuế tiêu thụ đặc biệt",
+      "Chi phí quảng cáo duy nhất",
+      "Nguồn lực và hệ thống cốt lõi",
+      "Chính sách tiền tệ"
+    ],
+    "answer": 2,
+    "explanation": "Công nghệ là Nguồn lực chính (Key Resources) và năng lực cốt lõi giúp Fintech vận hành và tạo giá trị khác biệt."
+  },
+  {
+    "id": "q_4_2",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "Mục đích chính của mã hóa dữ liệu là gì?",
+    "options": [
+      "Tăng độ sáng màn hình",
+      "Bảo vệ tính bí mật của thông tin trước truy cập trái phép",
+      "Tạo thêm dữ liệu giả",
+      "Giảm số lượng người dùng"
+    ],
+    "answer": 1,
+    "explanation": "Mã hóa (Encryption) bảo vệ tính bảo mật và toàn vẹn của dữ liệu trong quá trình lưu trữ hoặc truyền qua mạng."
+  },
+  {
+    "id": "q_4_3",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "Đổi mới nào làm thay đổi cách doanh nghiệp tạo và thu nhận giá trị?",
+    "options": [
+      "Đổi mới giao diện website",
+      "Đổi mới màu sắc thương hiệu",
+      "Đổi mới sản phẩm kinh doanh",
+      "Đổi mới mô hình kinh doanh"
+    ],
+    "answer": 3,
+    "explanation": "Đổi mới mô hình kinh doanh (Business Model Innovation) tái định nghĩa cách doanh nghiệp tạo lập, phân phối và giữ lại giá trị."
+  },
+  {
+    "id": "q_4_4",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "Vì sao quản lý dữ liệu quan trọng trong Fintech?",
+    "options": [
+      "Loại bỏ hoàn toàn đối thủ cạnh tranh",
+      "Thay thế vai trò Ngân hàng Trung ương",
+      "Tự động hóa cấp vốn không cần pháp luật",
+      "Giúp bảo mật, ngăn ngừa gian lận và tạo niềm tin với khách hàng"
+    ],
+    "answer": 3,
+    "explanation": "Quản trị dữ liệu chặt chẽ giúp bảo vệ khách hàng, chống rửa tiền/gian lận và duy trì uy tín của doanh nghiệp tài chính."
+  },
+  {
+    "id": "q_4_5",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "Sự kiện nào thường được gắn với sự khởi đầu của Fintech 2.0?",
+    "options": [
+      "Sự ra đời của Bitcoin",
+      "Khủng hoảng tài chính 2008",
+      "Sự phát triển của stablecoin",
+      "Sự xuất hiện của ATM và quá trình số hóa mạnh tại các định chế tài chính"
+    ],
+    "answer": 3,
+    "explanation": "Fintech 2.0 gắn với sự xuất hiện của máy ATM (1967) và việc ngân hàng truyền thống số hóa giao dịch và hệ thống cốt lõi."
+  },
+  {
+    "id": "q_4_6",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "RegTech hướng tới mục tiêu nào?",
+    "options": [
+      "Tự động hóa và nâng hiệu quả tuân thủ, giám sát và báo cáo",
+      "Tăng hồ sơ giấy bắt buộc",
+      "Loại bỏ kiểm soát nội bộ",
+      "Giúp doanh nghiệp né quy định"
+    ],
+    "answer": 0,
+    "explanation": "RegTech (Regulatory Technology) dùng công nghệ số để tự động hóa quy trình tuân thủ, giám sát rủi ro và nộp báo cáo định kỳ."
+  },
+  {
+    "id": "q_4_7",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "Khách hàng trong hệ sinh thái Fintech có vai trò nào?",
+    "options": [
+      "Chỉ cung cấp hạ tầng kỹ thuật",
+      "Chỉ có vai trò nộp thuế",
+      "Không ảnh hưởng đến sản phẩm",
+      "Tạo nhu cầu, dữ liệu phản hồi và quyết định mức độ chấp nhận dịch vụ"
+    ],
+    "answer": 3,
+    "explanation": "Khách hàng là trung tâm thúc đẩy nhu cầu, đóng góp dữ liệu hành vi và quyết định sự tồn tại của sản phẩm tài chính."
+  },
+  {
+    "id": "q_4_8",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "Regulatory Sandbox là gì?",
+    "options": [
+      "Khu vực không áp dụng pháp luật",
+      "Cơ chế cho phép thử nghiệm đổi mới trong phạm vi, thời gian và điều kiện được giám sát",
+      "Hệ thống thanh toán quốc tế",
+      "Chương trình miễn thuế vĩnh viễn"
+    ],
+    "answer": 1,
+    "explanation": "Sandbox là khung thử nghiệm có kiểm soát dành cho các giải pháp tài chính mới chưa có quy định pháp lý hoàn chỉnh."
+  },
+  {
+    "id": "q_4_9",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "Trong hệ sinh thái Fintech, nhà cung cấp dịch vụ đám mây thuộc nhóm nào gần nhất?",
+    "options": [
+      "Nhà phát triển và cung cấp công nghệ",
+      "Cơ quan thuế",
+      "Khách hàng tài chính",
+      "Nhà phát hành tiền pháp định"
+    ],
+    "answer": 0,
+    "explanation": "Nhà cung cấp hạ tầng đám mây (AWS, Azure, GCP...) đóng vai trò là nhà phát triển và cung cấp công nghệ hạ tầng."
+  },
+  {
+    "id": "q_4_10",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "API có vai trò chính nào trong Fintech?",
+    "options": [
+      "Thay thế mọi cơ sở dữ liệu",
+      "Chỉ dùng để thiết kế giao diện màu sắc",
+      "Cho phép các hệ thống kết nối và trao đổi dữ liệu có kiểm soát",
+      "Ngăn các ứng dụng giao tiếp với nhau"
+    ],
+    "answer": 2,
+    "explanation": "API (Application Programming Interface) là cầu nối kỹ thuật giúp kết nối hệ thống ngân hàng với các ứng dụng Fintech."
+  },
+  {
+    "id": "q_4_11",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "Rủi ro trọng yếu đối với nhà đầu tư trong P2P Lending là gì?",
+    "options": [
+      "Rủi ro biến động tỷ giá vàng thế giới",
+      "Rủi ro không rút được tiền vào ngày cuối tuần",
+      "Người vay không trả được nợ",
+      "Rủi ro lạm phát làm giảm giá trị tiền tệ nội địa"
+    ],
+    "answer": 2,
+    "explanation": "Nhà đầu tư trong P2P Lending trực tiếp chịu rủi ro tín dụng nếu người vay mất khả năng chi trả."
+  },
+  {
+    "id": "q_4_12",
+    "section": 4,
+    "sectionTitle": "Ôn tập 4",
+    "question": "Trong làn sóng Fintech hiện nay, điểm khác biệt nổi bật là gì?",
+    "options": [
+      "Fintech thay thế hoàn toàn hệ thống tiền tệ vật chất",
+      "Loại bỏ hoàn toàn sự quản lý của ngân hàng trung ương",
+      "Các công ty Fintech và ngân hàng chuyển sang hợp tác sâu sắc",
+      "Chỉ tập trung phát triển các dịch vụ tại quầy giao dịch"
+    ],
+    "answer": 2,
+    "explanation": "Xu hướng hiện nay là hợp tác cùng có lợi (win-win) giữa Fintech (nhanh nhạy, trải nghiệm tốt) và Ngân hàng (vốn lớn, giấy phép)."
+  },
+  {
+    "id": "q_5_1",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "Phishing là hình thức tấn công nào?",
+    "options": [
+      "Giả mạo để lừa người dùng cung cấp thông tin nhạy cảm",
+      "Nén dữ liệu",
+      "Sao lưu dữ liệu định kỳ",
+      "Tăng tốc máy chủ"
+    ],
+    "answer": 0,
+    "explanation": "Phishing là hình thức tấn công giả mạo (email, tin nhắn, website giả) để chiếm đoạt tài khoản, mật khẩu hoặc mã OTP."
+  },
+  {
+    "id": "q_5_2",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "Trong Fintech, “thị trường mục tiêu” trả lời câu hỏi nào?",
+    "options": [
+      "Khi nào sản phẩm Fintech sẽ lỗi thời",
+      "Doanh nghiệp phục vụ nhóm khách hàng nào",
+      "Chi phí phát hành mã nguồn là bao nhiêu",
+      "Hệ thống máy chủ được đặt tại quốc gia nào"
+    ],
+    "answer": 1,
+    "explanation": "Target Market xác định rõ nhóm khách hàng mà giải pháp tài chính nhắm tới để tối ưu giá trị và nguồn lực."
+  },
+  {
+    "id": "q_5_3",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một giải pháp dùng công nghệ để đổi mới cách cung cấp tín dụng, thanh toán, đầu tư hoặc quản trị rủi ro?",
+    "options": [
+      "Khái niệm Fintech",
+      "Động lực phát triển Fintech",
+      "Kinh tế số",
+      "Đổi mới đột phá"
+    ],
+    "answer": 0,
+    "explanation": "Đây là định nghĩa cốt lõi của Fintech: áp dụng đổi mới công nghệ vào các dịch vụ tài chính căn bản."
+  },
+  {
+    "id": "q_5_4",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "Nội dung nào mô tả đúng nhất về Fintech 1.0 và 2.0?",
+    "options": [
+      "Nền tảng tính toán, lưu trữ, kết nối và xử lý dữ liệu hỗ trợ các hoạt động của nền kinh tế số.",
+      "Các giai đoạn lịch sử gắn với việc công nghệ dần hỗ trợ kết nối tài chính và sau đó số hóa mạnh hoạt động của các định chế tài chính.",
+      "Quá trình công nghệ, dịch vụ, sản phẩm, kỹ thuật và kỹ năng số được phổ biến và sử dụng ngày càng rộng trong nền kinh tế và doanh nghiệp.",
+      "Một quá trình gồm giai đoạn đột phá ban đầu, phát triển tuyến tính, tập trung các kháng nghị và đổi mới hoàn toàn."
+    ],
+    "answer": 1,
+    "explanation": "Fintech 1.0 xây dựng hạ tầng kết nối tài chính toàn cầu; Fintech 2.0 số hóa mạnh mẽ bên trong các định chế tài chính."
+  },
+  {
+    "id": "q_5_5",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "Hợp đồng thông minh (Smart Contract) chạy trên hạ tầng công nghệ nào?",
+    "options": [
+      "Đám mây công cộng",
+      "Blockchain",
+      "Máy chủ tập trung",
+      "Cổng thanh toán"
+    ],
+    "answer": 1,
+    "explanation": "Smart Contract là các đoạn mã tự động thực thi được lưu trữ và vận hành trên mạng phân tán Blockchain."
+  },
+  {
+    "id": "q_5_6",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "Kiến trúc Ngân hàng mở (Open Banking) dựa trên công nghệ kết nối cốt lõi nào?",
+    "options": [
+      "Open API",
+      "Bluetooth",
+      "Cáp quang",
+      "Mã vạch 1D"
+    ],
+    "answer": 0,
+    "explanation": "Open API là nền tảng kỹ thuật cho phép bên thứ ba truy xuất an toàn dữ liệu khách hàng từ ngân hàng khi được đồng ý."
+  },
+  {
+    "id": "q_5_7",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "KYC được thực hiện chủ yếu để làm gì?",
+    "options": [
+      "Tăng tốc Wi-Fi",
+      "Nhận biết và xác minh khách hàng",
+      "Tạo mật khẩu chung",
+      "Quảng cáo sản phẩm"
+    ],
+    "answer": 1,
+    "explanation": "KYC (Know Your Customer) là quy trình xác minh danh tính khách hàng để phòng chống gian lận và tuân thủ luật."
+  },
+  {
+    "id": "q_5_8",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "Trụ cột nào đóng vai trò quản lý và ban hành hành lang pháp lý trong hệ sinh thái Fintech?",
+    "options": [
+      "Các công ty khởi nghiệp",
+      "Công ty công nghệ lớn",
+      "Khách hàng cá nhân",
+      "Cơ quan quản lý (Regulators)"
+    ],
+    "answer": 3,
+    "explanation": "Cơ quan quản lý (Ngân hàng Trung ương, Bộ Tài chính...) xây dựng và giám sát khung pháp lý."
+  },
+  {
+    "id": "q_5_9",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "Trong Business Model Canvas, “Khái niệm giá trị” (Value Proposition) trả lời cho câu hỏi nào?",
+    "options": [
+      "Doanh nghiệp thu tiền từ đâu?",
+      "Dịch vụ giải quyết vấn đề gì cho khách hàng?",
+      "Chi phí cố định là bao nhiêu?",
+      "Ai là đối tác cung cấp dịch vụ?"
+    ],
+    "answer": 1,
+    "explanation": "Đề xuất giá trị giải quyết câu hỏi: Sản phẩm đem lại giá trị gì và giúp giải quyết vấn đề gì cho khách hàng."
+  },
+  {
+    "id": "q_5_10",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "Nội dung nào mô tả đúng nhất về Thanh toán NFC?",
+    "options": [
+      "Thanh toán dùng công nghệ truyền thông trường gần, truyền dữ liệu ở khoảng cách rất ngắn và có thể tích hợp trên điện thoại.",
+      "Quy trình có hai giai đoạn chính: xác thực để kiểm tra khả năng thanh toán và thanh toán để hoàn tất chuyển tiền giữa các bên.",
+      "Thanh toán dựa trên mã hai chiều có thể được camera điện thoại đọc và chứa nhiều thông tin hơn mã vạch truyền thống.",
+      "Ứng dụng công nghệ vào quản lý tài sản, tư vấn đầu tư và phân bổ danh mục."
+    ],
+    "answer": 0,
+    "explanation": "NFC (Near Field Communication) cho phép truyền dữ liệu không tiếp xúc ở cự ly vài centimet, tích hợp trên Apple Pay, Google Pay..."
+  },
+  {
+    "id": "q_5_11",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "Fintech 3.5 thường nhấn mạnh điều gì?",
+    "options": [
+      "Sự kết thúc của ngân hàng điện tử",
+      "Việc chỉ sử dụng máy tính lớn tại ngân hàng",
+      "Việc quay lại hệ thống thanh toán bằng séc",
+      "Sự phát triển Fintech tại các thị trường đang phát triển và mới nổi"
+    ],
+    "answer": 3,
+    "explanation": "Fintech 3.5 nhấn mạnh sự phổ cập công nghệ tài chính vượt bậc tại các thị trường đang phát triển như Châu Á, Châu Phi."
+  },
+  {
+    "id": "q_5_12",
+    "section": 5,
+    "sectionTitle": "Ôn tập 5",
+    "question": "Crowdfunding dựa trên phần thưởng khác với quyên góp ở điểm nào?",
+    "options": [
+      "Người đóng góp có thể nhận phần thưởng/sản phẩm thay vì cổ phần",
+      "Luôn nhận lãi suất cố định",
+      "Luôn nhận cổ phần",
+      "Bắt buộc phải là ngân hàng"
+    ],
+    "answer": 0,
+    "explanation": "Reward-based crowdfunding trao quà tặng/sản phẩm thử nghiệm cho người ủng hộ, khác với quyên góp phi lợi nhuận (donation)."
+  },
+  {
+    "id": "q_6_1",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "Đặc tính nào giúp blockchain hạn chế việc sửa đổi dữ liệu đã ghi?",
+    "options": [
+      "Mọi dữ liệu nằm trên một máy tính duy nhất",
+      "Không sử dụng hàm băm",
+      "Chỉ có một người được xem sổ cái",
+      "Liên kết mật mã giữa các khối và cơ chế đồng thuận"
+    ],
+    "answer": 3,
+    "explanation": "Blockchain sử dụng hàm băm nối chuỗi các khối và thuật toán đồng thuận phân tán giúp dữ liệu có tính bất biến cao."
+  },
+  {
+    "id": "q_6_2",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "Nội dung nào mô tả đúng nhất về Cho vay ngang hàng (P2P)?",
+    "options": [
+      "Ứng dụng công nghệ vào chuỗi giá trị bảo hiểm để cải thiện thiết kế sản phẩm, định phí, phân phối, phục vụ và xử lý bồi thường.",
+      "Huy động nhiều khoản đóng góp hoặc đầu tư từ số đông qua Internet để tài trợ một mục tiêu hay dự án xác định.",
+      "Ứng dụng công nghệ vào quản lý tài sản, tư vấn đầu tư và phân bổ danh mục.",
+      "Nền tảng trực tuyến kết nối người vay và người cho vay; về nguyên tắc nền tảng đóng vai trò trung gian thông tin."
+    ],
+    "answer": 3,
+    "explanation": "P2P Lending hoạt động như cầu nối thông tin trực tiếp giữa người đi vay và nhà đầu tư cho vay."
+  },
+  {
+    "id": "q_6_3",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "Vai trò điển hình của công ty khởi nghiệp Fintech là gì?",
+    "options": [
+      "Ban hành luật tài chính quốc gia",
+      "Phát triển mô hình, sản phẩm hoặc dịch vụ tài chính dựa trên công nghệ",
+      "Quản lý chính sách tiền tệ",
+      "In tiền pháp định"
+    ],
+    "answer": 1,
+    "explanation": "Startup Fintech sáng tạo các giải pháp, quy trình và sản phẩm tài chính mới ứng dụng công nghệ."
+  },
+  {
+    "id": "q_6_4",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "Vai trò phù hợp của cơ quan quản lý trong Fintech là gì?",
+    "options": [
+      "Tự phát triển mọi ứng dụng",
+      "Cấm mọi sản phẩm mới",
+      "Không can thiệp trong mọi trường hợp",
+      "Cân bằng đổi mới với an toàn hệ thống và bảo vệ người tiêu dùng"
+    ],
+    "answer": 3,
+    "explanation": "Mục tiêu quản lý là thúc đẩy sáng tạo đồng thời bảo đảm an toàn hệ thống tài chính và quyền lợi khách hàng."
+  },
+  {
+    "id": "q_6_5",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "Kênh phân phối số có lợi ích nào?",
+    "options": [
+      "Giảm khả năng tương tác với khách hàng",
+      "Loại bỏ dữ liệu phản hồi",
+      "Tiếp cận khách hàng thuận tiện qua ứng dụng, web và các kênh số khác",
+      "Bắt buộc khách hàng đến quầy"
+    ],
+    "answer": 2,
+    "explanation": "Kênh số mang dịch vụ tài chính đến tay người dùng mọi lúc, mọi nơi qua ứng dụng di động và website."
+  },
+  {
+    "id": "q_6_6",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "Ngân hàng số Timo hay Cake tại Việt Nam là ví dụ minh họa cho mô hình nào?",
+    "options": [
+      "Ngân hàng truyền thống 100% chi nhánh",
+      "Neobank / Digital Bank",
+      "Quỹ đầu tư mạo hiểm",
+      "Công ty bảo hiểm nhân thọ"
+    ],
+    "answer": 1,
+    "explanation": "Timo và Cake là mô hình Neobank/Ngân hàng số không có chi nhánh vật lý, giao dịch hoàn toàn số hóa."
+  },
+  {
+    "id": "q_6_7",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "IoT có thể hỗ trợ InsurTech bằng cách nào?",
+    "options": [
+      "Thay thế hoàn toàn pháp luật bảo hiểm",
+      "Thu thập dữ liệu hành vi/sử dụng để định giá và quản lý rủi ro",
+      "Chỉ in hợp đồng nhanh hơn",
+      "Loại bỏ mọi dữ liệu khách hàng"
+    ],
+    "answer": 1,
+    "explanation": "Thiết bị IoT và cảm biến ghi nhận dữ liệu thực tế (lái xe, nhịp tim...) giúp tính phí bảo hiểm động (Usage-based Insurance)."
+  },
+  {
+    "id": "q_6_8",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một sản phẩm Fintech mới chưa có hành lang pháp lý rõ ràng cần thử nghiệm với nhóm khách hàng giới hạn dưới giám sát?",
+    "options": [
+      "Quản trị Fintech",
+      "Regulatory Sandbox",
+      "Tiền kỹ thuật số trong giao dịch bất động sản và AML",
+      "Chênh lệch quản lý và nguyên tắc 'cùng hoạt động, cùng luật'"
+    ],
+    "answer": 1,
+    "explanation": "Regulatory Sandbox cho phép thử nghiệm sản phẩm mới trong phạm vi giới hạn có sự kiểm soát của cơ quan quản lý."
+  },
+  {
+    "id": "q_6_9",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "Mô hình Mua trước trả sau (BNPL) viết tắt của cụm từ tiếng Anh nào?",
+    "options": [
+      "Bank Next Pay Later",
+      "Build Network Pay Later",
+      "Buy Next Pay Less",
+      "Buy Now Pay Later"
+    ],
+    "answer": 3,
+    "explanation": "BNPL viết tắt từ Buy Now Pay Later (Mua ngay, trả sau chia thành nhiều đợt không lãi suất)."
+  },
+  {
+    "id": "q_6_10",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "Tiền kỹ thuật số CBDC do tổ chức nào trực tiếp phát hành?",
+    "options": [
+      "Ngân hàng Trung ương quốc gia",
+      "Công ty khởi nghiệp Fintech",
+      "Mạng xã hội xuyên quốc gia",
+      "Sàn giao dịch tiền mã hóa tư nhân"
+    ],
+    "answer": 0,
+    "explanation": "CBDC (Central Bank Digital Currency) là tiền pháp định số do Ngân hàng Trung ương quốc gia phát hành và bảo đảm."
+  },
+  {
+    "id": "q_6_11",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "Đặc điểm kinh tế nào giúp nhiều dịch vụ số có thể mở rộng nhanh?",
+    "options": [
+      "Mọi dịch vụ đều cần chi nhánh vật lý",
+      "Mỗi giao dịch phải xây một trung tâm dữ liệu mới",
+      "Chi phí cận biên trên mỗi giao dịch có thể thấp",
+      "Chi phí cố định tăng tuyến tính theo số khách hàng"
+    ],
+    "answer": 2,
+    "explanation": "Chi phí cận biên (marginal cost) của dịch vụ phần mềm số gần như bằng 0, cho phép mở rộng quy mô phi mã."
+  },
+  {
+    "id": "q_6_12",
+    "section": 6,
+    "sectionTitle": "Ôn tập 6",
+    "question": "Khung thể chế thử nghiệm “Regulatory Sandbox” mang lại lợi ích chính nào?",
+    "options": [
+      "Thử nghiệm sản phẩm mới trong môi trường có kiểm soát rủi ro",
+      "Cho phép Fintech hoạt động vĩnh viễn không cần giấy phép",
+      "Miễn 100% thuế cho doanh nghiệp Fintech",
+      "Bắt buộc ngân hàng mua lại công ty Fintech"
+    ],
+    "answer": 0,
+    "explanation": "Sandbox giúp kiểm chứng an toàn và tính khả thi của giải pháp trước khi áp dụng trên quy mô lớn."
+  },
+  {
+    "id": "q_7_1",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Đặc tính nào của điện toán đám mây cho phép tăng hoặc giảm tài nguyên theo nhu cầu?",
+    "options": [
+      "Tính bất biến",
+      "Tính ẩn danh",
+      "Tính co giãn (elasticity)",
+      "Tính vật lý hóa"
+    ],
+    "answer": 2,
+    "explanation": "Tính co giãn (Elasticity) cho phép hệ thống tự động tăng giảm CPU, RAM, lưu trữ theo lưu lượng truy cập thực tế."
+  },
+  {
+    "id": "q_7_2",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Nội dung nào mô tả đúng nhất về Nhà phát triển công nghệ?",
+    "options": [
+      "Người dùng cá nhân hoặc tổ chức tiếp nhận và sử dụng sản phẩm, dịch vụ tài chính.",
+      "Chủ thể cung cấp hạ tầng, nền tảng, công cụ và năng lực công nghệ cho các hoạt động Fintech.",
+      "Chủ thể xây dựng, thực thi và giám sát khung chính sách nhằm cân bằng đổi mới với an toàn thị trường.",
+      "Khu vực hoặc thị trường có điều kiện thuận lợi về vốn, nhân lực, công nghệ, khách hàng và chính sách cho hoạt động Fintech."
+    ],
+    "answer": 1,
+    "explanation": "Nhà phát triển công nghệ là các bên cung ứng giải pháp kỹ thuật, phần mềm, bảo mật và đám mây."
+  },
+  {
+    "id": "q_7_3",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Biện pháp nào giúp giảm rủi ro an ninh mạng?",
+    "options": [
+      "Tắt cập nhật bảo mật",
+      "Lưu mọi dữ liệu công khai",
+      "Dùng chung một mật khẩu",
+      "Kiểm soát truy cập, mã hóa, giám sát và kế hoạch ứng phó sự cố"
+    ],
+    "answer": 3,
+    "explanation": "Bộ giải pháp bảo mật toàn diện: kiểm soát quyền truy cập chặt chẽ, mã hóa đầu cuối và giám sát an ninh 24/7."
+  },
+  {
+    "id": "q_7_4",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Khủng hoảng tài chính toàn cầu năm nào đã tạo động lực mạnh mẽ cho sự bùng nổ của Fintech 3.0?",
+    "options": [
+      "2008",
+      "1997",
+      "2015",
+      "2020"
+    ],
+    "answer": 0,
+    "explanation": "Cuộc khủng hoảng tài chính toàn cầu 2008 là cú hích lịch sử dẫn đến sự ra đời của Bitcoin và làn sóng Fintech 3.0."
+  },
+  {
+    "id": "q_7_5",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Mô hình P2P Lending hoạt động dựa trên nguyên lý nào?",
+    "options": [
+      "Ngân hàng huy động tiền gửi rồi cho vay",
+      "Kết nối trực tiếp người vay và người cho vay qua nền tảng số",
+      "Khách hàng vay vốn trực tiếp từ Ngân hàng Trung ương",
+      "Công ty bảo hiểm đứng ra cấp tín dụng"
+    ],
+    "answer": 1,
+    "explanation": "P2P Lending gạt bỏ khâu huy động vốn trung gian của ngân hàng, ghép nối trực tiếp cung và cầu vốn trên mạng số."
+  },
+  {
+    "id": "q_7_6",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Vai trò quan trọng của cơ quan quản lý đối với Fintech là gì?",
+    "options": [
+      "Thiết kế mọi ứng dụng Fintech",
+      "Trực tiếp bán mọi sản phẩm tài chính",
+      "Loại bỏ hoàn toàn cạnh tranh",
+      "Thiết lập khung giám sát, bảo vệ người dùng và hỗ trợ đổi mới có kiểm soát"
+    ],
+    "answer": 3,
+    "explanation": "Cơ quan quản lý tạo môi trường minh bạch, phòng chống rửa tiền, bảo vệ người tiêu dùng và hỗ trợ doanh nghiệp thử nghiệm."
+  },
+  {
+    "id": "q_7_7",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một Fintech có nhiều lượt tải ứng dụng nhưng tỷ lệ sử dụng lại và doanh thu trên khách hàng thấp?",
+    "options": [
+      "Đổi mới mô hình kinh doanh",
+      "Business Model Canvas (BMC)",
+      "Thị trường và sản phẩm/dịch vụ",
+      "Kênh phân phối, trải nghiệm khách hàng và doanh thu"
+    ],
+    "answer": 3,
+    "explanation": "Đây là vấn đề liên quan đến kênh tiếp cận, hành trình trải nghiệm người dùng và việc chuyển đổi thành dòng doanh thu bền vững."
+  },
+  {
+    "id": "q_7_8",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Nhận định nào phản ánh đúng ý nghĩa của Khách hàng tài chính?",
+    "options": [
+      "Nhu cầu, niềm tin và khả năng chấp nhận công nghệ quyết định mức độ phổ cập dịch vụ.",
+      "Thường tạo áp lực cạnh tranh nhưng cũng có thể hợp tác với định chế tài chính truyền thống.",
+      "Sự phát triển trung tâm Fintech phụ thuộc nhiều yếu tố hệ sinh thái chứ không chỉ số lượng startup.",
+      "Vừa chịu sức ép cạnh tranh vừa có thể hợp tác, đầu tư hoặc tích hợp giải pháp Fintech."
+    ],
+    "answer": 0,
+    "explanation": "Sự tiếp nhận và mức độ tin cậy của khách hàng là nhân tố cốt lõi quyết định giải pháp Fintech có tồn tại hay không."
+  },
+  {
+    "id": "q_7_9",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Đâu KHÔNG phải là tác động thường được kỳ vọng từ Fintech?",
+    "options": [
+      "Hỗ trợ tài chính toàn diện",
+      "Tạo mô hình kinh doanh mới",
+      "Tăng tính thuận tiện",
+      "Làm tăng rào cản tiếp cận dịch vụ cho mọi nhóm khách hàng"
+    ],
+    "answer": 3,
+    "explanation": "Fintech hướng tới giảm rào cản tiếp cận tài chính, không phải làm tăng rào cản."
+  },
+  {
+    "id": "q_7_10",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Nội dung nào mô tả đúng nhất về Đổi mới đột phá?",
+    "options": [
+      "Các giai đoạn lịch sử gắn với việc công nghệ dần hỗ trợ kết nối tài chính và sau đó số hóa mạnh hoạt động của các định chế tài chính.",
+      "Đổi mới có khả năng làm thay đổi quỹ đạo thị trường, tạo cách cung cấp giá trị mới và thách thức mô hình hiện hữu.",
+      "Các hoạt động kinh tế dựa trên hoặc được tăng cường đáng kể bởi công nghệ số, hạ tầng số, dịch vụ số và dữ liệu.",
+      "Một quá trình gồm giai đoạn đột phá ban đầu, phát triển tuyến tính, tập trung các kháng nghị và đổi mới hoàn toàn."
+    ],
+    "answer": 1,
+    "explanation": "Đổi mới đột phá (Disruptive Innovation) thay đổi hoàn toàn cách ngành hoạt động và làm suy yếu các doanh nghiệp đương nhiệm."
+  },
+  {
+    "id": "q_7_11",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Giá trị lâu dài của khách hàng (LTV) phản ánh điều gì?",
+    "options": [
+      "Giá trị của một giao dịch duy nhất",
+      "Giá trị kinh tế kỳ vọng từ mối quan hệ với khách hàng theo thời gian",
+      "Số lượt tải ứng dụng trong một ngày",
+      "Chi phí mua máy chủ"
+    ],
+    "answer": 1,
+    "explanation": "LTV (Lifetime Value) ước tính tổng lợi nhuận ròng mà một khách hàng mang lại trong suốt thời gian sử dụng dịch vụ."
+  },
+  {
+    "id": "q_7_12",
+    "section": 7,
+    "sectionTitle": "Ôn tập 7",
+    "question": "Robo-advisor thường làm gì?",
+    "options": [
+      "Cấp giấy phép ngân hàng",
+      "Phát hành tiền pháp định",
+      "Quản lý mạng viễn thông",
+      "Tự động đề xuất và quản lý danh mục theo hồ sơ khách hàng"
+    ],
+    "answer": 3,
+    "explanation": "Robo-advisor dựa trên thuật toán để tự động hóa việc phân bổ tài sản và tái cân bằng danh mục đầu tư theo mức chấp nhận rủi ro."
+  },
+  {
+    "id": "q_8_1",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "IoT là gì?",
+    "options": [
+      "Một mô hình gọi vốn cộng đồng",
+      "Một phương pháp kế toán",
+      "Mạng các thiết bị vật lý có khả năng thu thập và trao đổi dữ liệu",
+      "Một loại tiền mã hóa"
+    ],
+    "answer": 2,
+    "explanation": "IoT (Internet of Things) là mạng lưới các vật thể thông minh được nhúng cảm biến, kết nối mạng để thu thập dữ liệu."
+  },
+  {
+    "id": "q_8_2",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "Nhận định nào phản ánh đúng ý nghĩa của Đổi mới mô hình kinh doanh?",
+    "options": [
+      "Có thể thay đổi phân khúc khách hàng, kênh, nguồn thu, đối tác và cấu trúc chi phí.",
+      "Một sản phẩm tốt nhưng nhắm sai phân khúc vẫn có thể thất bại.",
+      "Hữu ích để phân tích tổng thể thay vì xem từng quyết định kinh doanh riêng lẻ.",
+      "Giúp doanh nghiệp thích ứng tốt hơn với đổi mới công nghệ và thị trường."
+    ],
+    "answer": 0,
+    "explanation": "Đổi mới mô hình kinh doanh có thể thay đổi toàn diện từ khách hàng, kênh phân phối, chi phí đến dòng doanh thu."
+  },
+  {
+    "id": "q_8_3",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "Nội dung nào mô tả đúng nhất về Regulatory Sandbox?",
+    "options": [
+      "Việc dùng tiền kỹ thuật số/chuỗi khối có thể tăng tốc và minh bạch một số khâu giao dịch nhưng cũng làm nảy sinh rủi ro rửa tiền và thực thi pháp luật.",
+      "Cách tiếp cận nhằm tạo điều kiện cho đổi mới tài chính đồng thời kiểm soát rủi ro, bảo vệ khách hàng và duy trì ổn định thị trường.",
+      "Giao dịch có người gửi, người nhận và sổ cái công khai; có thể giảm trung gian nhưng mức độ ẩn danh và tính khó đảo ngược làm phát sinh rủi ro.",
+      "Môi trường có kiểm soát do cơ quan quản lý thiết lập để doanh nghiệp thử nghiệm sản phẩm/dịch vụ mới trong điều kiện thật, có mục tiêu, phạm vi và thời gian xác định."
+    ],
+    "answer": 3,
+    "explanation": "Định nghĩa đầy đủ của Regulatory Sandbox: môi trường thử nghiệm có kiểm soát với mục tiêu, phạm vi và thời gian quy định cụ thể."
+  },
+  {
+    "id": "q_8_4",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "Yếu tố nào làm giảm chi phí tìm kiếm và chuyển đổi giữa các nhà cung cấp tài chính?",
+    "options": [
+      "Giới hạn khả năng so sánh sản phẩm",
+      "Tăng số lượng biểu mẫu giấy",
+      "Bắt buộc khách hàng dùng một nhà cung cấp",
+      "Kết nối Internet và các nền tảng số"
+    ],
+    "answer": 3,
+    "explanation": "Internet và nền tảng số giúp người dùng dễ dàng so sánh lãi suất, chi phí và chuyển đổi nhà cung cấp chỉ trong vài cú click."
+  },
+  {
+    "id": "q_8_5",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "Đâu là ví dụ điển hình của PayTech?",
+    "options": [
+      "Công ty vận tải biển",
+      "Ví điện tử và nền tảng thanh toán số",
+      "Doanh nghiệp khai khoáng",
+      "Nhà máy sản xuất thép"
+    ],
+    "answer": 1,
+    "explanation": "PayTech (Payment Technology) bao gồm ví điện tử, cổng thanh toán trực tuyến, QR code và chuyển khoản số."
+  },
+  {
+    "id": "q_8_6",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "Mối quan hệ giữa ngân hàng truyền thống và Fintech có thể là gì?",
+    "options": [
+      "Chỉ đối đầu, không thể hợp tác",
+      "Vừa cạnh tranh vừa hợp tác",
+      "Luôn là quan hệ sở hữu bắt buộc",
+      "Hoàn toàn không liên quan"
+    ],
+    "answer": 1,
+    "explanation": "Quan hệ Coopetition: vừa cạnh tranh trên một số mảng dịch vụ, vừa hợp tác chia sẻ hạ tầng API và tệp khách hàng."
+  },
+  {
+    "id": "q_8_7",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một website ghép nối nhà đầu tư với người cần vay dựa trên hồ sơ và mức độ rủi ro?",
+    "options": [
+      "Cho vay ngang hàng (P2P)",
+      "Thanh toán NFC",
+      "RegTech",
+      "Gọi vốn cộng đồng (Crowdfunding)"
+    ],
+    "answer": 0,
+    "explanation": "Website kết nối người có tiền nhàn rỗi và người cần vay là mô hình kinh điển của Cho vay ngang hàng (P2P Lending)."
+  },
+  {
+    "id": "q_8_8",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "Nhận định nào phản ánh đúng ý nghĩa của API",
+    "options": [
+      "Giúp các tổ chức kết nối dịch vụ sẵn có và tạo điều kiện để bên thứ ba phát triển dịch vụ bổ sung.",
+      "Giúp tăng khả năng phục vụ và giảm chi phí ở các tác vụ hỗ trợ lặp lại.",
+      "Hỗ trợ phân tích dữ liệu tài chính ở quy mô lớn và tăng tính linh hoạt so với chỉ dựa vào cơ sở dữ liệu quan hệ.",
+      "Có thể hỗ trợ tự động hóa, phát hiện gian lận, đánh giá rủi ro, đề xuất và tối ưu hóa hoạt động"
+    ],
+    "answer": 0,
+    "explanation": "API cho phép hệ thống mở kết nối liên thông và cho phép bên thứ ba xây dựng các dịch vụ giá trị gia tăng."
+  },
+  {
+    "id": "q_8_9",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "Quan hệ đối tác với ngân hàng có thể giúp startup Fintech điều gì?",
+    "options": [
+      "Bỏ qua quản trị rủi ro",
+      "Tránh mọi quy định pháp luật",
+      "Không cần bảo mật dữ liệu",
+      "Tiếp cận hạ tầng, giấy phép, sản phẩm hoặc tệp khách hàng"
+    ],
+    "answer": 3,
+    "explanation": "Startup Fintech bắt tay với ngân hàng để tận dụng hạ tầng thanh toán, giấy phép hoạt động và uy tín sẵn có của ngân hàng."
+  },
+  {
+    "id": "q_8_10",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "Ứng dụng M-Pesa tại Kenya bắt đầu dịch vụ thanh toán dựa trên công nghệ nào?",
+    "options": [
+      "NFC cao cấp",
+      "Tin nhắn SMS trên điện thoại cơ bản",
+      "Nhận diện mống mắt",
+      "Mạng 5G tốc độ cao"
+    ],
+    "answer": 1,
+    "explanation": "M-Pesa đạt thành công vang dội tại Kenya bắt đầu từ việc chuyển tiền qua tin nhắn SMS trên điện thoại 'cục gạch'."
+  },
+  {
+    "id": "q_8_11",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "Đâu là nguyên tắc phù hợp khi quản lý đổi mới Fintech?",
+    "options": [
+      "Không cần cơ chế chịu trách nhiệm",
+      "Không cần kiểm thử",
+      "Triển khai toàn thị trường ngay khi có ý tưởng",
+      "Thử nghiệm có kiểm soát, đánh giá rủi ro và tăng quy mô từng bước"
+    ],
+    "answer": 3,
+    "explanation": "Nguyên tắc quản lý thông minh: thí điểm trong khuôn khổ kiểm soát, nhận diện rủi ro rồi mới mở rộng từng nấc."
+  },
+  {
+    "id": "q_8_12",
+    "section": 8,
+    "sectionTitle": "Ôn tập 8",
+    "question": "Nội dung nào mô tả đúng nhất về Số hóa và chuyển đổi số?",
+    "options": [
+      "Nền tảng tính toán, lưu trữ, kết nối và xử lý dữ liệu hỗ trợ các hoạt động của nền kinh tế số.",
+      "Đổi mới có khả năng làm thay đổi quỹ đạo thị trường, tạo cách cung cấp giá trị mới và thách thức mô hình hiện hữu.",
+      "Quá trình công nghệ, dịch vụ, sản phẩm, kỹ thuật và kỹ năng số được phổ biến và sử dụng ngày càng rộng trong nền kinh tế và doanh nghiệp.",
+      "Một quá trình gồm giai đoạn đột phá ban đầu, phát triển tuyến tính, tập trung các kháng nghị và đổi mới hoàn toàn."
+    ],
+    "answer": 2,
+    "explanation": "Chuyển đổi số là quá trình thay đổi toàn diện công nghệ, quy trình và văn hóa số trong doanh nghiệp và nền kinh tế."
+  },
+  {
+    "id": "q_9_1",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Nội dung nào mô tả đúng nhất về Thanh toán thẻ: xác thực và thanh toán?",
+    "options": [
+      "Quy trình có hai giai đoạn chính: xác thực để kiểm tra khả năng thanh toán và thanh toán để hoàn tất chuyển tiền giữa các bên.",
+      "Thanh toán dựa trên mã hai chiều có thể được camera điện thoại đọc và chứa nhiều thông tin hơn mã vạch truyền thống.",
+      "Ứng dụng công nghệ để hỗ trợ quản trị, tuân thủ, giám sát và đáp ứng yêu cầu pháp lý hiệu quả hơn.",
+      "Nền tảng trực tuyến kết nối người vay và người cho vay; về nguyên tắc nền tảng đóng vai trò trung gian thông tin."
+    ],
+    "answer": 0,
+    "explanation": "Thanh toán thẻ bao gồm: Authorization (kiểm tra tài khoản/xác thực thẻ) và Settlement/Clearing (quyết toán và chuyển tiền thực tế)."
+  },
+  {
+    "id": "q_9_2",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Nhận định nào phản ánh đúng ý nghĩa của Điện toán đám mây?",
+    "options": [
+      "Có thể hỗ trợ tự động hóa, phát hiện gian lận, đánh giá rủi ro, đề xuất và tối ưu hóa hoạt động.",
+      "Giúp tăng khả năng phục vụ và giảm chi phí ở các tác vụ hỗ trợ lặp lại.",
+      "Giúp linh hoạt tài nguyên, giảm chi phí đầu tư ban đầu và triển khai dịch vụ nhanh hơn.",
+      "Làm tăng lựa chọn dịch vụ và cạnh tranh, đồng thời đòi hỏi quản trị quyền truy cập dữ liệu"
+    ],
+    "answer": 2,
+    "explanation": "Đám mây cho phép startup khởi chạy dịch vụ chỉ trong vài phút mà không cần mua sắm máy chủ vật lý tốn kém."
+  },
+  {
+    "id": "q_9_3",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Rủi ro thanh khoản phản ánh điều gì?",
+    "options": [
+      "Khả năng nhân viên đổi mật khẩu",
+      "Khả năng logo bị sao chép",
+      "Khả năng doanh nghiệp không đáp ứng kịp nghĩa vụ thanh toán đến hạn",
+      "Khả năng ứng dụng có màu khó nhìn"
+    ],
+    "answer": 2,
+    "explanation": "Rủi ro thanh khoản (Liquidity Risk) là rủi ro không có đủ tiền mặt hoặc tài sản thanh khoản để chi trả nghĩa vụ nợ đến hạn."
+  },
+  {
+    "id": "q_9_4",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Thuật ngữ “kỳ lân Fintech” thường chỉ doanh nghiệp nào?",
+    "options": [
+      "Doanh nghiệp đã phá sản",
+      "Startup Fintech tư nhân có định giá từ 1 tỷ USD trở lên",
+      "Mọi ngân hàng trung ương",
+      "Bất kỳ công ty niêm yết nào"
+    ],
+    "answer": 1,
+    "explanation": "Kỳ lân (Unicorn) là startup chưa lên sàn chứng khoán (tư nhân) đạt định giá từ 1 tỷ USD trở lên."
+  },
+  {
+    "id": "q_9_5",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Nội dung nào mô tả đúng nhất về Đổi mới mô hình kinh doanh?",
+    "options": [
+      "Đổi mới cách thức thực hiện hoạt động nhằm tăng tốc độ, giảm chi phí, giảm lỗi hoặc nâng cao chất lượng.",
+      "Việc lựa chọn phân khúc mục tiêu và xây dựng đề xuất giá trị phù hợp với nhu cầu của phân khúc đó.",
+      "Đổi mới cách doanh nghiệp tạo ra, cung cấp và thu nhận giá trị.",
+      "Nhóm quyết định về cách tiếp cận khách hàng, thiết kế trải nghiệm đa kênh và tạo dòng doanh thu dựa trên giá trị lâu dài của khách hàng."
+    ],
+    "answer": 2,
+    "explanation": "Mô hình kinh doanh là cách thức tạo ra (create), chuyển giao (deliver) và thu lại (capture) giá trị."
+  },
+  {
+    "id": "q_9_6",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Hình thức gọi vốn cộng đồng nào người góp vốn sẽ nhận được cổ phần công ty?",
+    "options": [
+      "Reward-based Crowdfunding",
+      "Donation-based Crowdfunding",
+      "Equity Crowdfunding",
+      "Debt Crowdfunding"
+    ],
+    "answer": 2,
+    "explanation": "Equity Crowdfunding là hình thức góp vốn nhận cổ phần của công ty."
+  },
+  {
+    "id": "q_9_7",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một doanh nghiệp tái thiết kế bán hàng, vận hành và ra quyết định dựa trên dữ liệu và nền tảng số?",
+    "options": [
+      "Số hóa và chuyển đổi số",
+      "Động lực phát triển Fintech",
+      "Kinh tế số",
+      "Đổi mới đột phá"
+    ],
+    "answer": 0,
+    "explanation": "Chuyển đổi số là ứng dụng công nghệ để tái định hình quy trình vận hành, kinh doanh và văn hóa ra quyết định dựa trên dữ liệu."
+  },
+  {
+    "id": "q_9_8",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Đâu là mô tả phù hợp nhất về chuyển đổi số?",
+    "options": [
+      "Chỉ mua thêm máy tính cho nhân viên",
+      "Thay đổi mô hình, quy trình và cách tạo giá trị dựa trên công nghệ số",
+      "Chỉ xây dựng một trang web giới thiệu",
+      "Chỉ chuyển tài liệu giấy thành tệp PDF"
+    ],
+    "answer": 1,
+    "explanation": "Chuyển đổi số không đơn thuần là số hóa tài liệu mà là cải tổ sâu sắc về mô hình kinh doanh, quy trình và trải nghiệm người dùng."
+  },
+  {
+    "id": "q_9_9",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Biện pháp xác thực nào yêu cầu kết hợp ít nhất 2 yếu tố độc lập?",
+    "options": [
+      "2FA",
+      "1FA",
+      "SĐT cố định",
+      "Tên đăng nhập"
+    ],
+    "answer": 0,
+    "explanation": "2FA (Two-Factor Authentication) xác thực bằng 2 lớp độc lập: mật khẩu + OTP SMS/Authenticator."
+  },
+  {
+    "id": "q_9_10",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Đổi mới quy trình là gì?",
+    "options": [
+      "Chỉ đổi tên sản phẩm",
+      "Cải tiến cách doanh nghiệp thực hiện hoạt động để nâng hiệu quả",
+      "Chỉ mua thêm bàn ghế",
+      "Chỉ thay logo"
+    ],
+    "answer": 1,
+    "explanation": "Đổi mới quy trình (Process Innovation) là tái thiết kế hoặc tối ưu các bước thực hiện nhằm giảm chi phí và nâng cao chất lượng."
+  },
+  {
+    "id": "q_9_11",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Nền tảng crowdfunding chủ yếu làm gì?",
+    "options": [
+      "Tự động in tiền",
+      "Ban hành luật chứng khoán",
+      "Kết nối dự án hay doanh nghiệp cần vốn với cộng đồng người tài trợ hoặc đầu tư",
+      "Quản lý chính sách tiền tệ"
+    ],
+    "answer": 2,
+    "explanation": "Crowdfunding đóng vai trò sàn kết nối trực tuyến giữa dự án kêu gọi vốn và cộng đồng nhà đầu tư nhỏ lẻ."
+  },
+  {
+    "id": "q_9_12",
+    "section": 9,
+    "sectionTitle": "Ôn tập 9",
+    "question": "Phương pháp học máy nào học từ dữ liệu có nhãn?",
+    "options": [
+      "Học tăng cường",
+      "Học không giám sát",
+      "Học có giám sát",
+      "Mã hóa đối xứng"
+    ],
+    "answer": 2,
+    "explanation": "Supervised Learning (Học có giám sát) huấn luyện mô hình dựa trên cặp dữ liệu đầu vào và nhãn đầu ra xác định."
+  },
+  {
+    "id": "q_10_1",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Super App (Siêu ứng dụng) là gì?",
+    "options": [
+      "Ứng dụng chỉ có một chức năng duy nhất",
+      "Nền tảng tích hợp đa dạng dịch vụ đáp ứng nhiều nhu cầu trên 1 app",
+      "Phần mềm diệt virus trên điện thoại",
+      "Ứng dụng quản lý phần cứng máy tính"
+    ],
+    "answer": 1,
+    "explanation": "Super App là ứng dụng 'tất cả trong một' tích hợp thanh toán, mua sắm, gọi xe, đặt vé, bảo hiểm trên cùng một nền tảng."
+  },
+  {
+    "id": "q_10_2",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Khối thành tố nào trong Business Model Canvas thể hiện cách doanh nghiệp Fintech thu tiền từ khách hàng?",
+    "options": [
+      "Value Propositions",
+      "Key Resources",
+      "Customer Relationships",
+      "Revenue Streams"
+    ],
+    "answer": 3,
+    "explanation": "Revenue Streams (Dòng doanh thu) trong BMC phản ánh các nguồn thu tiền từ sản phẩm, phí giao dịch, đăng ký..."
+  },
+  {
+    "id": "q_10_3",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Robo-advisor phân bổ danh mục đầu tư dựa trên thông tin đầu vào nào từ người dùng?",
+    "options": [
+      "Khảo sát mức độ chấp nhận rủi ro và mục tiêu tài chính",
+      "Số lượng bạn bè trên mạng xã hội",
+      "Lịch sử duyệt web",
+      "Nhãn hiệu điện thoại sử dụng"
+    ],
+    "answer": 0,
+    "explanation": "Robo-advisor thu thập mục tiêu đầu tư, thời hạn và khẩu vị rủi ro qua bộ câu hỏi trắc nghiệm để xây danh mục tối ưu."
+  },
+  {
+    "id": "q_10_4",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Nội dung nào mô tả đúng nhất về Đặc điểm giao dịch tiền kỹ thuật số?",
+    "options": [
+      "Việc dùng tiền kỹ thuật số có thể tăng tốc và minh bạch một số khâu giao dịch nhưng cũng làm nảy sinh rủi ro rửa tiền và thực thi pháp luật",
+      "Hệ thống trách nhiệm, kiểm soát, giám sát và ra quyết định để quản lý rủi ro trong hoạt động công nghệ tài chính",
+      "Môi trường có kiểm soát do cơ quan quản lý thiết lập để doanh nghiệp thử nghiệm sản phẩm/dịch vụ mới trong điều kiện thật, có mục tiêu, phạm vi và thời gian xác định",
+      "Giao dịch có người gửi, người nhận và sổ cái công khai; có thể giảm trung gian nhưng mức độ ẩn danh và tính khó đảo ngược làm phát sinh rủi ro"
+    ],
+    "answer": 3,
+    "explanation": "Giao dịch tiền mã hóa diễn ra trên sổ cái công khai (public ledger), ẩn danh địa chỉ ví và không thể hoàn tác khi đã ghi nhận."
+  },
+  {
+    "id": "q_10_5",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Công nghệ nào cho phép thanh toán không tiếp xúc ở khoảng cách gần?",
+    "options": [
+      "P2P Lending",
+      "Big Data",
+      "Crowdfunding",
+      "NFC"
+    ],
+    "answer": 3,
+    "explanation": "NFC (Near Field Communication) là chuẩn kết nối không dây tầm ngắn cho phép chạm thanh toán tại POS."
+  },
+  {
+    "id": "q_10_6",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Nhận định nào phản ánh đúng ý nghĩa của Công ty khởi nghiệp Fintech?",
+    "options": [
+      "Thường tạo áp lực cạnh tranh nhưng cũng có thể hợp tác với định chế tài chính truyền thống",
+      "Vừa chịu sức ép cạnh tranh vừa có thể hợp tác, đầu tư hoặc tích hợp giải pháp Fintech",
+      "Giá trị của Fintech phụ thuộc vào sự phối hợp giữa công nghệ, tài chính, khách hàng và quản lý",
+      "Số lượng kỳ lân phản ánh một phần khả năng huy động vốn và tăng trưởng của thị trường nhưng không phải thước đo duy nhất"
+    ],
+    "answer": 0,
+    "explanation": "Startup Fintech vừa tạo sức ép cạnh tranh buộc các ngân hàng chuyển đổi số, vừa có thể trở thành đối tác chiến lược."
+  },
+  {
+    "id": "q_10_7",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Yếu tố nào là động lực quan trọng của Fintech hiện đại?",
+    "options": [
+      "Thu hẹp quyền truy cập dữ liệu",
+      "Khả năng kết nối số và sức mạnh tính toán",
+      "Giảm tốc độ Internet",
+      "Tăng số lượng hồ sơ giấy"
+    ],
+    "answer": 1,
+    "explanation": "Hạ tầng kết nối tốc độ cao (4G/5G, Internet) và sức mạnh tính toán đám mây là đòn bẩy thúc đẩy Fintech phát triển mạnh mẽ."
+  },
+  {
+    "id": "q_10_8",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Kênh đa kênh (omnichannel) hướng tới điều gì?",
+    "options": [
+      "Ngăn khách hàng chuyển kênh",
+      "Loại bỏ ứng dụng di động",
+      "Tạo trải nghiệm liền mạch giữa nhiều điểm tiếp xúc với khách hàng",
+      "Chỉ dùng một chi nhánh duy nhất"
+    ],
+    "answer": 2,
+    "explanation": "Omnichannel đồng bộ hóa dữ liệu và cung cấp trải nghiệm nhất quán, liền mạch xuyên suốt app, web và quầy vật lý."
+  },
+  {
+    "id": "q_10_9",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Học tăng cường dựa chủ yếu trên cơ chế nào?",
+    "options": [
+      "Thử - sai với tín hiệu thưởng hoặc phạt",
+      "Mã hóa khóa công khai",
+      "Sao chép toàn bộ dữ liệu",
+      "Chỉ dùng dữ liệu có nhãn"
+    ],
+    "answer": 0,
+    "explanation": "Reinforcement Learning tối ưu hành vi của agent thông qua cơ chế thử sai (trial-and-error) và hàm phần thưởng (reward signal)."
+  },
+  {
+    "id": "q_10_10",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Nội dung nào mô tả đúng nhất về InsurTech?",
+    "options": [
+      "Ứng dụng công nghệ vào chuỗi giá trị bảo hiểm để cải thiện thiết kế sản phẩm, định phí, phân phối, phục vụ và xử lý bồi thường",
+      "Thanh toán dùng công nghệ truyền thông trường gần, truyền dữ liệu ở khoảng cách rất ngắn và có thể tích hợp trên điện thoại",
+      "Quy trình có hai giai đoạn chính: xác thực để kiểm tra khả năng thanh toán và thanh toán để hoàn tất chuyển tiền giữa các bên",
+      "Các công ty công nghệ lớn tận dụng quy mô nền tảng, dữ liệu và độ phủ khách hàng để cung cấp một số dịch vụ tài chính"
+    ],
+    "answer": 0,
+    "explanation": "Định nghĩa toàn diện của InsurTech: ứng dụng công nghệ cải tiến từ khâu thiết kế sản phẩm, định phí, bồi thường bảo hiểm."
+  },
+  {
+    "id": "q_10_11",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Rủi ro pháp lý và tuân thủ phát sinh khi nào?",
+    "options": [
+      "Khi doanh nghiệp vi phạm pháp luật hoặc không kịp thích ứng với quy định mới",
+      "Khi hệ thống máy chủ bị quá tải dẫn đến ứng dụng Fintech bị sập",
+      "Khi đối thủ cạnh tranh tung ra chương trình khuyến mãi lớn để giành khách hàng",
+      "Khi tỷ giá ngoại tệ biến động mạnh làm giảm giá trị tài sản của công ty"
+    ],
+    "answer": 0,
+    "explanation": "Compliance Risk phát sinh do vi phạm luật định hiện hành hoặc chậm trễ thích ứng với các thay đổi pháp lý của nhà nước."
+  },
+  {
+    "id": "q_10_12",
+    "section": 10,
+    "sectionTitle": "Ôn tập 10",
+    "question": "Sự khác biệt giữa các hệ sinh thái Fintech theo quốc gia có thể đến từ đâu?",
+    "options": [
+      "Tên miền Internet quốc gia",
+      "Mức độ phát triển hạ tầng, thị trường, vốn, nhân lực và quy định",
+      "Số ngày nghỉ lễ",
+      "Màu sắc ứng dụng phổ biến"
+    ],
+    "answer": 1,
+    "explanation": "Mỗi quốc gia có đặc thù riêng về hạ tầng viễn thông/ngân hàng, khung pháp lý, quy mô vốn đầu tư và nguồn nhân lực."
+  },
+  {
+    "id": "q_11_1",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "Đâu là ví dụ về đổi mới sản phẩm trong Fintech?",
+    "options": [
+      "Ngân hàng mở thêm một chi nhánh giao dịch vật lý mới tại vùng nông thôn",
+      "Công ty thay đổi quy trình báo cáo tài chính nội bộ từ hàng tháng sang hàng tuần",
+      "Sự ra đời của cố vấn robot (Robo-advisor) tự động quản lý danh mục đầu tư",
+      "Doanh nghiệp ký hợp đồng thuê lại một đơn vị bảo vệ chuyên nghiệp bên ngoài"
+    ],
+    "answer": 2,
+    "explanation": "Robo-advisor là sản phẩm tài chính đổi mới hoàn toàn nhờ thuật toán AI quản lý đầu tư thay con người."
+  },
+  {
+    "id": "q_11_2",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "Mốc nào gắn với giai đoạn đầu của Fintech 1.0?",
+    "options": [
+      "Sự xuất hiện của robo-advisor",
+      "Sự ra đời của smartphone",
+      "Sự phổ biến của DeFi",
+      "Sự hình thành hạ tầng viễn thông và cáp xuyên Đại Tây Dương"
+    ],
+    "answer": 3,
+    "explanation": "Fintech 1.0 bắt đầu từ tuyến cáp viễn thông xuyên Đại Tây Dương (Transatlantic telegraph cable) năm 1866."
+  },
+  {
+    "id": "q_11_3",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "Sản phẩm “Mua trước trả sau” (BNPL) tạo ra nguồn doanh thu chính từ đâu?",
+    "options": [
+      "Lãi suất huy động tiền gửi",
+      "Phí quản lý tài khoản định kỳ",
+      "Phí chiết khấu giao dịch từ người bán",
+      "Phí chuyển khoản"
+    ],
+    "answer": 2,
+    "explanation": "Doanh thu chính của BNPL đến từ phí chiết khấu giao dịch (Merchant discount rate) mà người bán trả để thu hút khách mua hàng."
+  },
+  {
+    "id": "q_11_4",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "Đâu là lợi ích của hợp tác Ngân hàng - Fintech?",
+    "options": [
+      "Loại bỏ mọi yêu cầu bảo mật",
+      "Bắt buộc khách hàng dùng tiền mặt",
+      "Làm giảm khả năng đổi mới",
+      "Kết hợp hạ tầng và niềm tin của ngân hàng với tốc độ đổi mới của Fintech"
+    ],
+    "answer": 3,
+    "explanation": "Ngân hàng mang lại vốn, giấy phép và tệp khách hàng; Fintech mang lại công nghệ mới, sự linh hoạt và trải nghiệm khách hàng xuất sắc."
+  },
+  {
+    "id": "q_11_5",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "Nội dung nào mô tả đúng nhất về Động lực phát triển Fintech?",
+    "options": [
+      "Quá trình công nghệ, dịch vụ, sản phẩm, kỹ thuật và kỹ năng số được phổ biến và sử dụng ngày càng rộng trong nền kinh tế và doanh nghiệp.",
+      "Đổi mới có khả năng làm thay đổi quỹ đạo thị trường, tạo cách cung cấp giá trị mới và thách thức mô hình hiện hữu.",
+      "Sự kết hợp của tiến bộ công nghệ, thay đổi nhu cầu khách hàng, dữ liệu, cạnh tranh và môi trường kinh doanh.",
+      "Giai đoạn Fintech hiện đại với sự nổi lên mạnh của startup, ngân hàng số, ngân hàng mở, AI, machine learning và các mô hình số mới."
+    ],
+    "answer": 2,
+    "explanation": "Fintech được thúc đẩy bởi sự hội tụ của công nghệ, nhu cầu người dùng số, sự phong phú dữ liệu và cạnh tranh thị trường."
+  },
+  {
+    "id": "q_11_6",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một đơn vị muốn giảm rủi ro lộ dữ liệu thẻ trong lúc khách hàng thực hiện giao dịch POS?",
+    "options": [
+      "Thanh toán NFC",
+      "Thanh toán thẻ: xác thực và thanh toán",
+      "BigTech tham gia dịch vụ tài chính",
+      "Gọi vốn cộng đồng (Crowdfunding)"
+    ],
+    "answer": 0,
+    "explanation": "Thanh toán NFC (như Apple Pay/Google Wallet) sử dụng cơ chế Tokenization, không gửi số thẻ thật đến máy POS."
+  },
+  {
+    "id": "q_11_7",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "P2P Lending là mô hình nào?",
+    "options": [
+      "Công ty bảo hiểm bán hợp đồng",
+      "Nền tảng kết nối người vay với người có vốn",
+      "Doanh nghiệp phát hành cổ phiếu trên sở giao dịch",
+      "Ngân hàng trung ương cho ngân hàng vay"
+    ],
+    "answer": 1,
+    "explanation": "P2P Lending kết nối trực tiếp cá nhân/hộ kinh doanh cần vốn với nhà đầu tư sẵn lòng cho vay qua sàn trực tuyến."
+  },
+  {
+    "id": "q_11_8",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một ngân hàng muốn phát hiện giao dịch bất thường và cá nhân hóa gợi ý cho khách hàng?",
+    "options": [
+      "Trí tuệ nhân tạo (AI)",
+      "Open Banking",
+      "API",
+      "Quản trị rủi ro thông minh"
+    ],
+    "answer": 0,
+    "explanation": "Trí tuệ nhân tạo (AI/Machine Learning) phân tích dữ liệu lịch sử để phát hiện bất thường và đưa ra gợi ý chi tiêu cá nhân hóa."
+  },
+  {
+    "id": "q_11_9",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "Nội dung nào mô tả đúng nhất về Điện toán đám mây?",
+    "options": [
+      "Nhóm công nghệ bao gồm học máy, xử lý ngôn ngữ tự nhiên, thị giác máy tính, nhận diện tiếng nói và học sâu.",
+      "Công cụ phần mềm cho phép các hệ thống máy tính truyền thông tin và tích hợp dịch vụ với nhau.",
+      "Mô hình cung cấp tài nguyên tính toán, lưu trữ và phần mềm qua hạ tầng đám mây thay vì doanh nghiệp phải tự sở hữu toàn bộ hạ tầng.",
+      "Việc dùng nền tảng ngân hàng lõi trên đám mây để hỗ trợ dịch vụ số và đưa sản phẩm tài chính vào hành trình của khách hàng phi tài chính."
+    ],
+    "answer": 2,
+    "explanation": "Điện toán đám mây cho phép truy cập tài nguyên điện toán dùng chung theo nhu cầu qua mạng Internet."
+  },
+  {
+    "id": "q_11_10",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "Mục tiêu của quản trị công nghệ tài chính là gì?",
+    "options": [
+      "Thiết lập trách nhiệm, kiểm soát và giám sát để doanh nghiệp vận hành bền vững",
+      "Chỉ tối đa hóa tăng trưởng ngắn hạn",
+      "Loại bỏ toàn bộ đổi mới",
+      "Bỏ qua quyền lợi khách hàng"
+    ],
+    "answer": 0,
+    "explanation": "Quản trị công nghệ bảo đảm trách nhiệm giải trình, kiểm soát an toàn bảo mật và phát triển bền vững."
+  },
+  {
+    "id": "q_11_11",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "Giá trị lâu dài của khách hàng (CLV/LTV) phản ánh điều gì?",
+    "options": [
+      "Số lượt tải ứng dụng trong một ngày",
+      "Giá trị của một giao dịch duy nhất",
+      "Giá trị kinh tế kỳ vọng từ mối quan hệ với khách hàng theo thời gian",
+      "Chi phí mua máy chủ"
+    ],
+    "answer": 2,
+    "explanation": "Customer Lifetime Value (CLV/LTV) đo lường tổng lợi nhuận kỳ vọng mà doanh nghiệp nhận được từ một khách hàng."
+  },
+  {
+    "id": "q_11_12",
+    "section": 11,
+    "sectionTitle": "Ôn tập 11",
+    "question": "Công nghệ nào có thể hỗ trợ nhận diện khuôn mặt trong eKYC?",
+    "options": [
+      "SWIFT",
+      "Thị giác máy tính (Computer Vision)",
+      "P2P Lending",
+      "Crowdfunding"
+    ],
+    "answer": 1,
+    "explanation": "Thị giác máy tính (Computer Vision) kết hợp AI xử lý nhận diện khuôn mặt, so khớp ảnh CCCD và phát hiện ảnh giả mạo (liveness detection)."
+  },
+  {
+    "id": "q_12_1",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "Lợi ích của Hệ sinh thái Fintech & Mô hình Business Model Canvas đối với mục tiêu Tài chính toàn diện (Financial Inclusion) là gì?",
+    "options": [
+      "Chỉ phục vụ giới siêu giàu",
+      "Yêu cầu thế chấp tài sản lớn",
+      "Mở rộng khả năng tiếp cận dịch vụ tài chính cho người yếu thế",
+      "Loại bỏ hoàn toàn sự tham gia của các ngân hàng truyền thống ra khỏi nền kinh tế số"
+    ],
+    "answer": 2,
+    "explanation": "Hạ thấp chi phí phục vụ giúp đưa các dịch vụ tài chính đến với vùng sâu vùng xa và những người chưa có tài khoản ngân hàng."
+  },
+  {
+    "id": "q_12_2",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "Ứng dụng MoMo tại Việt Nam áp dụng mô hình hệ sinh thái tài chính nào?",
+    "options": [
+      "Siêu ứng dụng (Super-App) tích hợp đa dịch vụ",
+      "Sàn giao dịch chứng khoán phi tập trung",
+      "Nền tảng cho vay ngang hàng (P2P Lending)",
+      "Nền tảng thanh toán nhanh"
+    ],
+    "answer": 0,
+    "explanation": "MoMo là điển hình của Super App tại Việt Nam, tích hợp ví điện tử, thanh toán hóa đơn, bảo hiểm, đầu tư, mua sắm..."
+  },
+  {
+    "id": "q_12_3",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một nhóm phát triển nền tảng số giúp giảm chi phí cung cấp dịch vụ tài chính cho một phân khúc cụ thể?",
+    "options": [
+      "Kỳ lân Fintech",
+      "Công ty khởi nghiệp Fintech",
+      "Hệ sinh thái Fintech",
+      "Trung tâm Fintech"
+    ],
+    "answer": 1,
+    "explanation": "Đây là mục tiêu đặc trưng của một Công ty khởi nghiệp Fintech (Fintech Startup)."
+  },
+  {
+    "id": "q_12_4",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "Hệ thống chuyển mạch tài chính và bù trừ điện tử tại Việt Nam do đơn vị nào vận hành?",
+    "options": [
+      "Trung tâm Lưu ký Chứng khoán Việt Nam (VSDC)",
+      "Hiệp hội Ngân hàng Việt Nam (VNBA)",
+      "Công ty Cổ phần Thanh toán Quốc gia Việt Nam (NAPAS).",
+      "Tổng công ty Bưu điện Việt Nam (VNPost)"
+    ],
+    "answer": 2,
+    "explanation": "NAPAS (National Payment Corporation of Vietnam) là đơn vị độc quyền vận hành hạ tầng chuyển mạch và bù trừ điện tử quốc gia."
+  },
+  {
+    "id": "q_12_5",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "Nội dung nào mô tả đúng nhất về Business Model Canvas (BMC)?",
+    "options": [
+      "Nhóm thành phần bảo đảm doanh nghiệp có công nghệ, nguồn lực, quan hệ hợp tác và cấu trúc chi phí phù hợp để vận hành bền vững.",
+      "Khung mô tả các thành phần chính của mô hình kinh doanh để thấy mối liên hệ giữa khách hàng, giá trị, hoạt động và tài chính.",
+      "Đổi mới tạo ra sản phẩm hoặc dịch vụ mới hay cải thiện đáng kể giá trị mà khách hàng nhận được.",
+      "Đổi mới cách doanh nghiệp tổ chức nguồn lực, cấu trúc, phối hợp và ra quyết định."
+    ],
+    "answer": 1,
+    "explanation": "BMC liên kết các khối khách hàng, giá trị mang lại, cơ sở hạ tầng hoạt động và bài toán tài chính doanh thu - chi phí."
+  },
+  {
+    "id": "q_12_6",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một thành phố muốn thu hút doanh nghiệp Fintech quốc tế?",
+    "options": [
+      "Nhà phát triển công nghệ",
+      "Tổ chức tài chính truyền thống",
+      "Trung tâm Fintech",
+      "Hệ sinh thái Fintech"
+    ],
+    "answer": 2,
+    "explanation": "Thành phố định hướng trở thành Trung tâm Fintech (Fintech Hub) như Singapore, London, New York..."
+  },
+  {
+    "id": "q_12_7",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "Đặc điểm cốt lõi của Trí tuệ nhân tạo (AI) & Machine Learning trong Chống gian lận tài chính trong nền kinh tế số là gì?",
+    "options": [
+      "Đặt ra các bộ quy tắc cố định, không thay đổi theo thời gian để dễ quản lý",
+      "Tối ưu hóa quy trình nhờ tự động hóa và phân tích dữ liệu",
+      "Chỉ tập trung lưu trữ lịch sử giao dịch cũ",
+      "Giảm thời gian xử lý giao dịch"
+    ],
+    "answer": 1,
+    "explanation": "AI & ML liên tục học hỏi từ mẫu dữ liệu giao dịch mới để tự động hóa phát hiện gian lận và tối ưu quy trình xử lý rủi ro."
+  },
+  {
+    "id": "q_12_8",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "Vai trò của Cơ quan quản lý nhà nước đối với lĩnh vực Rủi ro an ninh mạng & Bảo mật dữ liệu trong dịch vụ Fintech là gì?",
+    "options": [
+      "Trực tiếp vận hành kinh doanh thay doanh nghiệp",
+      "Cấm hoàn toàn mọi hoạt động đổi mới",
+      "Ban hành khung pháp lý và giám sát an toàn hệ thống",
+      "Tài trợ vốn cho tất cả các startup"
+    ],
+    "answer": 2,
+    "explanation": "Cơ quan quản lý ban hành các tiêu chuẩn bảo mật bắt buộc và tiến hành thanh tra, giám sát định kỳ hệ thống của các tổ chức tài chính."
+  },
+  {
+    "id": "q_12_9",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "Công nghệ nào cho phép phân tích hàng triệu dữ liệu phi cấu trúc để dự báo rủi ro tín dụng?",
+    "options": [
+      "NFC",
+      "Big Data & Machine Learning",
+      "POS",
+      "Blockchain"
+    ],
+    "answer": 1,
+    "explanation": "Dữ liệu lớn và học máy (Big Data & Machine Learning) xử lý cả văn bản, mạng xã hội, hành vi số để dự báo xác suất vỡ nợ."
+  },
+  {
+    "id": "q_12_10",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "Nội dung nào mô tả đúng nhất về Open Banking?",
+    "options": [
+      "Công cụ phần mềm cho phép các hệ thống máy tính truyền thông tin và tích hợp dịch vụ với nhau",
+      "Nhóm công nghệ bao gồm học máy, xử lý ngôn ngữ tự nhiên, thị giác máy tính, nhận diện tiếng nói và học sâu",
+      "Mô hình xử lý dữ liệu khối lượng lớn, đa nguồn và phân tán; NoSQL phù hợp khi cần truy cập nhanh dữ liệu lớn, phi cấu trúc và dễ mở rộng",
+      "Mô hình tăng khả năng tiếp cận dữ liệu và dịch vụ ngân hàng cho bên thứ ba được cấp phép trên cơ sở khách hàng đồng thuận"
+    ],
+    "answer": 3,
+    "explanation": "Open Banking cho phép khách hàng chia sẻ dữ liệu tài khoản của mình cho các công ty Fintech đáng tin cậy thông qua Open API."
+  },
+  {
+    "id": "q_12_11",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "API và số hóa có thể tác động đến chuỗi giá trị tài chính như thế nào?",
+    "options": [
+      "Loại bỏ hoàn toàn vai trò của dữ liệu",
+      "Cho phép tách các khâu và kết hợp dịch vụ từ nhiều nhà cung cấp chuyên biệt",
+      "Ngăn các đối tác chia sẻ chức năng theo quyền cho phép",
+      "Bắt buộc mọi chức năng phải do một ngân hàng duy nhất thực hiện"
+    ],
+    "answer": 1,
+    "explanation": "API giúp 'phân rã' (unbundle) các khâu dịch vụ và cho phép ghép nối linh hoạt các mảnh ghép chuyên biệt từ nhiều nhà cung cấp."
+  },
+  {
+    "id": "q_12_12",
+    "section": 12,
+    "sectionTitle": "Ôn tập 12",
+    "question": "“Dấu vết dữ liệu” do các quy trình số tạo ra có thể hỗ trợ hoạt động nào?",
+    "options": [
+      "Xóa bỏ mọi trách nhiệm bảo vệ dữ liệu",
+      "Bắt buộc tất cả khách hàng dùng cùng một dịch vụ",
+      "Hiểu khách hàng, quản trị rủi ro và tuân thủ",
+      "Ngăn doanh nghiệp cải tiến sản phẩm"
+    ],
+    "answer": 2,
+    "explanation": "Dữ liệu hành vi số giúp thấu hiểu insight người dùng, đánh giá rủi ro tín dụng và phòng chống gian lận chính xác hơn."
+  },
+  {
+    "id": "q_13_1",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "SaaS trong tiến hóa dịch vụ đám mây chủ yếu cung cấp gì?",
+    "options": [
+      "Phần mềm ứng dụng được cung cấp như một dịch vụ qua mạng",
+      "Chỉ thiết bị thanh toán NFC",
+      "Chỉ điện năng cho trung tâm dữ liệu",
+      "Chỉ cáp mạng vật lý"
+    ],
+    "answer": 0,
+    "explanation": "SaaS (Software as a Service) cung cấp giải pháp ứng dụng hoàn chỉnh cho người dùng cuối qua trình duyệt hoặc app."
+  },
+  {
+    "id": "q_13_2",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "Nhận định nào phản ánh đúng ý nghĩa của InsurTech?",
+    "options": [
+      "Giảm yêu cầu phần cứng chuyên dụng và thuận tiện khi kết hợp với ứng dụng ngân hàng/điện thoại.",
+      "Có thể hỗ trợ KYC/AML, báo cáo, giám sát giao dịch và quản lý dữ liệu tuân thủ.",
+      "Phù hợp với dự án sáng tạo, khởi nghiệp hoặc mục tiêu cộng đồng nhưng cần minh bạch thông tin.",
+      "Có thể dùng dữ liệu và tự động hóa để tăng tốc quy trình và cá nhân hóa dịch vụ."
+    ],
+    "answer": 3,
+    "explanation": "InsurTech ứng dụng dữ liệu lớn và AI để định phí linh hoạt, thẩm định tự động và đẩy nhanh tốc độ bồi thường bảo hiểm."
+  },
+  {
+    "id": "q_13_3",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "Nhận định nào phản ánh đúng ý nghĩa của Thanh toán NFC?",
+    "options": [
+      "Giai đoạn xác thực đặc biệt nhạy cảm vì dữ liệu xác thực thẻ phải đi qua hệ thống.",
+      "Có thể hỗ trợ KYC/AML, báo cáo, giám sát giao dịch và quản lý dữ liệu tuân thủ.",
+      "Mô hình có thể mở rộng tiếp cận vốn nhưng đi kèm rủi ro nếu nền tảng vượt quá vai trò trung gian hoặc quản trị yếu.",
+      "Cho phép trải nghiệm chạm để thanh toán nhanh tại điểm bán."
+    ],
+    "answer": 3,
+    "explanation": "Thanh toán NFC mang lại trải nghiệm 'chạm là xong' (tap and go) cực kỳ tiện lợi và nhanh chóng tại quầy thanh toán."
+  },
+  {
+    "id": "q_13_4",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một công ty bảo hiểm sử dụng dữ liệu cảm biến từ thiết bị đeo hoặc xe để hiểu hành vi sử dụng?",
+    "options": [
+      "Điện toán đám mây",
+      "NLP và dịch vụ khách hàng thông minh",
+      "Internet vạn vật (IoT)",
+      "API"
+    ],
+    "answer": 2,
+    "explanation": "Cảm biến trên ô tô (telematics) hay vòng đeo tay sức khỏe (smartwatch) là thiết bị kết nối IoT thu thập dữ liệu hành vi thực tế."
+  },
+  {
+    "id": "q_13_5",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "Học tăng cường (Reinforcement Learning) dựa chủ yếu trên cơ chế nào?",
+    "options": [
+      "Chỉ tìm cụm trong dữ liệu tĩnh",
+      "Tương tác thử-sai với môi trường và nhận tín hiệu thưởng/phạt",
+      "Chỉ học từ bảng dữ liệu đã gán nhãn",
+      "Chỉ sao chép quyết định của con người mà không có phản hồi"
+    ],
+    "answer": 1,
+    "explanation": "Học tăng cường dựa trên nguyên lý tương tác giữa agent và môi trường, học cách tối đa hóa phần thưởng nhận được."
+  },
+  {
+    "id": "q_13_6",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "AI có thể hỗ trợ chấm điểm tín dụng bằng cách nào?",
+    "options": [
+      "Xóa hoàn toàn nhu cầu kiểm tra chất lượng dữ liệu",
+      "Phân tích nhiều biến dữ liệu để ước lượng rủi ro và khả năng trả nợ",
+      "Chỉ dựa vào màu sắc giao diện ứng dụng",
+      "Tự động bảo đảm mọi người vay đều trả nợ"
+    ],
+    "answer": 1,
+    "explanation": "Mô hình chấm điểm AI tổng hợp hàng trăm biến số lịch sử thanh toán, hành vi số để ước tính xác suất trả nợ."
+  },
+  {
+    "id": "q_13_7",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "Ba đặc trưng thường được dùng để mô tả Big Data là gì?",
+    "options": [
+      "Khối lượng, tốc độ và sự đa dạng",
+      "Màu sắc, kích thước và độ sáng",
+      "Giá, thuế và lãi suất",
+      "Tiền mặt, séc và thẻ"
+    ],
+    "answer": 0,
+    "explanation": "Mô hình 3V: Volume (Khối lượng lớn), Velocity (Tốc độ sinh dữ liệu và xử lý thời gian thực), Variety (Đa dạng định dạng)."
+  },
+  {
+    "id": "q_13_8",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "Hợp đồng thông minh (Smart Contract) là gì?",
+    "options": [
+      "Chương trình có thể tự thực thi điều khoản khi các điều kiện định trước được đáp ứng",
+      "Một loại mật khẩu dùng một lần",
+      "Chỉ là ảnh chụp của hợp đồng giấy",
+      "Một cuộc gọi giữa hai luật sư"
+    ],
+    "answer": 0,
+    "explanation": "Smart Contract tự động thực thi các thỏa thuận đã lập trình sẵn mà không phụ thuộc vào bên thứ ba trung gian."
+  },
+  {
+    "id": "q_13_9",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một tổ chức cần xử lý dữ liệu phi cấu trúc rất lớn từ nhiều máy chủ phân tán?",
+    "options": [
+      "NLP và dịch vụ khách hàng thông minh",
+      "Quản trị rủi ro thông minh",
+      "Big Data và NoSQL",
+      "Điện toán đám mây"
+    ],
+    "answer": 2,
+    "explanation": "Dữ liệu phi cấu trúc quy mô lớn trên hệ phân tán được xử lý hiệu quả bởi công nghệ Big Data và cơ sở dữ liệu NoSQL."
+  },
+  {
+    "id": "q_13_10",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "Nhà đầu tư đóng góp chủ yếu gì cho hệ sinh thái Fintech?",
+    "options": [
+      "Thay cơ quan quản lý ban hành luật",
+      "Thay ngân hàng trung ương phát hành tiền",
+      "Cung cấp vốn và hỗ trợ doanh nghiệp mở rộng và phát triển",
+      "Quản lý dữ liệu dân cư quốc gia"
+    ],
+    "answer": 2,
+    "explanation": "Nhà đầu tư cung cấp nguồn lực tài chính, định hướng quản trị và mở rộng quan hệ đối tác kinh doanh."
+  },
+  {
+    "id": "q_13_11",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "Business Model Canvas được dùng chủ yếu để làm gì?",
+    "options": [
+      "Mô tả các thành phần cốt lõi của mô hình kinh doanh và mối liên hệ giữa chúng",
+      "Thiết kế chip bán dẫn",
+      "Tính lương tự động cho nhân viên",
+      "Mã hóa toàn bộ dữ liệu khách hàng"
+    ],
+    "answer": 0,
+    "explanation": "BMC cung cấp cái nhìn tổng thể trực quan về 9 thành tố cốt lõi trong mô hình kinh doanh."
+  },
+  {
+    "id": "q_13_12",
+    "section": 13,
+    "sectionTitle": "Ôn tập 13",
+    "question": "Biện pháp nào có thể hỗ trợ giảm rủi ro tín dụng trong P2P Lending?",
+    "options": [
+      "Cho vay tối đa cho mọi khách hàng",
+      "KYC, chấm điểm tín dụng, hạn mức phù hợp và giám sát sau giải ngân",
+      "Bỏ toàn bộ bước xác minh người vay",
+      "Không theo dõi tình trạng khoản vay"
+    ],
+    "answer": 1,
+    "explanation": "Quy trình kiểm soát rủi ro cho vay gồm: xác minh danh tính KYC, thẩm định điểm tín dụng, hạn mức phù hợp và theo dõi thu hồi nợ."
+  },
+  {
+    "id": "q_14_1",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "AI có thể hỗ trợ xử lý bồi thường bảo hiểm bằng cách nào?",
+    "options": [
+      "Bảo đảm mọi yêu cầu đều được chi trả",
+      "Chỉ thay đổi màu sắc biểu mẫu",
+      "Tự động phân loại hồ sơ, phát hiện bất thường và hỗ trợ quyết định xử lý",
+      "Xóa mọi quy trình kiểm soát gian lận"
+    ],
+    "answer": 2,
+    "explanation": "AI phân tích ảnh chụp thiệt hại, hồ sơ chứng từ để tự động phân loại, kiểm tra gian lận và đề xuất bồi thường tức thì."
+  },
+  {
+    "id": "q_14_2",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "Rủi ro đạo đức nào đáng chú ý trong InsurTech?",
+    "options": [
+      "Thu thập quá mức dữ liệu cá nhân hoặc thiên lệch dữ liệu dẫn đến định giá và ra quyết định không công bằng",
+      "Dữ liệu bảo hiểm không bao giờ liên quan đến quyền riêng tư",
+      "Công nghệ luôn loại bỏ mọi thiên lệch",
+      "Mọi thuật toán đều có thể giải thích hoàn toàn"
+    ],
+    "answer": 0,
+    "explanation": "Thuật toán định phí có thể gây phân biệt đối xử hoặc xâm phạm quyền riêng tư nếu dữ liệu huấn luyện bị thiên vị (bias)."
+  },
+  {
+    "id": "q_14_3",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "Lợi ích của robo-advisor so với tư vấn truyền thống có thể là gì?",
+    "options": [
+      "Loại bỏ hoàn toàn rủi ro đầu tư",
+      "Chi phí thấp hơn, tự động hóa và khả năng tiếp cận rộng hơn",
+      "Luôn có lợi nhuận cao hơn thị trường",
+      "Không bao giờ cần kiểm soát mô hình"
+    ],
+    "answer": 1,
+    "explanation": "Robo-advisor có mức phí quản lý rẻ hơn nhiều so với chuyên gia tư vấn người thật và phục vụ được đông đảo nhà đầu tư vốn nhỏ."
+  },
+  {
+    "id": "q_14_4",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "Nội dung nào mô tả đúng nhất về WealthTech?",
+    "options": [
+      "Thanh toán dựa trên mã hai chiều có thể được camera điện thoại đọc và chứa nhiều thông tin hơn mã vạch truyền thống.",
+      "Các công ty công nghệ lớn tận dụng quy mô nền tảng, dữ liệu và độ phủ khách hàng để cung cấp một số dịch vụ tài chính.",
+      "Ứng dụng công nghệ vào quản lý tài sản, tư vấn đầu tư và phân bổ danh mục.",
+      "Nền tảng trực tuyến kết nối người vay và người cho vay; về nguyên tắc nền tảng đóng vai trò trung gian thông tin."
+    ],
+    "answer": 2,
+    "explanation": "WealthTech hiện đại hóa ngành quản lý gia sản, giúp tối ưu hóa danh mục đầu tư tài chính thông qua công nghệ."
+  },
+  {
+    "id": "q_14_5",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "AML tập trung vào mục tiêu nào?",
+    "options": [
+      "Tăng doanh số bằng mọi giá",
+      "Tối ưu màu giao diện ứng dụng",
+      "Giảm tốc độ xử lý giao dịch",
+      "Phòng, phát hiện và ngăn chặn hoạt động rửa tiền"
+    ],
+    "answer": 3,
+    "explanation": "Quy định AML buộc các tổ chức tài chính phải giám sát giao dịch đáng ngờ và ngăn chặn dòng tiền bất hợp pháp."
+  },
+  {
+    "id": "q_14_6",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "Vai trò của kênh phân phối trong mô hình Fintech là gì?",
+    "options": [
+      "Chỉ xác định vốn pháp định",
+      "Chỉ lưu trữ dữ liệu kế toán",
+      "Đưa sản phẩm, dịch vụ và trải nghiệm đến khách hàng qua các điểm tiếp xúc phù hợp",
+      "Thay thế hoàn toàn bộ phận quản trị rủi ro"
+    ],
+    "answer": 2,
+    "explanation": "Kênh phân phối kết nối sản phẩm với người dùng qua các điểm chạm (touchpoints) như mobile app, web, đại lý số."
+  },
+  {
+    "id": "q_14_7",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "Yếu tố nào thường có trong một thử nghiệm sandbox?",
+    "options": [
+      "Phạm vi, đối tượng, thời hạn, giới hạn rủi ro, nghĩa vụ báo cáo và tiêu chí đánh giá",
+      "Không cần bất kỳ biện pháp bảo vệ nào",
+      "Không cần xác định đối tượng khách hàng",
+      "Không có thời hạn và không cần báo cáo"
+    ],
+    "answer": 0,
+    "explanation": "Khung Sandbox luôn quy định rõ ràng giới hạn quy mô giao dịch, nhóm khách hàng tham gia, thời gian thử nghiệm và chế độ báo cáo."
+  },
+  {
+    "id": "q_14_8",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "Vì sao dữ liệu đã xác nhận trên blockchain thường khó bị sửa đổi?",
+    "options": [
+      "Vì blockchain không dùng bất kỳ thuật toán nào",
+      "Vì chỉ người dùng cuối giữ bản sao duy nhất",
+      "Các khối liên kết bằng giá trị mật mã và thay đổi phải vượt qua cơ chế đồng thuận của mạng",
+      "Vì dữ liệu không bao giờ được lưu lại"
+    ],
+    "answer": 2,
+    "explanation": "Mỗi khối lưu mã hash của khối trước; muốn sửa đổi phải tính toán lại toàn bộ chuỗi và giành quyền kiểm soát phần lớn mạng lưới."
+  },
+  {
+    "id": "q_14_9",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "Điểm khác nhau quan trọng giữa số hóa và chuyển đổi số là gì?",
+    "options": [
+      "Hai khái niệm hoàn toàn đồng nghĩa trong mọi trường hợp",
+      "Chuyển đổi số thay đổi sâu hơn về mô hình, quy trình và cách tạo giá trị; số hóa chủ yếu đưa dữ liệu và chuyển đổi quy trình sang dạng số",
+      "Số hóa luôn rộng hơn chuyển đổi số",
+      "Chuyển đổi số chỉ là mua thêm máy tính"
+    ],
+    "answer": 1,
+    "explanation": "Số hóa (Digitization/Digitalization) là chuyển định dạng dữ liệu và quy trình sang số; Chuyển đổi số (Digital Transformation) là cách tân toàn diện chiến lược kinh doanh."
+  },
+  {
+    "id": "q_14_10",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "Tình huống sau gắn trực tiếp nhất với khái niệm nào: một tổ chức cần tự động phát hiện giao dịch bất thường và chuẩn hóa báo cáo tuân thủ?",
+    "options": [
+      "RegTech",
+      "Gọi vốn cộng đồng (Crowdfunding)",
+      "Thanh toán QR Code",
+      "Thanh toán NFC"
+    ],
+    "answer": 0,
+    "explanation": "RegTech tự động hóa việc theo dõi dòng tiền bất thường và kết xuất báo cáo tuân thủ gửi cơ quan quản lý."
+  },
+  {
+    "id": "q_14_11",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "Đổi mới gia tăng thường hướng đến điều gì?",
+    "options": [
+      "Luôn tạo ra một thị trường hoàn toàn mới",
+      "Cải thiện sản phẩm hoặc dịch vụ hiện có cho khách hàng và thị trường hiện tại",
+      "Không liên quan đến nhu cầu khách hàng",
+      "Luôn bắt đầu bằng sản phẩm kém hơn và rẻ hơn"
+    ],
+    "answer": 1,
+    "explanation": "Đổi mới gia tăng (Incremental Innovation) tập trung nâng cấp tính năng, tốc độ, độ ổn định của sản phẩm hiện có cho khách hàng cũ."
+  },
+  {
+    "id": "q_14_12",
+    "section": 14,
+    "sectionTitle": "Ôn tập 14",
+    "question": "Học có giám sát (Supervised Learning) học chủ yếu từ loại dữ liệu nào?",
+    "options": [
+      "Dữ liệu không có bất kỳ quan sát nào",
+      "Dữ liệu đã có nhãn hoặc đầu ra mục tiêu",
+      "Chỉ dữ liệu đã được mã hóa không thể đọc",
+      "Chỉ dữ liệu hình ảnh không nhãn"
+    ],
+    "answer": 1,
+    "explanation": "Học có giám sát sử dụng tập dữ liệu có nhãn sẵn (ground truth) để ánh xạ đầu vào sang kết quả đầu ra dự đoán."
+  },
+  {
+    "id": "q_15_1",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "Học không giám sát (Unsupervised Learning) phù hợp với nhiệm vụ nào?",
+    "options": [
+      "Chỉ thực hiện phép cộng số học cố định",
+      "Xác minh chữ ký tay bằng con người",
+      "Tìm nhóm hoặc cấu trúc trong dữ liệu chưa gán nhãn",
+      "Học từ tín hiệu thưởng/phạt trong môi trường"
+    ],
+    "answer": 2,
+    "explanation": "Học không giám sát tự động tìm quy luật tiềm ẩn, phân nhóm (clustering) dữ liệu khi không có nhãn trước."
+  },
+  {
+    "id": "q_15_2",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "Ứng dụng AI trong phát hiện gian lận thường tập trung vào điều gì?",
+    "options": [
+      "Nhận diện mẫu giao dịch bất thường hoặc khác biệt so với hành vi thông thường",
+      "Chỉ phân tích giao dịch tiền mặt tại quầy",
+      "Tắt toàn bộ cảnh báo giao dịch",
+      "Tăng số lần khách hàng phải nhập dữ liệu giống nhau"
+    ],
+    "answer": 0,
+    "explanation": "AI phát hiện giao dịch đột biến về địa lý, số tiền hoặc thời gian trái ngược với hồ sơ thói quen của chủ thẻ."
+  },
+  {
+    "id": "q_15_3",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "Nhận định nào phản ánh đúng ý nghĩa của Fintech 1.0 và 2.0?",
+    "options": [
+      "Mức độ chấp nhận và tiêu chí cạnh tranh thay đổi khi sản phẩm mới trưởng thành.",
+      "Khả năng xử lý dữ liệu và độ tin cậy của hạ tầng ảnh hưởng trực tiếp tới dịch vụ số.",
+      "Sự phát triển Fintech có tính kế thừa, từ hạ tầng kết nối tới số hóa dịch vụ tài chính quy mô lớn.",
+      "Fintech là sự kết hợp giữa đổi mới công nghệ và hoạt động tài chính, không chỉ là một loại ứng dụng thanh toán."
+    ],
+    "answer": 2,
+    "explanation": "Fintech là một quá trình liên tục có tính kế thừa: 1.0 đặt nền móng hạ tầng viễn thông, 2.0 số hóa nghiệp vụ ngân hàng truyền thống."
+  },
+  {
+    "id": "q_15_4",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "Nội dung nào mô tả đúng nhất về NLP và dịch vụ khách hàng thông minh?",
+    "options": [
+      "Mô hình cung cấp tài nguyên tính toán, lưu trữ và phần mềm qua hạ tầng đám mây thay vì doanh nghiệp phải tự sở hữu toàn bộ hạ tầng.",
+      "Các vật thể thực được kết nối Internet và có thể thu thập, truyền hoặc trao đổi dữ liệu.",
+      "Ứng dụng xử lý ngôn ngữ tự nhiên để giao tiếp tự động với khách hàng và cung cấp dịch vụ cá nhân hóa.",
+      "Mô hình xử lý dữ liệu khối lượng lớn, đa nguồn và phân tán; NoSQL phù hợp khi cần truy cập nhanh dữ liệu lớn, phi cấu trúc và dễ mở rộng."
+    ],
+    "answer": 2,
+    "explanation": "NLP cho phép trợ lý ảo hiểu tiếng nói, câu hỏi bằng chữ của khách hàng để giải đáp và hỗ trợ tài chính 24/7."
+  },
+  {
+    "id": "q_15_5",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "“Dữ liệu thay thế” trong chấm điểm tín dụng có thể bao gồm nội dung nào",
+    "options": [
+      "Chỉ số ngẫu nhiên do hệ thống tự tạo",
+      "Chỉ màu điện thoại của khách hàng",
+      "Chỉ dữ liệu không liên quan đến người vay",
+      "Dữ liệu thanh toán hóa đơn hoặc hành vi số phù hợp, ngoài dữ liệu tín dụng truyền thống"
+    ],
+    "answer": 3,
+    "explanation": "Dữ liệu thay thế (Alternative Data) như tiền điện nước, lịch sử mua sắm thương mại điện tử giúp chấm điểm cho người chưa có hồ sơ CIC."
+  },
+  {
+    "id": "q_15_6",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "Nội dung nào mô tả đúng nhất về RegTech?",
+    "options": [
+      "Ứng dụng công nghệ để hỗ trợ quản trị, tuân thủ, giám sát và đáp ứng yêu cầu pháp lý hiệu quả hơn.",
+      "Ứng dụng công nghệ vào quản lý tài sản, tư vấn đầu tư và phân bổ danh mục.",
+      "Quy trình có hai giai đoạn chính: xác thực để kiểm tra khả năng thanh toán và thanh toán để hoàn tất chuyển tiền giữa các bên.",
+      "Huy động nhiều khoản đóng góp hoặc đầu tư từ số đông qua Internet để tài trợ một mục tiêu hay dự án xác định."
+    ],
+    "answer": 0,
+    "explanation": "RegTech dùng công nghệ để giải quyết các gánh nặng quy định pháp lý, kiểm toán và giám sát phòng ngừa rủi ro."
+  },
+  {
+    "id": "q_15_7",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "Tính phân tán của blockchain có nghĩa là gì?",
+    "options": [
+      "Mọi dữ liệu đều công khai cho tất cả người trên Internet",
+      "Không cần cơ chế đồng thuận",
+      "Mỗi giao dịch chỉ được lưu trên điện thoại người gửi",
+      "Sổ cái được duy trì trên nhiều nút thay vì phụ thuộc một máy chủ duy nhất"
+    ],
+    "answer": 3,
+    "explanation": "Phân tán (Decentralized/Distributed) nghĩa là dữ liệu sổ cái được sao lưu và xác thực đồng thời trên nhiều node độc lập."
+  },
+  {
+    "id": "q_15_8",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "Trong học phần Công nghệ tài chính căn bản, Quản trị rủi ro được hiểu đúng là gì?",
+    "options": [
+      "Quy trình nhận diện, đánh giá, kiểm soát và giám sát rủi ro",
+      "Đổi mới tạo ra giá trị mới, thường bắt đầu ở phân khúc bị bỏ qua rồi làm thay đổi thị trường",
+      "Mô hình chia sẻ dữ liệu hoặc dịch vụ ngân hàng qua API với sự đồng ý phù hợp của khách hàng",
+      "Lợi ích cụ thể mà sản phẩm hoặc dịch vụ giải quyết cho khách hàng."
+    ],
+    "answer": 0,
+    "explanation": "Quản trị rủi ro là chu trình khép kín: Nhận diện rủi ro -> Đo lường/Đánh giá -> Kiểm soát/Xử lý -> Giám sát và báo cáo."
+  },
+  {
+    "id": "q_15_9",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "Thuật ngữ nào được dùng khi tổ chức cần bảo vệ dịch vụ số trước nguy cơ bị xâm nhập?",
+    "options": [
+      "An ninh mạng",
+      "Mô hình kinh doanh Canvas",
+      "API",
+      "Đổi mới đột phá"
+    ],
+    "answer": 0,
+    "explanation": "An ninh mạng (Cybersecurity) là các biện pháp phòng vệ trước các cuộc tấn công, phá hoại hoặc truy cập dữ liệu trái phép."
+  },
+  {
+    "id": "q_15_10",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "“Phân khúc khách hàng” trong mô hình kinh doanh Canvas giúp doanh nghiệp xác định điều gì?",
+    "options": [
+      "Tổng chi phí cố định và chi phí biến đổi cần thiết để duy trì nhà xưởng",
+      "Nhóm tổ chức hoặc cá nhân cụ thể mà doanh nghiệp tập trung phục vụ",
+      "Danh sách các nhà cung ứng nguyên vật liệu thô và đối tác vận chuyển",
+      "Danh sách các nhà cung ứng dịch vụ"
+    ],
+    "answer": 1,
+    "explanation": "Customer Segments xác định các nhóm khách hàng mục tiêu mà sản phẩm hướng tới đáp ứng."
+  },
+  {
+    "id": "q_15_11",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "Phishing trong thanh toán số thường nhằm mục đích gì?",
+    "options": [
+      "Tự động sao lưu dữ liệu an toàn",
+      "Tăng tốc độ đường truyền mạng",
+      "Giả mạo nguồn đáng tin cậy để lừa người dùng tiết lộ thông tin nhạy cảm",
+      "Nén dữ liệu giao dịch"
+    ],
+    "answer": 2,
+    "explanation": "Tấn công Phishing nhắm tới việc lấy cắp mã PIN, mật khẩu, mã OTP, số thẻ tín dụng của người dùng."
+  },
+  {
+    "id": "q_15_12",
+    "section": 15,
+    "sectionTitle": "Ôn tập 15",
+    "question": "Biện pháp nào phù hợp để nâng cao an toàn thanh toán trên thiết bị di động?",
+    "options": [
+      "Dùng MFA, bảo vệ thiết bị, kiểm tra nguồn yêu cầu thanh toán và không chia sẻ mã xác thực",
+      "Cài ứng dụng từ mọi đường link không rõ nguồn",
+      "Tắt khóa màn hình để thao tác nhanh hơn",
+      "Chia sẻ mã OTP khi được người lạ yêu cầu"
+    ],
+    "answer": 0,
+    "explanation": "Quy tắc an toàn trên di động: bật MFA sinh trắc học, không cài app lạ, không bao giờ tiết lộ mã OTP cho bất kỳ ai."
+  }
+]
