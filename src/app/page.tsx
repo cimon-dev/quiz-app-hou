@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import {
   Trophy,
   History,
@@ -12,9 +12,25 @@ import {
   Layers,
   ChevronRight,
   FileText,
-  CheckSquare
+  CheckSquare,
+  RotateCcw
 } from 'lucide-react';
-import { BLOCKS_METADATA, BlockGroup, QuizBlock, TOTAL_QUESTIONS_COUNT, formatTime } from '@/lib/quiz';
+import {
+  BLOCKS_METADATA,
+  BlockGroup,
+  QuizBlock,
+  TOTAL_QUESTIONS_COUNT,
+  VALID_QUESTION_IDS,
+  getNextBlock,
+  formatTime
+} from '@/lib/quiz';
+import {
+  WRONG_REVIEW_LIMIT,
+  WrongBankMap,
+  fetchAndMergeWrongBank,
+  getWrongBankStats,
+  loadLocalWrongBank
+} from '@/lib/wrongBank';
 import UserModal from '@/components/UserModal';
 import LeaderboardModal from '@/components/LeaderboardModal';
 import HistoryModal, { HistoryItem } from '@/components/HistoryModal';
@@ -35,16 +51,32 @@ export default function Home() {
   const [activeBlock, setActiveBlock] = useState<QuizBlock | null>(null);
   const [customQuestionCount, setCustomQuestionCount] = useState<number>(30);
   const [reviewItem, setReviewItem] = useState<HistoryItem | null>(null);
+  const [wrongBank, setWrongBank] = useState<WrongBankMap>({});
 
   const [bestScores, setBestScores] = useState<
     Record<string, { bestScore: number; totalQuestions: number; bestTimeSeconds: number }>
   >({});
+
+  const homeScrollYRef = useRef<number>(0);
+  const wasViewingSubPageRef = useRef<boolean>(false);
+
+  const isViewingSubPage = Boolean(activeBlock || reviewItem);
+
+  useLayoutEffect(() => {
+    if (isViewingSubPage && !wasViewingSubPageRef.current) {
+      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    } else if (!isViewingSubPage && wasViewingSubPageRef.current) {
+      window.scrollTo({ top: homeScrollYRef.current, behavior: 'instant' as ScrollBehavior });
+    }
+    wasViewingSubPageRef.current = isViewingSubPage;
+  }, [isViewingSubPage]);
 
   useEffect(() => {
     const savedUser = localStorage.getItem('quiz_username');
     if (savedUser) {
       setUsername(savedUser);
       loadBestScores(savedUser);
+      loadWrongBankState(savedUser);
     } else {
       setShowUserModal(true);
     }
@@ -54,6 +86,13 @@ export default function Home() {
       setQuizMode(savedMode);
     }
   }, []);
+
+  const loadWrongBankState = async (user: string) => {
+    if (!user) return;
+    setWrongBank(loadLocalWrongBank(user));
+    const merged = await fetchAndMergeWrongBank(user);
+    setWrongBank(merged);
+  };
 
   const loadBestScores = async (user: string) => {
     if (!user) return;
@@ -99,10 +138,18 @@ export default function Home() {
     }
   };
 
+  const enterSubView = (fn: () => void) => {
+    if (!activeBlock && !reviewItem) {
+      homeScrollYRef.current = window.scrollY;
+    }
+    fn();
+  };
+
   const handleUserSelected = (name: string) => {
     setUsername(name);
     localStorage.setItem('quiz_username', name);
     loadBestScores(name);
+    loadWrongBankState(name);
   };
 
   const handleModeChange = (mode: 'instant' | 'exam') => {
@@ -118,75 +165,45 @@ export default function Home() {
 
     if (block.id === 'custom') {
       setShowCustomModal(true);
-    } else {
-      setActiveBlock(block);
+      return;
     }
+
+    if (block.id === 'wrong') {
+      const latestStats = getWrongBankStats(loadLocalWrongBank(username), VALID_QUESTION_IDS);
+      if (latestStats.activeCount === 0 && latestStats.level0Count === 0) {
+        alert('Bạn chưa có câu sai nào để ôn tập.');
+        return;
+      }
+      if (latestStats.activeCount === 0 && latestStats.level0Count > 0) {
+        const ok = confirm(
+          `Bạn đã ôn hết các câu sai!\nHiện có ${latestStats.level0Count} câu từng sai ở mức độ 0. Bạn có muốn ôn lại tối đa ${WRONG_REVIEW_LIMIT} câu mức độ 0 không?`
+        );
+        if (!ok) return;
+      }
+    }
+
+    enterSubView(() => setActiveBlock(block));
   };
 
   const handleStartCustom = (count: number) => {
     setCustomQuestionCount(count);
     const customBlock = BLOCKS_METADATA.find(b => b.id === 'custom')!;
-    setActiveBlock({
-      ...customBlock,
-      count
-    });
+    enterSubView(() =>
+      setActiveBlock({
+        ...customBlock,
+        count
+      })
+    );
   };
 
-  if (activeBlock) {
-    return (
-      <main className="min-h-screen bg-slate-50 text-slate-900 pb-12">
-        <QuizPlay
-          blockId={activeBlock.id}
-          blockTitle={
-            activeBlock.id === 'custom'
-              ? `Tùy chọn (${customQuestionCount} câu)`
-              : activeBlock.title
-          }
-          mode={quizMode}
-          username={username}
-          count={activeBlock.id === 'custom' ? customQuestionCount : activeBlock.count}
-          onExit={() => {
-            setActiveBlock(null);
-            loadBestScores(username);
-          }}
-          onScoreSaved={() => {
-            loadBestScores(username);
-          }}
-        />
-      </main>
-    );
-  }
-
-  if (reviewItem) {
-    return (
-      <main className="min-h-screen bg-slate-50 text-slate-900 pb-12">
-        <ReviewView
-          blockTitle={reviewItem.blockTitle}
-          score={reviewItem.score}
-          totalQuestions={reviewItem.totalQuestions}
-          timeSeconds={reviewItem.timeSeconds}
-          questions={reviewItem.questions}
-          userAnswers={reviewItem.userAnswers}
-          onReplay={() => {
-            const block = BLOCKS_METADATA.find(b => b.id === reviewItem.blockId) || {
-              id: reviewItem.blockId,
-              title: reviewItem.blockTitle,
-              subtitle: '',
-              count: reviewItem.totalQuestions,
-              type: 'section' as const,
-              group: 'bo1' as const
-            };
-            if (block.id === 'custom') {
-              setCustomQuestionCount(reviewItem.totalQuestions);
-            }
-            setReviewItem(null);
-            setActiveBlock(block);
-          }}
-          onHome={() => setReviewItem(null)}
-        />
-      </main>
-    );
-  }
+  const wrongStats = getWrongBankStats(wrongBank, VALID_QUESTION_IDS);
+  const wrongLevelSummary = [
+    wrongStats.highCount > 0 ? `Mức ≥3: ${wrongStats.highCount}` : null,
+    wrongStats.level2Count > 0 ? `Mức 2: ${wrongStats.level2Count}` : null,
+    wrongStats.level1Count > 0 ? `Mức 1: ${wrongStats.level1Count}` : null
+  ]
+    .filter(Boolean)
+    .join(' • ');
 
   const synthesisConfig: Record<
     string,
@@ -197,7 +214,9 @@ export default function Home() {
       actionText: string;
       actionLabel: string;
       badgeText: string;
+      spanClass?: string;
       showShuffleIcon?: boolean;
+      showWrongIcon?: boolean;
     }
   > = {
     full: {
@@ -232,6 +251,31 @@ export default function Home() {
       actionLabel: 'Chọn số câu',
       badgeText: `1 - ${TOTAL_QUESTIONS_COUNT} câu`,
       showShuffleIcon: true
+    },
+    wrong: {
+      border: 'border-rose-200 hover:border-rose-500',
+      hoverText: 'group-hover:text-rose-600',
+      badge:
+        wrongStats.activeCount > 0
+          ? 'text-rose-700 bg-rose-50'
+          : wrongStats.level0Count > 0
+            ? 'text-emerald-700 bg-emerald-50'
+            : 'text-gray-500 bg-gray-100',
+      actionText: 'text-rose-600',
+      actionLabel:
+        wrongStats.activeCount > 0
+          ? `Ôn ${Math.min(WRONG_REVIEW_LIMIT, wrongStats.activeCount)} câu`
+          : wrongStats.level0Count > 0
+            ? 'Ôn mức 0'
+            : 'Chưa có',
+      badgeText:
+        wrongStats.activeCount > 0
+          ? `${wrongStats.activeCount} câu sai`
+          : wrongStats.level0Count > 0
+            ? `${wrongStats.level0Count} mức 0`
+            : '0 câu sai',
+      spanClass: 'sm:col-span-2',
+      showWrongIcon: true
     }
   };
 
@@ -279,9 +323,80 @@ export default function Home() {
     }
   ];
 
+  const reviewNextBlock =
+    reviewItem && reviewItem.blockId !== 'custom' && reviewItem.blockId !== 'wrong'
+      ? getNextBlock(reviewItem.blockId)
+      : null;
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 pb-16">
-      {/* Top Header */}
+      {activeBlock && (
+        <div className="pb-12">
+          <QuizPlay
+            blockId={activeBlock.id}
+            blockTitle={
+              activeBlock.id === 'custom'
+                ? `Tùy chọn (${customQuestionCount} câu)`
+                : activeBlock.title
+            }
+            mode={quizMode}
+            username={username}
+            count={activeBlock.id === 'custom' ? customQuestionCount : activeBlock.count}
+            onNextBlock={nextBlk => setActiveBlock(nextBlk)}
+            onWrongBankUpdated={updated => setWrongBank(updated)}
+            onExit={() => {
+              setActiveBlock(null);
+              setWrongBank(loadLocalWrongBank(username));
+              loadBestScores(username);
+            }}
+            onScoreSaved={() => {
+              loadBestScores(username);
+            }}
+          />
+        </div>
+      )}
+
+      {!activeBlock && reviewItem && (
+        <div className="pb-12">
+          <ReviewView
+            blockTitle={reviewItem.blockTitle}
+            score={reviewItem.score}
+            totalQuestions={reviewItem.totalQuestions}
+            timeSeconds={reviewItem.timeSeconds}
+            questions={reviewItem.questions}
+            userAnswers={reviewItem.userAnswers}
+            nextBlock={reviewNextBlock}
+            onNextBlock={
+              reviewNextBlock
+                ? () => {
+                    setReviewItem(null);
+                    setActiveBlock(reviewNextBlock);
+                  }
+                : undefined
+            }
+            replayLabel={reviewItem.blockId === 'wrong' ? 'Ôn tiếp câu sai' : 'Làm lại'}
+            onReplay={() => {
+              const block = BLOCKS_METADATA.find(b => b.id === reviewItem.blockId) || {
+                id: reviewItem.blockId,
+                title: reviewItem.blockTitle,
+                subtitle: '',
+                count: reviewItem.totalQuestions,
+                type: 'section' as const,
+                group: 'bo1' as const
+              };
+              if (block.id === 'custom') {
+                setCustomQuestionCount(reviewItem.totalQuestions);
+              }
+              setReviewItem(null);
+              setActiveBlock(block);
+            }}
+            onHome={() => setReviewItem(null)}
+          />
+        </div>
+      )}
+
+      <div className={isViewingSubPage ? 'hidden' : 'block'}>
+        {/* Top Header */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
@@ -381,12 +496,13 @@ export default function Home() {
             {synthesisBlocks.map(block => {
               const cfg = synthesisConfig[block.id] || synthesisConfig.full;
               const best = bestScores[block.id];
+              const isWrongBlock = block.id === 'wrong';
 
               return (
                 <div
                   key={block.id}
                   onClick={() => handleBlockClick(block)}
-                  className={`bg-white rounded-2xl p-4 sm:p-5 border hover:shadow-xs cursor-pointer transition-all flex flex-col justify-between group active:scale-[0.99] ${cfg.border}`}
+                  className={`bg-white rounded-2xl p-4 sm:p-5 border hover:shadow-xs cursor-pointer transition-all flex flex-col justify-between group active:scale-[0.99] ${cfg.border} ${cfg.spanClass || ''}`}
                 >
                   <div className="mb-4">
                     <div className="flex items-center justify-between gap-2 mb-2">
@@ -395,13 +511,24 @@ export default function Home() {
                       </h3>
                       <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full shrink-0 flex items-center gap-1 ${cfg.badge}`}>
                         {cfg.showShuffleIcon && <Shuffle className="w-3 h-3" />}
+                        {cfg.showWrongIcon && <RotateCcw className="w-3 h-3" />}
                         <span>{cfg.badgeText}</span>
                       </span>
                     </div>
                   </div>
 
                   <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
-                    {best ? (
+                    {isWrongBlock ? (
+                      wrongStats.activeCount > 0 ? (
+                        <span className="font-medium text-gray-600">{wrongLevelSummary}</span>
+                      ) : wrongStats.level0Count > 0 ? (
+                        <span className="font-medium text-emerald-700">
+                          Đã ôn hết • {wrongStats.level0Count} câu mức 0
+                        </span>
+                      ) : (
+                        <span className="text-gray-400">Các câu làm sai sẽ tự lưu tại đây</span>
+                      )
+                    ) : best ? (
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-emerald-600">
                           Tốt nhất: {best.bestScore}/{best.totalQuestions}
@@ -489,6 +616,8 @@ export default function Home() {
         })}
       </div>
 
+      </div>
+
       <UserModal
         isOpen={showUserModal}
         onClose={() => setShowUserModal(false)}
@@ -512,7 +641,7 @@ export default function Home() {
       <HistoryModal
         isOpen={showHistory}
         onClose={() => setShowHistory(false)}
-        onSelectReview={item => setReviewItem(item)}
+        onSelectReview={item => enterSubView(() => setReviewItem(item))}
       />
     </main>
   );

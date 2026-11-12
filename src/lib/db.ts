@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { WrongBankMap, WrongQuestionEntry, mergeWrongUpdates } from './wrongBank';
 
 export interface ScoreRecord {
   id: string;
@@ -24,11 +25,13 @@ export interface UserStats {
 export interface DbData {
   users: string[];
   scores: ScoreRecord[];
+  wrongQuestions?: Record<string, WrongBankMap>;
 }
 
 let memoryDb: DbData = {
   users: [],
-  scores: []
+  scores: [],
+  wrongQuestions: {}
 };
 
 // Dynamic credential resolution for Vercel KV / Upstash Redis with any prefix (KV, STORAGE, etc.)
@@ -289,4 +292,42 @@ export async function getAttemptsLeaderboard(): Promise<UserStats[]> {
   });
 
   return list.slice(0, 50);
+}
+
+function getNormalizedWrongKey(username: string): string {
+  return username.trim().toLowerCase();
+}
+
+export async function getUserWrongBank(username: string): Promise<WrongBankMap> {
+  const key = getNormalizedWrongKey(username);
+  if (!key) return {};
+  const db = await getDbData();
+  const map = db.wrongQuestions || {};
+  if (map[key]) return map[key];
+  // Backwards check in case non-lowercased key existed
+  const matchedKey = Object.keys(map).find(k => k.toLowerCase() === key);
+  return matchedKey ? map[matchedKey] : {};
+}
+
+export async function saveUserWrongUpdates(
+  username: string,
+  updates: WrongQuestionEntry[]
+): Promise<WrongBankMap> {
+  const clean = username.trim();
+  const key = getNormalizedWrongKey(clean);
+  if (!key) return {};
+
+  const db = await getDbData();
+  if (!db.wrongQuestions) db.wrongQuestions = {};
+
+  const current = db.wrongQuestions[key] || {};
+  const next = mergeWrongUpdates(current, updates);
+  db.wrongQuestions[key] = next;
+
+  if (!db.users.includes(clean)) {
+    db.users.unshift(clean);
+  }
+
+  await saveDbData(db);
+  return next;
 }

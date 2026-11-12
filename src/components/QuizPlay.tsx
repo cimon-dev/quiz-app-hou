@@ -13,7 +13,24 @@ import {
   Check,
   X
 } from 'lucide-react';
-import { QuizQuestion, formatTime } from '@/lib/quiz';
+import {
+  QuizBlock,
+  QuizQuestion,
+  VALID_QUESTION_IDS,
+  getNextBlock,
+  getWrongReviewQuestions,
+  formatTime
+} from '@/lib/quiz';
+import {
+  WRONG_REVIEW_LIMIT,
+  WrongBankMap,
+  WrongQuestionEntry,
+  applyAnswerToWrongBank,
+  getWrongBankStats,
+  loadLocalWrongBank,
+  saveLocalWrongBank,
+  syncWrongEntriesToServer
+} from '@/lib/wrongBank';
 import ReviewView from './ReviewView';
 
 interface QuizPlayProps {
@@ -22,6 +39,8 @@ interface QuizPlayProps {
   mode: 'instant' | 'exam';
   username: string;
   count?: number;
+  onNextBlock?: (block: QuizBlock) => void;
+  onWrongBankUpdated?: (bank: WrongBankMap) => void;
   onExit: () => void;
   onScoreSaved: () => void;
 }
@@ -32,6 +51,8 @@ export default function QuizPlay({
   mode,
   username,
   count,
+  onNextBlock,
+  onWrongBankUpdated,
   onExit,
   onScoreSaved
 }: QuizPlayProps) {
@@ -43,8 +64,13 @@ export default function QuizPlay({
   const [isLoading, setIsLoading] = useState(true);
   const [showNavGrid, setShowNavGrid] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
+  const [wrongPoolMode, setWrongPoolMode] = useState<'active' | 'level0' | 'empty'>('active');
+  const [wrongTransitions, setWrongTransitions] = useState<
+    Record<number, { before: number | undefined; after: number }>
+  >({});
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const appliedIndicesRef = useRef<Set<number>>(new Set());
 
   useEffect(() => {
     loadQuestions();
@@ -53,28 +79,86 @@ export default function QuizPlay({
     };
   }, [blockId, count]);
 
+  const startTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setTimeSeconds(prev => prev + 1);
+    }, 1000);
+  };
+
   const loadQuestions = async () => {
     setIsLoading(true);
+    setShowNavGrid(false);
+    appliedIndicesRef.current.clear();
+    setWrongTransitions({});
+    setCurrentIndex(0);
+    setUserAnswers({});
+    setTimeSeconds(0);
+    setFinalScore(0);
+    setIsFinished(false);
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    }
+
     try {
+      if (blockId === 'wrong') {
+        const bank = loadLocalWrongBank(username);
+        const res = getWrongReviewQuestions(bank, WRONG_REVIEW_LIMIT);
+        setWrongPoolMode(res.poolMode);
+        setQuestions(res.questions);
+        if (res.questions.length > 0) {
+          startTimer();
+        } else if (timerRef.current) {
+          clearInterval(timerRef.current);
+        }
+        return;
+      }
+
       const url = `/api/questions?blockId=${blockId}&count=${count || 30}`;
       const res = await fetch(url);
       if (res.ok) {
         const data = await res.json();
+        setWrongPoolMode('active');
         setQuestions(data.questions || []);
-        setCurrentIndex(0);
-        setUserAnswers({});
-        setTimeSeconds(0);
-        setIsFinished(false);
-
-        if (timerRef.current) clearInterval(timerRef.current);
-        timerRef.current = setInterval(() => {
-          setTimeSeconds(prev => prev + 1);
-        }, 1000);
+        startTimer();
       }
     } catch (e) {
       console.error(e);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const applyQuestionOutcomes = async (pairs: { idx: number; chosen: number }[]) => {
+    if (pairs.length === 0) return;
+
+    let bank = loadLocalWrongBank(username);
+    const changed: WrongQuestionEntry[] = [];
+    const transitions: Record<number, { before: number | undefined; after: number }> = {};
+
+    for (const { idx, chosen } of pairs) {
+      if (appliedIndicesRef.current.has(idx)) continue;
+      const q = questions[idx];
+      if (!q) continue;
+      appliedIndicesRef.current.add(idx);
+
+      const isCorrect = chosen === q.answer;
+      const res = applyAnswerToWrongBank(bank, q.id, isCorrect);
+      bank = res.nextBank;
+      if (res.changedEntry) {
+        changed.push(res.changedEntry);
+        transitions[idx] = {
+          before: res.previousLevel,
+          after: res.changedEntry.level
+        };
+      }
+    }
+
+    if (changed.length > 0) {
+      saveLocalWrongBank(username, bank);
+      setWrongTransitions(prev => ({ ...prev, ...transitions }));
+      onWrongBankUpdated?.(bank);
+      await syncWrongEntriesToServer(username, changed);
     }
   };
 
@@ -89,6 +173,10 @@ export default function QuizPlay({
       ...prev,
       [currentIndex]: optionIndex
     }));
+
+    if (mode === 'instant') {
+      applyQuestionOutcomes([{ idx: currentIndex, chosen: optionIndex }]);
+    }
   };
 
   const handleSubmit = async (force: boolean = false) => {
@@ -107,39 +195,55 @@ export default function QuizPlay({
     }
 
     let score = 0;
+    const pendingPairs: { idx: number; chosen: number }[] = [];
     questions.forEach((q, idx) => {
-      if (userAnswers[idx] === q.answer) {
-        score++;
+      const chosen = userAnswers[idx];
+      if (chosen !== undefined) {
+        if (chosen === q.answer) {
+          score++;
+        }
+        if (!appliedIndicesRef.current.has(idx)) {
+          pendingPairs.push({ idx, chosen });
+        }
       }
     });
+
+    await applyQuestionOutcomes(pendingPairs);
+
+    const effectiveTitle =
+      blockId === 'wrong' && wrongPoolMode === 'level0'
+        ? 'Ôn tập câu sai (Mức 0)'
+        : blockTitle;
 
     setFinalScore(score);
     setIsFinished(true);
 
-    try {
-      await fetch('/api/scores', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          username,
-          blockId,
-          blockTitle,
-          score,
-          totalQuestions: questions.length,
-          timeSeconds,
-          mode
-        })
-      });
-      onScoreSaved();
-    } catch (e) {
-      console.error(e);
+    if (blockId !== 'wrong') {
+      try {
+        await fetch('/api/scores', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username,
+            blockId,
+            blockTitle: effectiveTitle,
+            score,
+            totalQuestions: questions.length,
+            timeSeconds,
+            mode
+          })
+        });
+        onScoreSaved();
+      } catch (e) {
+        console.error(e);
+      }
     }
 
     try {
       const historyItem = {
         id: `h_${Date.now()}`,
         blockId,
-        blockTitle,
+        blockTitle: effectiveTitle,
         score,
         totalQuestions: questions.length,
         timeSeconds,
@@ -167,18 +271,63 @@ export default function QuizPlay({
     );
   }
 
+  const handleReplay = () => {
+    if (blockId === 'wrong') {
+      const stats = getWrongBankStats(loadLocalWrongBank(username), VALID_QUESTION_IDS);
+      if (stats.activeCount === 0 && stats.level0Count > 0) {
+        const ok = confirm(
+          `Bạn đã ôn hết danh sách câu sai!\nHiện có ${stats.level0Count} câu từng sai ở mức độ 0. Bạn có muốn ôn lại tối đa ${WRONG_REVIEW_LIMIT} câu mức độ 0 không?`
+        );
+        if (!ok) return;
+      } else if (stats.activeCount === 0 && stats.level0Count === 0) {
+        alert('Hiện không có câu sai nào để ôn tập.');
+        onExit();
+        return;
+      }
+    }
+    loadQuestions();
+  };
+
   if (isFinished) {
+    const nextBlock = blockId !== 'custom' && blockId !== 'wrong' ? getNextBlock(blockId) : null;
+    const effectiveTitle =
+      blockId === 'wrong' && wrongPoolMode === 'level0'
+        ? 'Ôn tập câu sai (Mức 0)'
+        : blockTitle;
+
     return (
       <ReviewView
-        blockTitle={blockTitle}
+        blockTitle={effectiveTitle}
         score={finalScore}
         totalQuestions={questions.length}
         timeSeconds={timeSeconds}
         questions={questions}
         userAnswers={userAnswers}
-        onReplay={loadQuestions}
+        nextBlock={nextBlock}
+        onNextBlock={nextBlock && onNextBlock ? () => onNextBlock(nextBlock) : undefined}
+        replayLabel={blockId === 'wrong' ? 'Ôn tiếp câu sai' : 'Làm lại'}
+        wrongTransitions={wrongTransitions}
+        onReplay={handleReplay}
         onHome={onExit}
       />
+    );
+  }
+
+  if (questions.length === 0) {
+    return (
+      <div className="max-w-md mx-auto px-4 py-12 text-center space-y-4">
+        <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-xs space-y-3">
+          <p className="text-sm font-semibold text-gray-800">
+            Hiện không có câu sai nào để ôn tập.
+          </p>
+          <button
+            onClick={onExit}
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl"
+          >
+            Quay về trang chủ
+          </button>
+        </div>
+      </div>
     );
   }
 
@@ -205,7 +354,11 @@ export default function QuizPlay({
         </button>
 
         <div className="flex-1 text-center min-w-0">
-          <div className="text-xs font-bold text-gray-800 truncate">{blockTitle}</div>
+          <div className="text-xs font-bold text-gray-800 truncate">
+            {blockId === 'wrong' && wrongPoolMode === 'level0'
+              ? 'Ôn tập câu sai (Mức 0)'
+              : blockTitle}
+          </div>
           <div className="text-[11px] text-gray-400">
             <span>{answeredTotal}/{questions.length} câu</span>
           </div>
@@ -243,6 +396,19 @@ export default function QuizPlay({
               Câu {currentIndex + 1} / {questions.length}
             </span>
             <div className="flex items-center gap-1.5">
+              {currentQ.wrongLevel !== undefined && (
+                <span
+                  className={`px-2 py-0.5 rounded-full font-semibold text-[11px] ${
+                    currentQ.wrongLevel >= 3
+                      ? 'bg-rose-50 text-rose-700'
+                      : currentQ.wrongLevel >= 1
+                        ? 'bg-amber-50 text-amber-700'
+                        : 'bg-gray-100 text-gray-600'
+                  }`}
+                >
+                  Mức {currentQ.wrongLevel}
+                </span>
+              )}
               {currentQ.type === 'tf' && (
                 <span className="px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 font-semibold text-[11px]">
                   Đúng / Sai
@@ -396,6 +562,18 @@ export default function QuizPlay({
               </div>
               {currentQ.explanation && (
                 <p className="text-gray-700 mt-1">{currentQ.explanation}</p>
+              )}
+              {wrongTransitions[currentIndex] && (
+                <p className="text-[11px] font-semibold mt-1.5 text-gray-600">
+                  {wrongTransitions[currentIndex].before === undefined ||
+                  wrongTransitions[currentIndex].before === 0
+                    ? wrongTransitions[currentIndex].after > 0
+                      ? `Đã lưu vào câu sai (Mức ${wrongTransitions[currentIndex].after})`
+                      : 'Mức 0'
+                    : wrongTransitions[currentIndex].after === 0
+                      ? `Mức ${wrongTransitions[currentIndex].before} → 0 (Đã thuộc)`
+                      : `Mức ${wrongTransitions[currentIndex].before} → ${wrongTransitions[currentIndex].after}`}
+                </p>
               )}
             </div>
           )}

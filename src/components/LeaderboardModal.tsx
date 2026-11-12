@@ -106,7 +106,7 @@ export default function LeaderboardModal({
               onChange={e => setSelectedBlockId(e.target.value)}
               className="flex-1 px-3 py-1.5 text-xs bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 font-medium text-gray-800"
             >
-              {BLOCKS_METADATA.map(b => (
+              {BLOCKS_METADATA.filter(b => b.type !== 'wrong').map(b => (
                 <option key={b.id} value={b.id}>
                   {b.type === 'custom' ? b.title : `${b.title} (${b.count} câu)`}
                 </option>

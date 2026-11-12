@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CheckCircle2, XCircle, RotateCcw, Home, Filter, ChevronUp, Check, X } from 'lucide-react';
-import { QuizQuestion, formatTime } from '@/lib/quiz';
+import { CheckCircle2, XCircle, RotateCcw, Home, Filter, ChevronUp, Check, X, ArrowRight } from 'lucide-react';
+import { QuizBlock, QuizQuestion, formatTime } from '@/lib/quiz';
 
 interface ReviewViewProps {
   blockTitle: string;
@@ -11,6 +11,10 @@ interface ReviewViewProps {
   timeSeconds: number;
   questions: QuizQuestion[];
   userAnswers: Record<number, number>;
+  nextBlock?: QuizBlock | null;
+  onNextBlock?: () => void;
+  replayLabel?: string;
+  wrongTransitions?: Record<number, { before: number | undefined; after: number }>;
   onReplay: () => void;
   onHome: () => void;
 }
@@ -22,6 +26,10 @@ export default function ReviewView({
   timeSeconds,
   questions,
   userAnswers,
+  nextBlock,
+  onNextBlock,
+  replayLabel,
+  wrongTransitions,
   onReplay,
   onHome
 }: ReviewViewProps) {
@@ -65,12 +73,21 @@ export default function ReviewView({
 
         {/* Action buttons */}
         <div className="flex flex-wrap items-center justify-center gap-2.5">
+          {nextBlock && onNextBlock && (
+            <button
+              onClick={onNextBlock}
+              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs rounded-xl transition-colors flex items-center gap-1.5 shadow-xs"
+            >
+              <span>Tiếp theo: {nextBlock.title}</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          )}
           <button
             onClick={onReplay}
             className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs rounded-xl transition-colors flex items-center gap-1.5 shadow-xs"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            <span>Làm lại</span>
+            <span>{replayLabel || 'Làm lại'}</span>
           </button>
           <button
             onClick={onHome}
@@ -137,11 +154,31 @@ export default function ReviewView({
               }`}
             >
               <div className="flex items-start justify-between gap-3 mb-2.5">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="font-bold text-xs text-gray-400">Câu {idx + 1}</span>
                   <span className="text-[11px] px-2 py-0.5 rounded-md bg-gray-100 text-gray-500 font-medium">
                     {q.sectionTitle}
                   </span>
+                  {wrongTransitions?.[idx] ? (
+                    <span
+                      className={`text-[11px] px-2 py-0.5 rounded-md font-semibold ${
+                        wrongTransitions[idx].after === 0
+                          ? 'bg-emerald-50 text-emerald-700'
+                          : wrongTransitions[idx].before === undefined ||
+                              wrongTransitions[idx].after > (wrongTransitions[idx].before ?? 0)
+                            ? 'bg-rose-50 text-rose-700'
+                            : 'bg-amber-50 text-amber-700'
+                      }`}
+                    >
+                      {wrongTransitions[idx].before === undefined || wrongTransitions[idx].before === 0
+                        ? `Mức ${wrongTransitions[idx].after}`
+                        : `Mức ${wrongTransitions[idx].before} → ${wrongTransitions[idx].after}`}
+                    </span>
+                  ) : q.wrongLevel !== undefined ? (
+                    <span className="text-[11px] px-2 py-0.5 rounded-md bg-amber-50 text-amber-700 font-semibold">
+                      Mức {q.wrongLevel}
+                    </span>
+                  ) : null}
                 </div>
                 <div>
                   {isCorrect ? (
