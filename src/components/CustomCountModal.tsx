@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Shuffle, X, ArrowRight } from 'lucide-react';
+import { TOTAL_QUESTIONS_COUNT } from '@/lib/quiz';
 
 interface CustomCountModalProps {
   isOpen: boolean;
@@ -9,7 +10,7 @@ interface CustomCountModalProps {
   onStart: (count: number) => void;
 }
 
-const PRESETS = [10, 20, 30, 40, 50, 60];
+const PRESETS = [15, 30, 60, 90, 120, 180];
 
 export default function CustomCountModal({ isOpen, onClose, onStart }: CustomCountModalProps) {
   const [selectedCount, setSelectedCount] = useState<number>(30);
@@ -27,12 +28,12 @@ export default function CustomCountModal({ isOpen, onClose, onStart }: CustomCou
     setCustomInput(val);
     const num = parseInt(val, 10);
     if (!isNaN(num)) {
-      setSelectedCount(Math.min(180, Math.max(1, num)));
+      setSelectedCount(Math.min(TOTAL_QUESTIONS_COUNT, Math.max(1, num)));
     }
   };
 
   const handleSubmit = () => {
-    const finalVal = Math.min(180, Math.max(1, selectedCount || 30));
+    const finalVal = Math.min(TOTAL_QUESTIONS_COUNT, Math.max(1, selectedCount || 30));
     onStart(finalVal);
     onClose();
   };
@@ -72,16 +73,16 @@ export default function CustomCountModal({ isOpen, onClose, onStart }: CustomCou
 
           <div>
             <label className="block text-xs text-gray-500 mb-1">
-              Hoặc nhập số câu (1 - 180):
+              Hoặc nhập số câu (1 - {TOTAL_QUESTIONS_COUNT}):
             </label>
             <input
               type="number"
               min={1}
-              max={180}
+              max={TOTAL_QUESTIONS_COUNT}
               value={customInput}
               onChange={handleCustomChange}
               className="w-full px-3.5 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900 font-semibold text-base"
-              placeholder="1 - 180"
+              placeholder={`1 - ${TOTAL_QUESTIONS_COUNT}`}
             />
           </div>
 

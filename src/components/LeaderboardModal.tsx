@@ -108,7 +108,7 @@ export default function LeaderboardModal({
             >
               {BLOCKS_METADATA.map(b => (
                 <option key={b.id} value={b.id}>
-                  {b.title} ({b.count} câu)
+                  {b.type === 'custom' ? b.title : `${b.title} (${b.count} câu)`}
                 </option>
               ))}
             </select>

@@ -10,9 +10,11 @@ import {
   Shuffle,
   Clock,
   Layers,
-  ChevronRight
+  ChevronRight,
+  FileText,
+  CheckSquare
 } from 'lucide-react';
-import { BLOCKS_METADATA, QuizBlock, formatTime } from '@/lib/quiz';
+import { BLOCKS_METADATA, BlockGroup, QuizBlock, TOTAL_QUESTIONS_COUNT, formatTime } from '@/lib/quiz';
 import UserModal from '@/components/UserModal';
 import LeaderboardModal from '@/components/LeaderboardModal';
 import HistoryModal, { HistoryItem } from '@/components/HistoryModal';
@@ -171,8 +173,12 @@ export default function Home() {
               title: reviewItem.blockTitle,
               subtitle: '',
               count: reviewItem.totalQuestions,
-              type: 'section' as const
+              type: 'section' as const,
+              group: 'bo1' as const
             };
+            if (block.id === 'custom') {
+              setCustomQuestionCount(reviewItem.totalQuestions);
+            }
             setReviewItem(null);
             setActiveBlock(block);
           }}
@@ -182,10 +188,96 @@ export default function Home() {
     );
   }
 
-  const fullBlock = BLOCKS_METADATA.find(b => b.id === 'full')!;
-  const customBlock = BLOCKS_METADATA.find(b => b.id === 'custom')!;
-  const bestFull = bestScores['full'];
-  const bestCustom = bestScores['custom'];
+  const synthesisConfig: Record<
+    string,
+    {
+      border: string;
+      hoverText: string;
+      badge: string;
+      actionText: string;
+      actionLabel: string;
+      badgeText: string;
+      showShuffleIcon?: boolean;
+    }
+  > = {
+    full: {
+      border: 'border-indigo-200 hover:border-indigo-500',
+      hoverText: 'group-hover:text-indigo-600',
+      badge: 'text-indigo-700 bg-indigo-50',
+      actionText: 'text-indigo-600',
+      actionLabel: 'Vào ôn',
+      badgeText: '180 câu'
+    },
+    full_2: {
+      border: 'border-blue-200 hover:border-blue-500',
+      hoverText: 'group-hover:text-blue-600',
+      badge: 'text-blue-700 bg-blue-50',
+      actionText: 'text-blue-600',
+      actionLabel: 'Vào ôn',
+      badgeText: '180 câu'
+    },
+    full_tf: {
+      border: 'border-teal-200 hover:border-teal-500',
+      hoverText: 'group-hover:text-teal-600',
+      badge: 'text-teal-700 bg-teal-50',
+      actionText: 'text-teal-600',
+      actionLabel: 'Vào ôn',
+      badgeText: '30 câu'
+    },
+    custom: {
+      border: 'border-amber-200 hover:border-amber-500',
+      hoverText: 'group-hover:text-amber-600',
+      badge: 'text-amber-700 bg-amber-50',
+      actionText: 'text-amber-600',
+      actionLabel: 'Chọn số câu',
+      badgeText: `1 - ${TOTAL_QUESTIONS_COUNT} câu`,
+      showShuffleIcon: true
+    }
+  };
+
+  const synthesisBlocks = BLOCKS_METADATA.filter(b => b.group === 'synthesis');
+
+  const sectionGroups: {
+    group: BlockGroup;
+    title: string;
+    hoverBorder: string;
+    hoverTitle: string;
+    hoverArrow: string;
+    icon: React.ReactNode;
+  }[] = [
+    {
+      group: 'bo1',
+      title: 'Ôn tập theo phần',
+      hoverBorder: 'hover:border-blue-500',
+      hoverTitle: 'group-hover:text-blue-600',
+      hoverArrow: 'group-hover:text-blue-600',
+      icon: <BookOpen className="w-4 h-4 text-blue-600" />
+    },
+    {
+      group: 'sv',
+      title: 'Đề cương Phần A',
+      hoverBorder: 'hover:border-indigo-500',
+      hoverTitle: 'group-hover:text-indigo-600',
+      hoverArrow: 'group-hover:text-indigo-600',
+      icon: <FileText className="w-4 h-4 text-indigo-600" />
+    },
+    {
+      group: 'bo2_mcq',
+      title: 'Bộ 2 - Trắc nghiệm',
+      hoverBorder: 'hover:border-violet-500',
+      hoverTitle: 'group-hover:text-violet-600',
+      hoverArrow: 'group-hover:text-violet-600',
+      icon: <BookOpen className="w-4 h-4 text-violet-600" />
+    },
+    {
+      group: 'bo2_tf',
+      title: 'Bộ 2 - Đúng / Sai',
+      hoverBorder: 'hover:border-teal-500',
+      hoverTitle: 'group-hover:text-teal-600',
+      hoverArrow: 'group-hover:text-teal-600',
+      icon: <CheckSquare className="w-4 h-4 text-teal-600" />
+    }
+  ];
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 pb-16">
@@ -286,133 +378,46 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            {/* Block 1: Full */}
-            <div
-              onClick={() => handleBlockClick(fullBlock)}
-              className="bg-white rounded-2xl p-4 sm:p-5 border border-indigo-200 hover:border-indigo-500 hover:shadow-xs cursor-pointer transition-all flex flex-col justify-between group active:scale-[0.99]"
-            >
-              <div className="mb-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-indigo-600 transition-colors">
-                    {fullBlock.title}
-                  </h3>
-                  <span className="text-xs font-semibold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full">
-                    180 câu
-                  </span>
-                </div>
-              </div>
-
-              <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
-                {bestFull ? (
-                  <div className="flex items-center gap-2">
-                    <span className="font-bold text-emerald-600">
-                      Tốt nhất: {bestFull.bestScore}/{bestFull.totalQuestions}
-                    </span>
-                    <span className="text-gray-300">•</span>
-                    <span className="text-gray-500 font-mono flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-gray-400" />
-                      <span>{formatTime(bestFull.bestTimeSeconds)}</span>
-                    </span>
-                  </div>
-                ) : (
-                  <span className="text-gray-400">Chưa làm</span>
-                )}
-
-                <span className="text-indigo-600 font-semibold group-hover:translate-x-0.5 transition-transform flex items-center">
-                  Vào ôn <ChevronRight className="w-4 h-4" />
-                </span>
-              </div>
-            </div>
-
-            {/* Block 2: Custom */}
-            <div
-              onClick={() => handleBlockClick(customBlock)}
-              className="bg-white rounded-2xl p-4 sm:p-5 border border-amber-200 hover:border-amber-500 hover:shadow-xs cursor-pointer transition-all flex flex-col justify-between group active:scale-[0.99]"
-            >
-              <div className="mb-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-amber-600 transition-colors">
-                    {customBlock.title}
-                  </h3>
-                  <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full flex items-center gap-1">
-                    <Shuffle className="w-3 h-3" />
-                    <span>Tùy chọn số câu</span>
-                  </span>
-                </div>
-              </div>
-
-              <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
-                {bestCustom ? (
-                  <div className="flex items-center gap-2">
-                    <span className="font-bold text-emerald-600">
-                      Tốt nhất: {bestCustom.bestScore}/{bestCustom.totalQuestions}
-                    </span>
-                    <span className="text-gray-300">•</span>
-                    <span className="text-gray-500 font-mono flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-gray-400" />
-                      <span>{formatTime(bestCustom.bestTimeSeconds)}</span>
-                    </span>
-                  </div>
-                ) : (
-                  <span className="text-gray-400">Chưa làm</span>
-                )}
-
-                <span className="text-amber-600 font-semibold group-hover:translate-x-0.5 transition-transform flex items-center">
-                  Chọn số câu <ChevronRight className="w-4 h-4" />
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 15 Section Blocks */}
-        <div>
-          <div className="flex items-center gap-2 mb-3">
-            <BookOpen className="w-4 h-4 text-blue-600" />
-            <h2 className="text-sm font-bold text-gray-800">
-              Ôn tập theo phần
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {BLOCKS_METADATA.filter(b => b.type === 'section').map(block => {
+            {synthesisBlocks.map(block => {
+              const cfg = synthesisConfig[block.id] || synthesisConfig.full;
               const best = bestScores[block.id];
 
               return (
                 <div
                   key={block.id}
                   onClick={() => handleBlockClick(block)}
-                  className="bg-white rounded-2xl p-4 border border-gray-200 hover:border-blue-500 hover:shadow-xs cursor-pointer transition-all flex flex-col justify-between group active:scale-[0.99]"
+                  className={`bg-white rounded-2xl p-4 sm:p-5 border hover:shadow-xs cursor-pointer transition-all flex flex-col justify-between group active:scale-[0.99] ${cfg.border}`}
                 >
-                  <div className="mb-3">
-                    <div className="flex items-center justify-between mb-1">
-                      <h3 className="font-bold text-gray-900 text-base group-hover:text-blue-600 transition-colors">
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <h3 className={`font-bold text-gray-900 text-base sm:text-lg transition-colors ${cfg.hoverText}`}>
                         {block.title}
                       </h3>
-                      <span className="text-xs text-gray-400 font-medium">
-                        12 câu
+                      <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full shrink-0 flex items-center gap-1 ${cfg.badge}`}>
+                        {cfg.showShuffleIcon && <Shuffle className="w-3 h-3" />}
+                        <span>{cfg.badgeText}</span>
                       </span>
                     </div>
                   </div>
 
-                  <div className="pt-2.5 border-t border-gray-100 flex items-center justify-between text-xs">
+                  <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
                     {best ? (
-                      <div className="flex items-center gap-1.5">
+                      <div className="flex items-center gap-2">
                         <span className="font-bold text-emerald-600">
-                          {best.bestScore}/{best.totalQuestions}
+                          Tốt nhất: {best.bestScore}/{best.totalQuestions}
                         </span>
                         <span className="text-gray-300">•</span>
-                        <span className="text-gray-500 font-mono flex items-center gap-0.5 text-[11px]">
+                        <span className="text-gray-500 font-mono flex items-center gap-1">
                           <Clock className="w-3 h-3 text-gray-400" />
                           <span>{formatTime(best.bestTimeSeconds)}</span>
                         </span>
                       </div>
                     ) : (
-                      <span className="text-gray-400 text-[11px]">Chưa làm</span>
+                      <span className="text-gray-400">Chưa làm</span>
                     )}
 
-                    <span className="text-gray-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all">
-                      <ChevronRight className="w-4 h-4" />
+                    <span className={`font-semibold group-hover:translate-x-0.5 transition-transform flex items-center ${cfg.actionText}`}>
+                      {cfg.actionLabel} <ChevronRight className="w-4 h-4" />
                     </span>
                   </div>
                 </div>
@@ -420,6 +425,68 @@ export default function Home() {
             })}
           </div>
         </div>
+
+        {/* Grouped Section Blocks */}
+        {sectionGroups.map(groupCfg => {
+          const blocks = BLOCKS_METADATA.filter(b => b.group === groupCfg.group);
+
+          return (
+            <div key={groupCfg.group}>
+              <div className="flex items-center gap-2 mb-3">
+                {groupCfg.icon}
+                <h2 className="text-sm font-bold text-gray-800">
+                  {groupCfg.title}
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {blocks.map(block => {
+                  const best = bestScores[block.id];
+
+                  return (
+                    <div
+                      key={block.id}
+                      onClick={() => handleBlockClick(block)}
+                      className={`bg-white rounded-2xl p-4 border border-gray-200 hover:shadow-xs cursor-pointer transition-all flex flex-col justify-between group active:scale-[0.99] ${groupCfg.hoverBorder}`}
+                    >
+                      <div className="mb-3">
+                        <div className="flex items-center justify-between gap-2 mb-1">
+                          <h3 className={`font-bold text-gray-900 text-base transition-colors ${groupCfg.hoverTitle}`}>
+                            {block.title}
+                          </h3>
+                          <span className="text-xs text-gray-400 font-medium shrink-0">
+                            {block.count} câu
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="pt-2.5 border-t border-gray-100 flex items-center justify-between text-xs">
+                        {best ? (
+                          <div className="flex items-center gap-1.5">
+                            <span className="font-bold text-emerald-600">
+                              {best.bestScore}/{best.totalQuestions}
+                            </span>
+                            <span className="text-gray-300">•</span>
+                            <span className="text-gray-500 font-mono flex items-center gap-0.5 text-[11px]">
+                              <Clock className="w-3 h-3 text-gray-400" />
+                              <span>{formatTime(best.bestTimeSeconds)}</span>
+                            </span>
+                          </div>
+                        ) : (
+                          <span className="text-gray-400 text-[11px]">Chưa làm</span>
+                        )}
+
+                        <span className={`text-gray-400 group-hover:translate-x-0.5 transition-all ${groupCfg.hoverArrow}`}>
+                          <ChevronRight className="w-4 h-4" />
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       <UserModal

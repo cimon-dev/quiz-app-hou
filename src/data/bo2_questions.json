@@ -1,0 +1,753 @@
+[
+  {
+    "id": "bo2_mcq_1_1",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Giai đoạn Fintech 1.0 được đánh dấu chủ yếu bởi sự kiện nào sau đây?",
+    "options": [
+      "Sự bùng nổ của mạng xã hội và ví điện tử",
+      "Việc đặt cáp quang giao tiếp xuyên Đại Tây Dương và sự ra đời của hệ thống SWIFT, máy ATM",
+      "Sự xuất hiện của đồng tiền mã hóa Bitcoin",
+      "Khủng hoảng tài chính toàn cầu năm 2008"
+    ],
+    "answer": 1,
+    "explanation": "Fintech 1.0 gắn với hạ tầng truyền thông tài chính xuyên lục địa và các hệ thống thanh toán điện tử nền tảng ban đầu."
+  },
+  {
+    "id": "bo2_mcq_1_2",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Một trong những yếu tố cốt lõi tạo nên sự thành công của cơ chế Regulatory Sandbox là gì?",
+    "options": [
+      "Cho phép doanh nghiệp hoạt động vĩnh viễn không cần xin giấy phép chính thức",
+      "Miễn hoàn toàn trách nhiệm pháp lý nếu xảy ra tổn thất tài chính cho người dùng",
+      "Môi trường thử nghiệm có kiểm soát với giới hạn về phạm vi, thời gian và số lượng khách hàng",
+      "Bắt buộc doanh nghiệp phải áp dụng công nghệ Blockchain"
+    ],
+    "answer": 2,
+    "explanation": "Regulatory Sandbox cho phép thử nghiệm đổi mới trong giới hạn kiểm soát về phạm vi, thời gian và quy mô khách hàng để quản lý rủi ro."
+  },
+  {
+    "id": "bo2_mcq_1_3",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Trong Business Model Canvas, khối 'Key Activities' (Hoạt động cốt lõi) của một công ty Fintech chuyên về giải pháp eKYC bao gồm công việc nào?",
+    "options": [
+      "Thu tiền phạt trả chậm từ người tiêu dùng",
+      "Phát triển, tối ưu hóa thuật toán AI nhận diện khuôn mặt và bảo trì hạ tầng hệ thống",
+      "Mua sắm bất động sản mở rộng chi nhánh giao dịch",
+      "Bảo lãnh phát hành cổ phiếu trên thị trường chứng khoán"
+    ],
+    "answer": 1,
+    "explanation": "Hoạt động cốt lõi của nhà cung cấp giải pháp eKYC là xây dựng, tối ưu thuật toán AI (OCR, nhận diện khuôn mặt) và vận hành hệ thống."
+  },
+  {
+    "id": "bo2_mcq_1_4",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Kỹ thuật OCR (Optical Character Recognition) trong quy trình eKYC giữ vai trò gì?",
+    "options": [
+      "Mã hóa các khoản vay P2P thành trái phiếu",
+      "Trích xuất tự động thông tin dạng văn bản từ ảnh chụp giấy tờ định danh (CCCD/Hộ chiếu)",
+      "Kết nối cổng thanh toán với máy ATM",
+      "Đo lường khoảng cách giữa hai thiết bị di động"
+    ],
+    "answer": 1,
+    "explanation": "OCR nhận dạng ký tự quang học giúp đọc và trích xuất thông tin từ hình ảnh CCCD/Hộ chiếu tự động."
+  },
+  {
+    "id": "bo2_mcq_1_5",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Giải pháp RegTech giúp các tổ chức tài chính giải quyết thách thức nào lớn nhất?",
+    "options": [
+      "Thiết kế giao diện ứng dụng di động bắt mắt hơn",
+      "Giảm chi phí tuân thủ và tự động hóa quy trình báo cáo pháp lý phức tạp",
+      "Loại bỏ hoàn toàn nhu cầu sử dụng máy chủ đám mây",
+      "Tăng tỷ lệ duyệt vay cho khách hàng rủi ro cao"
+    ],
+    "answer": 1,
+    "explanation": "RegTech ứng dụng công nghệ giúp tổ chức tài chính tự động hóa tuân thủ, giám sát và báo cáo quy định với chi phí thấp hơn."
+  },
+  {
+    "id": "bo2_mcq_1_6",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Điểm khác biệt chính giữa Ngân hàng mở (Open Banking) và Ngân hàng truyền thống là gì?",
+    "options": [
+      "Open Banking cho phép bên thứ ba truy cập dữ liệu tài chính (khi khách hàng đồng ý) qua API mở",
+      "Open Banking bắt buộc khách hàng phải đến giao dịch trực tiếp tại quầy",
+      "Ngân hàng truyền thống không sử dụng tiền mặt",
+      "Open Banking không chịu sự quản lý của Ngân hàng Trung ương"
+    ],
+    "answer": 0,
+    "explanation": "Open Banking cho phép chia sẻ dữ liệu và khởi tạo dịch vụ an toàn với bên thứ ba được ủy quyền thông qua API chuẩn hóa khi có sự đồng ý của khách hàng."
+  },
+  {
+    "id": "bo2_mcq_1_7",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Công nghệ nào dưới đây đóng vai trò nền tảng cho việc lưu trữ và xác thực dữ liệu bất biến trong hợp đồng thông minh?",
+    "options": [
+      "NFC",
+      "Cloud IaaS",
+      "Blockchain",
+      "Edge Computing"
+    ],
+    "answer": 2,
+    "explanation": "Hợp đồng thông minh (Smart Contract) chạy và lưu trữ trạng thái thực thi bất biến trên nền tảng Blockchain."
+  },
+  {
+    "id": "bo2_mcq_1_8",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Đâu là đặc điểm cốt lõi của tiền kỹ thuật số do Ngân hàng Trung ương phát hành (CBDC)?",
+    "options": [
+      "Do các tập đoàn công nghệ đa quốc gia phát hành",
+      "Có biến động giá ngẫu nhiên và không được đảm bảo bởi Chính phủ",
+      "Là nghĩa vụ nợ trực tiếp của Ngân hàng Trung ương và có giá trị pháp định",
+      "Chỉ sử dụng cho các giao dịch quyên góp từ thiện"
+    ],
+    "answer": 2,
+    "explanation": "CBDC là tiền pháp định dạng kỹ thuật số, là nghĩa vụ nợ trực tiếp của Ngân hàng Trung ương quốc gia phát hành."
+  },
+  {
+    "id": "bo2_mcq_1_9",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Hình thức Crowdfunding nào mà người đóng góp tiền sẽ nhận lại một sản phẩm hoặc dịch vụ cụ thể trong tương lai?",
+    "options": [
+      "Equity-based Crowdfunding",
+      "Reward-based Crowdfunding",
+      "P2P Lending",
+      "Donation-based Crowdfunding"
+    ],
+    "answer": 1,
+    "explanation": "Reward-based Crowdfunding trao cho người ủng hộ phần thưởng, sản phẩm hoặc dịch vụ như cam kết của dự án."
+  },
+  {
+    "id": "bo2_mcq_1_10",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Trí tuệ nhân tạo (AI) thuộc nhóm 'Học không giám sát' (Unsupervised Learning) thường được ứng dụng vào công việc nào trong Fintech?",
+    "options": [
+      "Dự đoán chính xác doanh thu theo công thức có sẵn",
+      "Phân cụm/phân khúc khách hàng tự động dựa trên các hành vi ẩn chưa có nhãn",
+      "Chuyển đổi file ảnh CCCD thành văn bản",
+      "Quét mã QR thanh toán không tiếp xúc"
+    ],
+    "answer": 1,
+    "explanation": "Học không giám sát tìm ra cấu trúc, cụm hành vi ẩn từ dữ liệu chưa gắn nhãn, rất hữu ích cho phân khúc khách hàng và phát hiện bất thường."
+  },
+  {
+    "id": "bo2_mcq_1_11",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Sự bùng nổ của sản phẩm 'Mua trước trả sau' (BNPL) nhắm tới giải quyết nhu cầu nào của người tiêu dùng trẻ?",
+    "options": [
+      "Đóng thuế thu nhập cá nhân tự động",
+      "Tiếp cận giải pháp linh hoạt chi trả ngắn hạn mà không cần thủ tục mở thẻ tín dụng phức tạp",
+      "Đầu tư tích lũy cổ phiếu dài hạn",
+      "Bảo hiểm tài sản chống rủi ro an ninh mạng"
+    ],
+    "answer": 1,
+    "explanation": "BNPL đáp ứng nhu cầu chia nhỏ thanh toán ngắn hạn, xét duyệt nhanh ngay tại điểm bán mà không cần thẻ tín dụng truyền thống."
+  },
+  {
+    "id": "bo2_mcq_1_12",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Yếu tố nào thể hiện tính 'Velocity' (Tốc độ) trong đặc tính 3V của Big Data?",
+    "options": [
+      "Dung lượng cơ sở dữ liệu đạt hàng Petabyte",
+      "Dữ liệu gồm cả định dạng văn bản, hình ảnh và âm thanh",
+      "Tốc độ thu thập, xử lý và phân tích dữ liệu phát sinh theo thời gian thực",
+      "Độ chính xác của thông tin cá nhân khách hàng"
+    ],
+    "answer": 2,
+    "explanation": "Velocity phản ánh tốc độ tạo ra, truyền tải và xử lý dòng dữ liệu liên tục theo thời gian thực hoặc gần thời gian thực."
+  },
+  {
+    "id": "bo2_mcq_1_13",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Rủi ro rò rỉ dữ liệu cá nhân (Data Privacy Risk) trong Fintech chủ yếu phát sinh từ nguyên nhân nào?",
+    "options": [
+      "Doanh nghiệp thu thập, lưu trữ hoặc chia sẻ dữ liệu người dùng không an toàn/trái phép",
+      "Khách hàng thực hiện chuyển khoản quá nhanh",
+      "Giá trị định giá công ty Fintech giảm sút",
+      "Doanh nghiệp sử dụng hạ tầng cáp quang tốc độ cao"
+    ],
+    "answer": 0,
+    "explanation": "Thu thập, lưu trữ kém bảo mật hoặc chia sẻ dữ liệu trái phép là nguyên nhân trực tiếp gây lộ lọt thông tin cá nhân."
+  },
+  {
+    "id": "bo2_mcq_1_14",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Một Neobank tạo ra ưu thế cạnh tranh so với ngân hàng truyền thống chủ yếu nhờ vào yếu tố nào?",
+    "options": [
+      "Mạng lưới phòng giao dịch phủ rộng khắp các địa phương",
+      "Chi phí vận hành thấp, giao diện tối ưu số và khả năng triển khai tính năng mới nhanh chóng",
+      "Quyền độc quyền phát hành tiền tệ quốc gia",
+      "Không cần tuân thủ các quy định về AML/KYC"
+    ],
+    "answer": 1,
+    "explanation": "Không có gánh nặng chi nhánh vật lý giúp Neobank giảm chi phí vận hành, tối ưu trải nghiệm số và đổi mới sản phẩm nhanh."
+  },
+  {
+    "id": "bo2_mcq_1_15",
+    "section": 201,
+    "sectionTitle": "Bộ 2 - Đề 1",
+    "type": "mcq",
+    "question": "Trong mô hình kinh doanh Fintech, yếu tố nào xác định 'Khách hàng mục tiêu' (Customer Segments)?",
+    "options": [
+      "Chi phí khấu hao máy chủ",
+      "Nhóm cá nhân hoặc tổ chức cụ thể mà sản phẩm Fintech hướng tới phục vụ",
+      "Cơ quan ban hành luật tài chính",
+      "Danh mục các nhà cung cấp hạ tầng Internet"
+    ],
+    "answer": 1,
+    "explanation": "Customer Segments xác định nhóm khách hàng cụ thể mà doanh nghiệp nhắm tới tạo giá trị và phục vụ."
+  },
+  {
+    "id": "bo2_mcq_2_1",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Thuật ngữ 'API' trong kiến trúc phần mềm tài chính là viết tắt của cụm từ nào?",
+    "options": [
+      "Application Programming Interface",
+      "Advanced Payment Integration",
+      "Automated Processing Instruction",
+      "Account Protection Infrastructure"
+    ],
+    "answer": 0,
+    "explanation": "API là viết tắt của Application Programming Interface (Giao diện lập trình ứng dụng)."
+  },
+  {
+    "id": "bo2_mcq_2_2",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Hiện tượng 'Khoảng cách số' (Digital Divide) gây ra hậu quả gì cho việc phát triển Fintech?",
+    "options": [
+      "Làm gia tăng giá trị định giá của các công ty Unicorn",
+      "Khiến một bộ phận người dân thiếu hạ tầng/kỹ năng số bị gạt ra ngoài cơ hội tiếp cận tài chính số",
+      "Giúp các giao dịch Blockchain diễn ra nhanh hơn",
+      "Loại bỏ rủi ro rửa tiền trong hệ thống ngân hàng"
+    ],
+    "answer": 1,
+    "explanation": "Người thiếu thiết bị, mạng hoặc kỹ năng số khó tiếp cận dịch vụ Fintech, tạo ra nguy cơ bị bỏ lại phía sau."
+  },
+  {
+    "id": "bo2_mcq_2_3",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Mô hình Cloud PaaS (Platform as a Service) cung cấp yếu tố nào cho các nhà phát triển Fintech?",
+    "options": [
+      "Chỉ duy nhất thiết bị phần cứng điện thoại di động",
+      "Môi trường phát triển và vận hành ứng dụng (hệ điều hành, cơ sở dữ liệu, công cụ lập trình)",
+      "Phần mềm kế toán hoàn chỉnh cho người dùng cuối",
+      "Dịch vụ bảo vệ an ninh chi nhánh vật lý"
+    ],
+    "answer": 1,
+    "explanation": "PaaS cung cấp nền tảng phần mềm/runtime hoàn chỉnh (OS, DB, công cụ phát triển) để lập trình viên xây và chạy ứng dụng."
+  },
+  {
+    "id": "bo2_mcq_2_4",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Công nghệ InsurTech ứng dụng thiết bị IoT (như thiết bị giám sát hành trình xe) để làm gì?",
+    "options": [
+      "Thu tiền mặt trực tiếp từ tài xế",
+      "Thu thập dữ liệu hành vi lái xe thực tế để tính phí bảo hiểm theo mức độ rủi ro cá nhân (UBI)",
+      "Thay thế hoàn toàn hợp đồng bảo hiểm",
+      "Tự động thanh lý tài sản khi xảy ra va quẹt"
+    ],
+    "answer": 1,
+    "explanation": "Mô hình bảo hiểm theo mức độ sử dụng/hành vi (UBI) dùng dữ liệu IoT thực tế để định giá rủi ro chính xác hơn."
+  },
+  {
+    "id": "bo2_mcq_2_5",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Trong phân tích tài chính số, chỉ số CAC (Customer Acquisition Cost) đo lường điều gì?",
+    "options": [
+      "Tổng chi phí khấu hao tài sản cố định trong 5 năm",
+      "Chi phí trung bình để thu hút được 01 khách hàng mới sử dụng dịch vụ",
+      "Mức phí giao dịch thu từ ngân hàng đối tác",
+      "Tỷ lệ hoại tử dữ liệu trên máy chủ"
+    ],
+    "answer": 1,
+    "explanation": "CAC là chi phí trung bình (marketing, bán hàng, khuyến mãi...) bỏ ra để có thêm một khách hàng mới."
+  },
+  {
+    "id": "bo2_mcq_2_6",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Cơ chế xác thực 2FA/MFA phổ biến hiện nay thường kết hợp yếu tố nào?",
+    "options": [
+      "Yếu tố bạn biết (mật khẩu) và yếu tố bạn sở hữu (mã OTP gửi về điện thoại/App Authenticator)",
+      "Hai mật khẩu giống hệt nhau nhập hai lần",
+      "Tên đăng nhập và địa chỉ email công cộng",
+      "Số CMND cũ và số CCCD mới"
+    ],
+    "answer": 0,
+    "explanation": "Xác thực đa yếu tố yêu cầu ít nhất hai nhóm yếu tố độc lập như thứ bạn biết (mật khẩu) và thứ bạn có (OTP/thiết bị)."
+  },
+  {
+    "id": "bo2_mcq_2_7",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Nguồn doanh thu chủ yếu của nền tảng P2P Lending đến từ đâu?",
+    "options": [
+      "Lãi suất tiền gửi từ Ngân hàng Trung ương",
+      "Phí kết nối/phí dịch vụ thu từ nhà đầu tư (bên cho vay) và người đi vay",
+      "Chênh lệch giá bán tiền mã hóa",
+      "Ngân sách hỗ trợ từ Chính phủ"
+    ],
+    "answer": 1,
+    "explanation": "Nền tảng P2P Lending đóng vai trò trung gian công nghệ và thu phí dịch vụ/khởi tạo/kết nối từ các bên tham gia."
+  },
+  {
+    "id": "bo2_mcq_2_8",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Phương pháp 'Học tăng cường' (Reinforcement Learning) trong WealthTech phù hợp nhất cho bài toán nào?",
+    "options": [
+      "Nhận diện chữ viết tay trên séc ngân hàng",
+      "Tối ưu hóa chiến lược giao dịch tự động thông qua thử-sai và nhận tín hiệu thưởng/phạt từ thị trường",
+      "Đổi tên tập tin trong cơ sở dữ liệu",
+      "Kiểm tra hạn sử dụng của thẻ ATM"
+    ],
+    "answer": 1,
+    "explanation": "Học tăng cường học chính sách hành động tối ưu qua tương tác liên tục với môi trường và phản hồi thưởng/phạt."
+  },
+  {
+    "id": "bo2_mcq_2_9",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Đâu là thách thức lớn nhất khi áp dụng quy định chống rửa tiền (AML) đối với giao dịch Tiền mã hóa (Crypto)?",
+    "options": [
+      "Các giao dịch diễn ra quá chậm",
+      "Tính ẩn danh hoặc bán ẩn danh của các địa chỉ ví trên Blockchain",
+      "Không thể kết nối với mạng Internet",
+      "Chi phí tạo ví điện tử quá cao"
+    ],
+    "answer": 1,
+    "explanation": "Địa chỉ ví blockchain không tự động gắn liền với danh tính thực, gây khó khăn cho truy vết và tuân thủ AML."
+  },
+  {
+    "id": "bo2_mcq_2_10",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Thanh toán qua mã QR động (Dynamic QR Code) có ưu điểm gì vượt trội so với QR tĩnh (Static QR Code)?",
+    "options": [
+      "Không cần sử dụng kết nối camera để quét",
+      "Đã bao gồm sẵn số tiền giao dịch và nội dung thanh toán, hạn chế sai sót do người dùng tự nhập",
+      "Chỉ dùng được cho giao dịch quốc tế",
+      "Không bị giới hạn bởi quy định an toàn bảo mật"
+    ],
+    "answer": 1,
+    "explanation": "QR động được tạo riêng cho từng hóa đơn với số tiền và mã tham chiếu cố định sẵn, giúp đối soát tự động và tránh nhập nhầm."
+  },
+  {
+    "id": "bo2_mcq_2_11",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Thuật ngữ 'SupTech' được định nghĩa là gì?",
+    "options": [
+      "Dịch vụ hỗ trợ tài chính cho sinh viên",
+      "Ứng dụng công nghệ đổi mới bởi các cơ quan quản lý để nâng cao hiệu quả giám sát thị trường tài chính",
+      "Phần mềm siêu máy tính dành cho giao dịch chứng khoán",
+      "Mô hình chuỗi cung ứng vật tư ngân hàng"
+    ],
+    "answer": 1,
+    "explanation": "SupTech (Supervisory Technology) là công nghệ phục vụ trực tiếp cho cơ quan quản lý/giám sát tài chính."
+  },
+  {
+    "id": "bo2_mcq_2_12",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Biện pháp nào sau đây giúp giảm thiểu 'Rủi ro bên thứ ba' (Third-Party Risk) khi dùng điện toán đám mây?",
+    "options": [
+      "Không ký hợp đồng dịch vụ (SLA) với nhà cung cấp",
+      "Đánh giá an ninh định kỳ, đa dạng hóa nhà cung cấp (Multi-cloud) và xây dựng kế hoạch dự phòng sự cố",
+      "Lưu trữ toàn bộ mật khẩu tài khoản ở dạng văn bản thô (Plaintext)",
+      "Tắt toàn bộ hệ thống tường lửa"
+    ],
+    "answer": 1,
+    "explanation": "Quản trị rủi ro bên thứ ba đòi hỏi đánh giá bảo mật định kỳ, SLA rõ ràng, đa dạng hóa nhà cung cấp và phương án dự phòng."
+  },
+  {
+    "id": "bo2_mcq_2_13",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Vai trò cốt lõi của 'Đề xuất giá trị' (Value Proposition) trong mô hình Canvas là gì?",
+    "options": [
+      "Xác định mức chi trả lương cho nhân sự",
+      "Giải thích rõ giải pháp độc đáo mà sản phẩm mang lại nhằm giải quyết vấn đề của khách hàng",
+      "Liệt kê danh sách thiết bị máy tính của công ty",
+      "Xác định mã số thuế của doanh nghiệp Fintech"
+    ],
+    "answer": 1,
+    "explanation": "Value Proposition mô tả tập hợp lợi ích và giải pháp khác biệt giúp giải quyết nhu cầu hoặc nỗi đau của khách hàng."
+  },
+  {
+    "id": "bo2_mcq_2_14",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Rủi ro tín dụng đối với nhà đầu tư cá nhân trên nền tảng P2P Lending xảy ra khi nào?",
+    "options": [
+      "Hệ thống ngân hàng điều chỉnh tỷ giá hối đoái",
+      "Người đi vay chậm thanh toán hoặc mất khả năng hoàn trả gốc và lãi theo cam kết",
+      "Nền tảng P2P nâng cấp giao dịch đồ họa",
+      "Ứng dụng di động thay đổi màu sắc giao diện"
+    ],
+    "answer": 1,
+    "explanation": "Rủi ro tín dụng trong P2P phát sinh trực tiếp khi bên vay vỡ nợ hoặc chậm trả gốc và lãi."
+  },
+  {
+    "id": "bo2_mcq_2_15",
+    "section": 202,
+    "sectionTitle": "Bộ 2 - Đề 2",
+    "type": "mcq",
+    "question": "Chiến lược tiếp cận 'Thiết kế lấy khách hàng làm trung tâm' (Customer-Centric Design) tập trung vào khía cạnh nào?",
+    "options": [
+      "Tối đa hóa độ phức tạp của quy trình đăng ký",
+      "Tối ưu hóa trải nghiệm người dùng (UX/UI), giảm điểm nghẽn và đáp ứng đúng thói quen của khách hàng",
+      "Ép buộc khách hàng sử dụng dịch vụ tại chi nhánh",
+      "Ẩn thông tin về phí dịch vụ"
+    ],
+    "answer": 1,
+    "explanation": "Thiết kế lấy khách hàng làm trung tâm tối ưu UX/UI, đơn giản hóa thao tác và giải quyết đúng điểm đau người dùng."
+  },
+  {
+    "id": "bo2_tf_1_1",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Khái niệm Sandbox: Sandbox cho phép các doanh nghiệp Fintech thử nghiệm các sản phẩm, dịch vụ tài chính mới trên thị trường thực tế với quy mô và phạm vi được giới hạn.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. Regulatory Sandbox tạo không gian thử nghiệm thực tế nhưng giới hạn phạm vi, thời gian và quy mô dưới sự giám sát của cơ quan quản lý."
+  },
+  {
+    "id": "bo2_tf_1_2",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Khái niệm Fintech 1.0: Giai đoạn Fintech 1.0 bắt đầu bùng nổ từ sau khủng hoảng tài chính toàn cầu năm 2008 với sự ra đời của các công ty khởi nghiệp công nghệ tài chính độc lập.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Sau khủng hoảng tài chính 2008 cùng sự bùng nổ của các startup độc lập là đặc trưng của giai đoạn Fintech 3.0."
+  },
+  {
+    "id": "bo2_tf_1_3",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Mô hình P2P Lending: Mô hình P2P Lending thay thế hoàn toàn vai trò của ngân hàng bằng cách cho phép nền tảng đứng ra huy động tiền gửi và tự chịu rủi ro tín dụng thay cho người cho vay.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Nền tảng P2P Lending chỉ kết nối trực tiếp người vay và người cho vay, không nhận tiền gửi như ngân hàng và thường không tự gánh chịu rủi ro tín dụng."
+  },
+  {
+    "id": "bo2_tf_1_4",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Bản chất Blockchain: Blockchain là một loại hình cơ sở dữ liệu tập trung, cho phép một quản trị viên duy nhất toàn quyền chỉnh sửa và hủy bỏ giao dịch khi có sự cố.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Blockchain là sổ cái phân tán (phi tập trung) được lưu trên nhiều nút; dữ liệu đã xác nhận không thuộc toàn quyền sửa/xóa của một cá nhân."
+  },
+  {
+    "id": "bo2_tf_1_5",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Đặc tính Big Data (5Vs): Ngoài Volume, Velocity và Variety, đặc tính Veracity (tính chính xác/độ tin cậy) và Value (giá trị) cũng là các chiều kích quan trọng của dữ liệu lớn trong tài chính.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. Mô hình 5Vs của Big Data bao gồm Volume, Velocity, Variety, Veracity và Value."
+  },
+  {
+    "id": "bo2_tf_1_6",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Vai trò Open API: Kiến trúc Open API cho phép các công ty Fintech kết nối an toàn với hệ thống ngân hàng để truy cập dữ liệu khách hàng (khi được đồng ý) mà không cần xây dựng lại toàn bộ hạ tầng thanh toán.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. Open API giúp Fintech tích hợp an toàn vào dữ liệu và chức năng ngân hàng khi khách hàng ủy quyền."
+  },
+  {
+    "id": "bo2_tf_1_7",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "RegTech & SupTech: RegTech là công nghệ hỗ trợ các cơ quan quản lý nhà nước giám sát thị trường, trong khi SupTech là công nghệ giúp các tổ chức tài chính tuân thủ quy định pháp lý.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Hai khái niệm bị đảo ngược: RegTech dành cho tổ chức tài chính tuân thủ quy định, còn SupTech dành cho cơ quan quản lý giám sát thị trường."
+  },
+  {
+    "id": "bo2_tf_1_8",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Mô hình BNPL: Mô hình Mua trước trả sau (BNPL) chỉ tạo ra dòng doanh thu duy nhất từ phạt trả chậm của người tiêu dùng.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Nguồn thu chính của BNPL thường đến từ phí chiết khấu thu của nhà bán hàng (merchant fee), bên cạnh phí trả chậm hoặc lãi suất trả góp."
+  },
+  {
+    "id": "bo2_tf_1_9",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Khái niệm Neobank: Neobank là các ngân hàng số hoạt động không có chi nhánh vật lý truyền thống và thường tối ưu hóa trải nghiệm người dùng trên thiết bị di động.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. Neobank vận hành thuần số, không có mạng lưới chi nhánh vật lý và ưu tiên trải nghiệm trên di động."
+  },
+  {
+    "id": "bo2_tf_1_10",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Vai trò của AI trong Fraud Detection: Trí tuệ nhân tạo (AI) giúp phát hiện gian lận tài chính bằng cách phân tích mẫu hành vi lịch sử và cảnh báo các giao dịch bất thường theo thời gian thực.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. AI/ML phát hiện bất thường hiệu quả dựa trên đối chiếu hành vi lịch sử và dòng giao dịch thời gian thực."
+  },
+  {
+    "id": "bo2_tf_1_11",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Rủi ro An ninh mạng: Rủi ro an ninh mạng chỉ đe dọa đến tài sản tài chính của người dùng chứ không làm tổn hại đến giá trị thương hiệu hay uy tín của doanh nghiệp Fintech.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Sự cố an ninh mạng làm mất niềm tin khách hàng, ảnh hưởng nghiêm trọng đến uy tín, thương hiệu và nghĩa vụ pháp lý của doanh nghiệp."
+  },
+  {
+    "id": "bo2_tf_1_12",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "CBDC vs Crypto: Tiền kỹ thuật số của Ngân hàng Trung ương (CBDC) có giá trị pháp lý và là đồng tiền thanh toán hợp pháp do quốc gia phát hành, khác biệt hoàn toàn với tiền mã hóa tư nhân phi tập trung.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. CBDC là tiền pháp định do Ngân hàng Trung ương phát hành, khác với tiền mã hóa tư nhân phi tập trung."
+  },
+  {
+    "id": "bo2_tf_1_13",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Công nghệ NFC: Thanh toán không tiếp xúc qua công nghệ NFC bắt buộc thiết bị thanh toán và thiết bị chấp nhận thanh toán phải kết nối chung một mạng Wi-Fi công cộng.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. NFC giao tiếp trực tiếp qua trường điện từ cự ly vài centimet giữa thẻ/điện thoại và máy POS, không cần chung Wi-Fi công cộng."
+  },
+  {
+    "id": "bo2_tf_1_14",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Tài chính toàn diện (Financial Inclusion): Tài chính toàn diện hướng tới việc phổ cập các dịch vụ tài chính an toàn, thuận tiện với chi phí hợp lý cho mọi phân khúc dân số, đặc biệt là nhóm người chưa có tài khoản ngân hàng.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. Đây là mục tiêu cốt lõi của tài chính toàn diện nhằm thu hẹp khoảng cách tiếp cận dịch vụ tài chính."
+  },
+  {
+    "id": "bo2_tf_1_15",
+    "section": 301,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 1",
+    "type": "tf",
+    "question": "Hợp đồng thông minh (Smart Contract): Hợp đồng thông minh có khả năng tự động thực thi các điều khoản đã lập trình sẵn trên Blockchain mà không phụ thuộc vào sự can thiệp của bên thứ ba.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. Smart contract tự động thực thi khi các điều kiện lập trình sẵn được đáp ứng trên Blockchain."
+  },
+  {
+    "id": "bo2_tf_2_1",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Mô hình SaaS: Trong mô hình Cloud SaaS (Software as a Service), khách hàng phải tự mua sắm, cài đặt và bảo trì toàn bộ cơ sở hạ tầng máy chủ vật lý tại đơn vị.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Với SaaS, nhà cung cấp đám mây vận hành toàn bộ hạ tầng máy chủ và phần mềm; khách hàng chỉ sử dụng qua mạng."
+  },
+  {
+    "id": "bo2_tf_2_2",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Hệ sinh thái Fintech: Ngân hàng truyền thống chỉ đóng vai trò là đối thủ cạnh tranh duy nhất và không thể là đối tác chiến lược của các công ty khởi nghiệp Fintech.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Ngân hàng truyền thống và startup Fintech thường hợp tác chiến lược (Open Banking, BaaS, đồng phát triển sản phẩm) song song với cạnh tranh."
+  },
+  {
+    "id": "bo2_tf_2_3",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Chấm điểm tín dụng bằng dữ liệu thay thế: Dữ liệu thay thế (như lịch sử thanh toán hóa đơn điện thoại, hành vi thương mại điện tử) hỗ trợ mở rộng tín dụng cho những người thiếu lịch sử tín dụng truyền thống.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. Dữ liệu thay thế bổ sung tín hiệu đánh giá uy tín và khả năng trả nợ cho nhóm người chưa có lịch sử tín dụng ngân hàng."
+  },
+  {
+    "id": "bo2_tf_2_4",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Robo-Advisor: Cố vấn robot (Robo-Advisor) đưa ra lời khuyên đầu tư dựa trên cảm xúc thị trường ngắn hạn thay vì tuân theo các thuật toán và hồ sơ rủi ro của khách hàng.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Robo-Advisor sử dụng thuật toán dựa trên mục tiêu và khẩu vị rủi ro của khách hàng nhằm loại bỏ yếu tố cảm tính."
+  },
+  {
+    "id": "bo2_tf_2_5",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Yếu tố KYC/eKYC: eKYC cho phép định danh và xác thực khách hàng trực tuyến thông qua công nghệ nhận diện khuôn mặt (Facial Recognition) và OCR mà không cần gặp mặt trực tiếp.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. eKYC kết hợp OCR và sinh trắc học khuôn mặt giúp định danh khách hàng từ xa nhanh chóng và an toàn."
+  },
+  {
+    "id": "bo2_tf_2_6",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Đổi mới mô hình kinh doanh: Đổi mới mô hình kinh doanh Fintech chỉ đơn thuần là việc số hóa các biểu mẫu giấy sang định dạng PDF để khách hàng tải về.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Chuyển biểu mẫu giấy sang PDF chỉ là số hóa tài liệu cơ bản, chưa phải đổi mới mô hình kinh doanh hay quy trình giá trị."
+  },
+  {
+    "id": "bo2_tf_2_7",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Công nghệ QR Code: Thanh toán bằng mã QR yêu cầu hai thiết bị di động phải được va chạm vật lý vào nhau để truyền dữ liệu giao dịch.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Thanh toán QR sử dụng camera để quét mã hiển thị, không cần hai thiết bị chạm vào nhau."
+  },
+  {
+    "id": "bo2_tf_2_8",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Rủi ro tập trung (Concentration Risk): Việc phụ thuộc hoàn toàn vào một nhà cung cấp dịch vụ điện toán đám mây duy nhất có thể gây ra rủi ro tập trung và rủi ro gián đoạn vận hành cho tổ chức tài chính.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. Phụ thuộc một nhà cung cấp cloud duy nhất làm tăng rủi ro gián đoạn diện rộng và phụ thuộc nhà cung cấp."
+  },
+  {
+    "id": "bo2_tf_2_9",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Đặc trưng của FinTech 3.5: Fintech 3.5 được ghi nhận bởi sự trỗi dậy mạnh mẽ của các giải pháp tài chính số tại các quốc gia đang phát triển thuộc Châu Á, Châu Phi và Mỹ Latinh.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. Fintech 3.5 phản ánh làn sóng tăng trưởng Fintech nhanh tại các nền kinh tế mới nổi và đang phát triển."
+  },
+  {
+    "id": "bo2_tf_2_10",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Học máy có giám sát (Supervised Learning): Học máy có giám sát là phương pháp huấn luyện mô hình dựa trên tập dữ liệu chưa được gán nhãn trước.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Học có giám sát học từ dữ liệu đã gán nhãn đầu ra; dữ liệu chưa gán nhãn dùng cho học không giám sát."
+  },
+  {
+    "id": "bo2_tf_2_11",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "InsurTech: InsurTech ứng dụng công nghệ như IoT và Big Data để định giá rủi ro cá thể hóa và tự động hóa quy trình bồi thường bảo hiểm.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. IoT và Big Data giúp thu thập dữ liệu hành vi thực tế để định giá cá thể hóa và tăng tốc bồi thường."
+  },
+  {
+    "id": "bo2_tf_2_12",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Tấn công Phishing: Phishing là hình thức tấn công vào phần cứng máy chủ nhằm làm gián đoạn đường truyền mạng vật lý của ngân hàng.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Phishing là tấn công giả mạo (email, SMS, trang web giả) nhằm lừa người dùng tiết lộ thông tin nhạy cảm."
+  },
+  {
+    "id": "bo2_tf_2_13",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Kỳ lân Fintech (Unicorn): Định giá từ 1 tỷ USD trở lên của một Kỳ lân Fintech là căn cứ bắt buộc công ty đó phải niêm yết cổ phiếu công khai trên sàn chứng khoán.",
+    "options": ["Đúng", "Sai"],
+    "answer": 1,
+    "explanation": "Sai. Unicorn là công ty khởi nghiệp tư nhân (chưa niêm yết) có định giá từ 1 tỷ USD trở lên và không bị bắt buộc phải IPO."
+  },
+  {
+    "id": "bo2_tf_2_14",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Quản trị dữ liệu (Data Governance): Quản trị dữ liệu trong Fintech giúp đảm bảo tính toàn vẹn, bảo mật và tính tuân thủ pháp lý của dữ liệu khách hàng trong suốt vòng đời sử dụng.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. Quản trị dữ liệu thiết lập chuẩn mực kiểm soát chất lượng, an toàn và tuân thủ dữ liệu trong toàn bộ vòng đời."
+  },
+  {
+    "id": "bo2_tf_2_15",
+    "section": 302,
+    "sectionTitle": "Bộ 2 - Đúng/Sai 2",
+    "type": "tf",
+    "question": "Mô hình Crowdfunding dựa trên cổ phần: Nhà đầu tư tham gia Equity Crowdfunding sẽ nhận được quyền sở hữu một phần cổ phần hoặc lợi ích tương đương trong doanh nghiệp gọi vốn.",
+    "options": ["Đúng", "Sai"],
+    "answer": 0,
+    "explanation": "Đúng. Người góp vốn trong Equity Crowdfunding trở thành cổ đông hoặc nắm giữ phần sở hữu tương đương trong dự án/doanh nghiệp."
+  }
+]
+

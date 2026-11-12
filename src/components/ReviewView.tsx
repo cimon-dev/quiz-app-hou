@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CheckCircle2, XCircle, RotateCcw, Home, Filter, ChevronUp } from 'lucide-react';
+import { CheckCircle2, XCircle, RotateCcw, Home, Filter, ChevronUp, Check, X } from 'lucide-react';
 import { QuizQuestion, formatTime } from '@/lib/quiz';
 
 interface ReviewViewProps {
@@ -162,10 +162,17 @@ export default function ReviewView({
                 {q.question}
               </h3>
 
-              <div className="space-y-1.5 mb-2.5">
+              <div
+                className={
+                  q.type === 'tf'
+                    ? 'grid grid-cols-2 gap-2 mb-2.5'
+                    : 'space-y-1.5 mb-2.5'
+                }
+              >
                 {q.options.map((opt, oIdx) => {
                   const isUserSelection = userChoice === oIdx;
                   const isAnswer = q.answer === oIdx;
+                  const isTrueFalse = q.type === 'tf';
 
                   let optClass = 'border-gray-200 bg-white text-gray-700';
                   let badgeClass = 'bg-gray-100 text-gray-600';
@@ -196,15 +203,33 @@ export default function ReviewView({
                   return (
                     <div
                       key={oIdx}
-                      className={`p-2.5 sm:p-3 rounded-xl border flex items-start justify-between gap-2.5 text-xs sm:text-sm ${optClass}`}
+                      className={`p-2.5 sm:p-3 rounded-xl border flex justify-between gap-2 text-xs sm:text-sm ${
+                        isTrueFalse ? 'items-center' : 'items-start'
+                      } ${optClass}`}
                     >
-                      <div className="flex items-start gap-2 flex-1">
+                      <div
+                        className={`flex gap-2 flex-1 min-w-0 ${
+                          isTrueFalse ? 'items-center' : 'items-start'
+                        }`}
+                      >
                         <span
-                          className={`w-5 h-5 rounded-md font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5 ${badgeClass}`}
+                          className={`w-5 h-5 rounded-md font-bold text-[11px] flex items-center justify-center shrink-0 ${
+                            isTrueFalse ? '' : 'mt-0.5'
+                          } ${badgeClass}`}
                         >
-                          {optLetter}
+                          {isTrueFalse ? (
+                            oIdx === 0 ? (
+                              <Check className="w-3 h-3" />
+                            ) : (
+                              <X className="w-3 h-3" />
+                            )
+                          ) : (
+                            optLetter
+                          )}
                         </span>
-                        <span className="leading-snug">{opt}</span>
+                        <span className={`leading-snug ${isTrueFalse ? 'font-medium' : ''}`}>
+                          {opt}
+                        </span>
                       </div>
                       {label && <div className="shrink-0">{label}</div>}
                     </div>

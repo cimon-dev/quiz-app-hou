@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Send,
   LayoutGrid,
+  Check,
   X
 } from 'lucide-react';
 import { QuizQuestion, formatTime } from '@/lib/quiz';
@@ -237,74 +238,135 @@ export default function QuizPlay({
       {/* Question Card */}
       {currentQ && (
         <div className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-200 shadow-xs space-y-4">
-          <div className="flex items-center justify-between text-xs text-gray-400 border-b border-gray-100 pb-2.5">
+          <div className="flex items-center justify-between text-xs text-gray-400 border-b border-gray-100 pb-2.5 gap-2">
             <span className="font-bold text-blue-600 text-sm">
               Câu {currentIndex + 1} / {questions.length}
             </span>
-            <span className="font-medium text-gray-500">
-              {currentQ.sectionTitle}
-            </span>
+            <div className="flex items-center gap-1.5">
+              {currentQ.type === 'tf' && (
+                <span className="px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 font-semibold text-[11px]">
+                  Đúng / Sai
+                </span>
+              )}
+              <span className="font-medium text-gray-500">
+                {currentQ.sectionTitle}
+              </span>
+            </div>
           </div>
 
           <h2 className="text-base sm:text-lg font-bold text-gray-900 leading-snug">
             {currentQ.question}
           </h2>
 
-          <div className="space-y-2">
-            {currentQ.options.map((opt, oIdx) => {
-              const optLetter = String.fromCharCode(65 + oIdx);
-              const isSelected = userChoice === oIdx;
+          {currentQ.type === 'tf' ? (
+            <div className="grid grid-cols-2 gap-3 pt-1">
+              {currentQ.options.map((opt, oIdx) => {
+                const isSelected = userChoice === oIdx;
+                const isTrueBtn = oIdx === 0;
 
-              let btnStyle = 'border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-gray-800';
-              let badgeStyle = 'bg-gray-100 text-gray-600';
+                let cardStyle =
+                  'border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-gray-800';
+                let iconWrapStyle = isTrueBtn
+                  ? 'bg-emerald-50 text-emerald-600'
+                  : 'bg-rose-50 text-rose-600';
 
-              if (mode === 'instant') {
-                if (hasAnsweredCurrent) {
-                  if (oIdx === currentQ.answer) {
-                    btnStyle = 'border-emerald-500 bg-emerald-50 text-emerald-950 font-medium ring-1 ring-emerald-500';
-                    badgeStyle = 'bg-emerald-600 text-white';
-                  } else if (isSelected) {
-                    btnStyle = 'border-rose-400 bg-rose-50 text-rose-950 font-medium ring-1 ring-rose-400';
-                    badgeStyle = 'bg-rose-600 text-white';
-                  } else {
-                    btnStyle = 'border-gray-200 bg-gray-50/50 text-gray-400 opacity-60';
+                if (mode === 'instant') {
+                  if (hasAnsweredCurrent) {
+                    if (oIdx === currentQ.answer) {
+                      cardStyle =
+                        'border-emerald-500 bg-emerald-50 text-emerald-950 font-bold ring-1 ring-emerald-500';
+                      iconWrapStyle = 'bg-emerald-600 text-white';
+                    } else if (isSelected) {
+                      cardStyle =
+                        'border-rose-400 bg-rose-50 text-rose-950 font-bold ring-1 ring-rose-400';
+                      iconWrapStyle = 'bg-rose-600 text-white';
+                    } else {
+                      cardStyle = 'border-gray-200 bg-gray-50/50 text-gray-400 opacity-60';
+                      iconWrapStyle = 'bg-gray-100 text-gray-400';
+                    }
+                  }
+                } else if (isSelected) {
+                  cardStyle = isTrueBtn
+                    ? 'border-emerald-600 bg-emerald-50 text-emerald-950 font-bold ring-1 ring-emerald-600'
+                    : 'border-rose-500 bg-rose-50 text-rose-950 font-bold ring-1 ring-rose-500';
+                  iconWrapStyle = isTrueBtn ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white';
+                }
+
+                return (
+                  <button
+                    key={oIdx}
+                    onClick={() => handleSelectOption(oIdx)}
+                    className={`py-5 px-4 rounded-2xl border transition-all flex flex-col items-center justify-center gap-2.5 text-base font-semibold active:scale-[0.98] ${cardStyle}`}
+                  >
+                    <span
+                      className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${iconWrapStyle}`}
+                    >
+                      {isTrueBtn ? <Check className="w-5 h-5" /> : <X className="w-5 h-5" />}
+                    </span>
+                    <span>{opt}</span>
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {currentQ.options.map((opt, oIdx) => {
+                const optLetter = String.fromCharCode(65 + oIdx);
+                const isSelected = userChoice === oIdx;
+
+                let btnStyle =
+                  'border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-gray-800';
+                let badgeStyle = 'bg-gray-100 text-gray-600';
+
+                if (mode === 'instant') {
+                  if (hasAnsweredCurrent) {
+                    if (oIdx === currentQ.answer) {
+                      btnStyle =
+                        'border-emerald-500 bg-emerald-50 text-emerald-950 font-medium ring-1 ring-emerald-500';
+                      badgeStyle = 'bg-emerald-600 text-white';
+                    } else if (isSelected) {
+                      btnStyle =
+                        'border-rose-400 bg-rose-50 text-rose-950 font-medium ring-1 ring-rose-400';
+                      badgeStyle = 'bg-rose-600 text-white';
+                    } else {
+                      btnStyle = 'border-gray-200 bg-gray-50/50 text-gray-400 opacity-60';
+                    }
+                  }
+                } else {
+                  if (isSelected) {
+                    btnStyle =
+                      'border-blue-600 bg-blue-50 text-blue-900 font-semibold ring-1 ring-blue-600';
+                    badgeStyle = 'bg-blue-600 text-white';
                   }
                 }
-              } else {
-                if (isSelected) {
-                  btnStyle = 'border-blue-600 bg-blue-50 text-blue-900 font-semibold ring-1 ring-blue-600';
-                  badgeStyle = 'bg-blue-600 text-white';
-                }
-              }
 
-              return (
-                <button
-                  key={oIdx}
-                  onClick={() => handleSelectOption(oIdx)}
-                  className={`w-full p-3.5 rounded-xl border text-left transition-all flex items-start gap-3 ${btnStyle}`}
-                >
-                  <span
-                    className={`w-6 h-6 rounded-lg font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 ${badgeStyle}`}
+                return (
+                  <button
+                    key={oIdx}
+                    onClick={() => handleSelectOption(oIdx)}
+                    className={`w-full p-3.5 rounded-xl border text-left transition-all flex items-start gap-3 ${btnStyle}`}
                   >
-                    {optLetter}
-                  </span>
-                  <span className="text-sm sm:text-base leading-snug flex-1">
-                    {opt}
-                  </span>
-
-                  {mode === 'instant' && hasAnsweredCurrent && (
-                    <span className="shrink-0">
-                      {oIdx === currentQ.answer ? (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-                      ) : isSelected ? (
-                        <XCircle className="w-5 h-5 text-rose-600" />
-                      ) : null}
+                    <span
+                      className={`w-6 h-6 rounded-lg font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 ${badgeStyle}`}
+                    >
+                      {optLetter}
                     </span>
-                  )}
-                </button>
-              );
-            })}
-          </div>
+                    <span className="text-sm sm:text-base leading-snug flex-1">{opt}</span>
+
+                    {mode === 'instant' && hasAnsweredCurrent && (
+                      <span className="shrink-0">
+                        {oIdx === currentQ.answer ? (
+                          <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                        ) : isSelected ? (
+                          <XCircle className="w-5 h-5 text-rose-600" />
+                        ) : null}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          )}
 
           {/* Explanation in instant mode */}
           {mode === 'instant' && hasAnsweredCurrent && (
@@ -325,7 +387,9 @@ export default function QuizPlay({
                   <>
                     <XCircle className="w-4 h-4 text-rose-600" />
                     <span>
-                      Sai. Đáp án: {String.fromCharCode(65 + currentQ.answer)}
+                      {currentQ.type === 'tf'
+                        ? `Chưa đúng. Đáp án: ${currentQ.options[currentQ.answer]}`
+                        : `Sai. Đáp án: ${String.fromCharCode(65 + currentQ.answer)}`}
                     </span>
                   </>
                 )}
