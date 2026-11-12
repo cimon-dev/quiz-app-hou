@@ -1,17 +1,23 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, connection } from 'next/server';
 import { getUserWrongBank, saveUserWrongUpdates } from '@/lib/db';
 import { WrongQuestionEntry } from '@/lib/wrongBank';
+import { noCacheJson } from '@/lib/apiResponse';
 
 export async function GET(req: Request) {
+  await connection();
   const { searchParams } = new URL(req.url);
   const username = searchParams.get('username');
 
   if (!username || !username.trim()) {
-    return NextResponse.json({ error: 'Thiếu tên người dùng' }, { status: 400 });
+    return noCacheJson({ error: 'Thiếu tên người dùng' }, 400);
   }
 
-  const wrongBank = await getUserWrongBank(username);
-  return NextResponse.json({ wrongBank });
+  try {
+    const wrongBank = await getUserWrongBank(username);
+    return noCacheJson({ wrongBank });
+  } catch (err: any) {
+    return noCacheJson({ error: err?.message || 'Lỗi tải ngân hàng câu sai' }, 500);
+  }
 }
 
 export async function POST(req: Request) {

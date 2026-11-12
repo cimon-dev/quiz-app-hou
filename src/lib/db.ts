@@ -34,73 +34,181 @@ let memoryDb: DbData = {
   wrongQuestions: {}
 };
 
+export function normalizeDbData(raw: unknown): DbData {
+  let parsed = raw;
+  while (typeof parsed === 'string') {
+    try {
+      parsed = JSON.parse(parsed);
+    } catch {
+      break;
+    }
+  }
+  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+    return { users: [], scores: [], wrongQuestions: {} };
+  }
+  const obj = parsed as Record<string, unknown>;
+  return {
+    users: Array.isArray(obj.users)
+      ? obj.users.filter((u): u is string => typeof u === 'string')
+      : [],
+    scores: Array.isArray(obj.scores) ? (obj.scores as ScoreRecord[]) : [],
+    wrongQuestions:
+      obj.wrongQuestions && typeof obj.wrongQuestions === 'object' && !Array.isArray(obj.wrongQuestions)
+        ? (obj.wrongQuestions as Record<string, WrongBankMap>)
+        : {}
+  };
+}
+
+interface StorageConfig {
+  restUrl?: string;
+  restToken?: string;
+  redisUrl?: string;
+}
+
 // Dynamic credential resolution for Vercel KV / Upstash Redis with any prefix (KV, STORAGE, etc.)
-function getKvCredentials(): { url?: string; token?: string } {
-  const directUrl =
-    process.env.KV_REST_API_URL ||
-    process.env.STORAGE_REST_API_URL ||
-    process.env.STORAGE_KV_REST_API_URL ||
-    process.env.UPSTASH_REDIS_REST_URL;
+export function getStorageConfig(): StorageConfig {
+  const restPairs: Array<[string | undefined, string | undefined]> = [
+    [process.env.KV_REST_API_URL, process.env.KV_REST_API_TOKEN],
+    [process.env.STORAGE_KV_REST_API_URL, process.env.STORAGE_KV_REST_API_TOKEN],
+    [process.env.STORAGE_REST_API_URL, process.env.STORAGE_REST_API_TOKEN],
+    [process.env.STORAGE_KV_REST_URL, process.env.STORAGE_KV_REST_TOKEN],
+    [process.env.STORAGE_REST_URL, process.env.STORAGE_REST_TOKEN],
+    [process.env.UPSTASH_REDIS_REST_URL, process.env.UPSTASH_REDIS_REST_TOKEN],
+    [process.env.STORAGE_REDIS_REST_URL, process.env.STORAGE_REDIS_REST_TOKEN]
+  ];
 
-  const directToken =
-    process.env.KV_REST_API_TOKEN ||
-    process.env.STORAGE_REST_API_TOKEN ||
-    process.env.STORAGE_KV_REST_API_TOKEN ||
-    process.env.UPSTASH_REDIS_REST_TOKEN;
+  let restUrl: string | undefined;
+  let restToken: string | undefined;
 
-  if (directUrl && directToken) {
-    return { url: directUrl, token: directToken };
+  for (const [u, t] of restPairs) {
+    if (u && t) {
+      restUrl = u.replace(/\/+$/, '');
+      restToken = t;
+      break;
+    }
   }
 
-  for (const [key, val] of Object.entries(process.env)) {
-    if (key.endsWith('_REST_API_URL') && val) {
-      const prefix = key.replace('_REST_API_URL', '');
-      const tokenKey = `${prefix}_REST_API_TOKEN`;
-      if (process.env[tokenKey]) {
-        return { url: val, token: process.env[tokenKey] };
+  if (!restUrl || !restToken) {
+    for (const [key, val] of Object.entries(process.env)) {
+      if (!val) continue;
+      for (const suffix of ['_REST_API_URL', '_REST_URL']) {
+        if (key.endsWith(suffix)) {
+          const prefix = key.slice(0, -suffix.length);
+          const tokenKey =
+            suffix === '_REST_API_URL' ? `${prefix}_REST_API_TOKEN` : `${prefix}_REST_TOKEN`;
+          const tok = process.env[tokenKey];
+          if (tok) {
+            restUrl = val.replace(/\/+$/, '');
+            restToken = tok;
+            break;
+          }
+        }
+      }
+      if (restUrl && restToken) break;
+    }
+  }
+
+  const directRedisUrls = [
+    process.env.STORAGE_URL,
+    process.env.STORAGE_REDIS_URL,
+    process.env.KV_URL,
+    process.env.REDIS_URL,
+    process.env.UPSTASH_REDIS_URL,
+    process.env.STORAGE_KV_URL
+  ];
+
+  let redisUrl: string | undefined = directRedisUrls.find(
+    (v) => typeof v === 'string' && (v.startsWith('redis://') || v.startsWith('rediss://'))
+  );
+
+  if (!redisUrl) {
+    for (const [key, val] of Object.entries(process.env)) {
+      if (
+        val &&
+        (val.startsWith('redis://') || val.startsWith('rediss://')) &&
+        (key.endsWith('_URL') || key.endsWith('_REDIS_URL'))
+      ) {
+        redisUrl = val;
+        break;
       }
     }
   }
 
-  return {};
+  return { restUrl, restToken, redisUrl };
 }
 
-async function kvGet<T>(key: string): Promise<T | null> {
-  const { url, token } = getKvCredentials();
-  if (!url || !token) return null;
-  try {
-    const res = await fetch(`${url}/get/${key}`, {
-      headers: { Authorization: `Bearer ${token}` },
-      cache: 'no-store'
-    });
-    if (res.ok) {
-      const data = await res.json();
-      if (data.result) {
-        return typeof data.result === 'string' ? JSON.parse(data.result) : data.result;
-      }
+async function kvGet(key: string, url: string, token: string): Promise<DbData | null> {
+  const res = await fetch(`${url}/get/${encodeURIComponent(key)}`, {
+    headers: { Authorization: `Bearer ${token}` },
+    cache: 'no-store'
+  });
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(`KV get failed (${res.status}): ${errText}`);
+  }
+  const data = await res.json();
+  if (data?.error) {
+    throw new Error(`KV get error: ${data.error}`);
+  }
+  if (data?.result === null || data?.result === undefined) {
+    return null;
+  }
+  return normalizeDbData(data.result);
+}
+
+async function kvSet(key: string, value: DbData, url: string, token: string): Promise<void> {
+  // Send Upstash command tuple so the JSON string is stored once (never double-encoded)
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(['SET', key, JSON.stringify(value)]),
+    cache: 'no-store'
+  });
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(`KV set failed (${res.status}): ${errText}`);
+  }
+  const data = await res.json().catch(() => null);
+  if (data?.error) {
+    throw new Error(`KV set error: ${data.error}`);
+  }
+}
+
+let cachedRedisClient: { url: string; client: any } | null = null;
+
+async function getRedisClient(redisUrl: string) {
+  if (cachedRedisClient && cachedRedisClient.url === redisUrl) {
+    const status = cachedRedisClient.client.status;
+    if (status !== 'end' && status !== 'close') {
+      return cachedRedisClient.client;
     }
-  } catch (e) {
-    console.error('KV get error:', e);
   }
-  return null;
+  const { default: Redis } = await import('ioredis');
+  const client = new Redis(redisUrl, {
+    maxRetriesPerRequest: 2,
+    enableReadyCheck: false,
+    connectTimeout: 5000
+  });
+  client.on('error', (err: Error) => {
+    console.error('Redis client error:', err.message);
+  });
+  cachedRedisClient = { url: redisUrl, client };
+  return client;
 }
 
-async function kvSet(key: string, value: any): Promise<void> {
-  const { url, token } = getKvCredentials();
-  if (!url || !token) return;
-  try {
-    await fetch(`${url}/set/${key}`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(typeof value === 'string' ? value : JSON.stringify(value)),
-      cache: 'no-store'
-    });
-  } catch (e) {
-    console.error('KV set error:', e);
-  }
+async function redisGet(key: string, redisUrl: string): Promise<DbData | null> {
+  const client = await getRedisClient(redisUrl);
+  const raw = await client.get(key);
+  if (raw === null || raw === undefined) return null;
+  return normalizeDbData(raw);
+}
+
+async function redisSet(key: string, value: DbData, redisUrl: string): Promise<void> {
+  const client = await getRedisClient(redisUrl);
+  await client.set(key, JSON.stringify(value));
 }
 
 // Local filesystem paths
@@ -121,7 +229,7 @@ function ensureLocalDb(): DbData {
       return memoryDb;
     }
     const raw = fs.readFileSync(DB_FILE, 'utf8');
-    const parsed = JSON.parse(raw);
+    const parsed = normalizeDbData(JSON.parse(raw));
     memoryDb = parsed;
     return parsed;
   } catch (err) {
@@ -144,20 +252,69 @@ function saveLocalDb(data: DbData) {
 }
 
 export async function getDbData(): Promise<DbData> {
-  const { url, token } = getKvCredentials();
-  if (url && token) {
-    const cloudDb = await kvGet<DbData>('quiz_master_db');
-    if (cloudDb) return cloudDb;
+  const { restUrl, restToken, redisUrl } = getStorageConfig();
+  if (restUrl && restToken) {
+    const cloudDb = await kvGet('quiz_master_db', restUrl, restToken);
+    return cloudDb ?? { users: [], scores: [], wrongQuestions: {} };
+  }
+  if (redisUrl) {
+    const tcpDb = await redisGet('quiz_master_db', redisUrl);
+    return tcpDb ?? { users: [], scores: [], wrongQuestions: {} };
   }
   return ensureLocalDb();
 }
 
 export async function saveDbData(data: DbData): Promise<void> {
-  const { url, token } = getKvCredentials();
-  if (url && token) {
-    await kvSet('quiz_master_db', data);
+  const normalized = normalizeDbData(data);
+  const { restUrl, restToken, redisUrl } = getStorageConfig();
+  if (restUrl && restToken) {
+    await kvSet('quiz_master_db', normalized, restUrl, restToken);
+    saveLocalDb(normalized);
+    return;
   }
-  saveLocalDb(data);
+  if (redisUrl) {
+    await redisSet('quiz_master_db', normalized, redisUrl);
+    saveLocalDb(normalized);
+    return;
+  }
+  saveLocalDb(normalized);
+}
+
+export async function getStorageHealth() {
+  const { restUrl, restToken, redisUrl } = getStorageConfig();
+  const detectedEnvKeys = Object.keys(process.env)
+    .filter((k) => /^(KV|STORAGE|REDIS|UPSTASH)_/i.test(k))
+    .sort();
+
+  const backend: 'upstash-rest' | 'redis-tcp' | 'local-file' =
+    restUrl && restToken ? 'upstash-rest' : redisUrl ? 'redis-tcp' : 'local-file';
+
+  let connected = backend === 'local-file';
+  let error: string | undefined;
+  let db: DbData = { users: [], scores: [], wrongQuestions: {} };
+
+  try {
+    db = await getDbData();
+    if (backend !== 'local-file') {
+      connected = true;
+    }
+  } catch (e: any) {
+    error = e?.message || 'Storage connection error';
+    connected = false;
+  }
+
+  return {
+    ok: connected,
+    backend,
+    hasRestConfig: Boolean(restUrl && restToken),
+    hasRedisUrl: Boolean(redisUrl),
+    isVercel: Boolean(process.env.VERCEL),
+    detectedEnvKeys,
+    usersCount: db.users.length,
+    scoresCount: db.scores.length,
+    wrongUsersCount: Object.keys(db.wrongQuestions || {}).length,
+    ...(error ? { error } : {})
+  };
 }
 
 export async function getAllUsers(): Promise<string[]> {

@@ -34,13 +34,15 @@ export default function LeaderboardModal({
     setIsLoading(true);
     try {
       if (activeTab === 'block') {
-        const res = await fetch(`/api/leaderboard?type=block&blockId=${selectedBlockId}`);
+        const res = await fetch(`/api/leaderboard?type=block&blockId=${selectedBlockId}`, {
+          cache: 'no-store'
+        });
         if (res.ok) {
           const data = await res.json();
           setBlockRanking(data.ranking || []);
         }
       } else {
-        const res = await fetch(`/api/leaderboard?type=attempts`);
+        const res = await fetch(`/api/leaderboard?type=attempts`, { cache: 'no-store' });
         if (res.ok) {
           const data = await res.json();
           setAttemptsRanking(data.attempts || []);

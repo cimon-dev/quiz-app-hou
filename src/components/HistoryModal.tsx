@@ -6,6 +6,7 @@ import { formatTime } from '@/lib/quiz';
 
 export interface HistoryItem {
   id: string;
+  username?: string;
   blockId: string;
   blockTitle: string;
   score: number;
@@ -21,22 +22,29 @@ interface HistoryModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSelectReview: (item: HistoryItem) => void;
+  currentUser?: string | null;
 }
 
-export default function HistoryModal({ isOpen, onClose, onSelectReview }: HistoryModalProps) {
+export default function HistoryModal({ isOpen, onClose, onSelectReview, currentUser }: HistoryModalProps) {
   const [history, setHistory] = useState<HistoryItem[]>([]);
 
   useEffect(() => {
     if (isOpen) {
       loadHistory();
     }
-  }, [isOpen]);
+  }, [isOpen, currentUser]);
 
   const loadHistory = () => {
     try {
       const raw = localStorage.getItem('quiz_history');
       if (raw) {
-        setHistory(JSON.parse(raw));
+        const parsed: HistoryItem[] = JSON.parse(raw);
+        const filtered = Array.isArray(parsed)
+          ? parsed.filter((item) => !currentUser || !item.username || item.username === currentUser)
+          : [];
+        setHistory(filtered);
+      } else {
+        setHistory([]);
       }
     } catch (e) {
       console.error(e);
@@ -45,7 +53,24 @@ export default function HistoryModal({ isOpen, onClose, onSelectReview }: Histor
 
   const handleClearHistory = () => {
     if (confirm('Bạn có muốn xóa toàn bộ lịch sử trên máy này?')) {
-      localStorage.removeItem('quiz_history');
+      try {
+        const raw = localStorage.getItem('quiz_history');
+        if (raw && currentUser) {
+          const parsed: HistoryItem[] = JSON.parse(raw);
+          const remaining = Array.isArray(parsed)
+            ? parsed.filter((item) => item.username && item.username !== currentUser)
+            : [];
+          if (remaining.length > 0) {
+            localStorage.setItem('quiz_history', JSON.stringify(remaining));
+          } else {
+            localStorage.removeItem('quiz_history');
+          }
+        } else {
+          localStorage.removeItem('quiz_history');
+        }
+      } catch {
+        localStorage.removeItem('quiz_history');
+      }
       setHistory([]);
     }
   };

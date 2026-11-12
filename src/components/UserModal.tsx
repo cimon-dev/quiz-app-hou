@@ -25,7 +25,7 @@ export default function UserModal({ isOpen, onClose, currentUser, onUserSelected
 
   const fetchExistingUsers = async () => {
     try {
-      const res = await fetch('/api/users');
+      const res = await fetch('/api/users', { cache: 'no-store' });
       if (res.ok) {
         const data = await res.json();
         setExistingUsers(data.users || []);

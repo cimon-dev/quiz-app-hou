@@ -242,6 +242,7 @@ export default function QuizPlay({
     try {
       const historyItem = {
         id: `h_${Date.now()}`,
+        username,
         blockId,
         blockTitle: effectiveTitle,
         score,

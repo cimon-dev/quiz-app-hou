@@ -97,7 +97,9 @@ export default function Home() {
   const loadBestScores = async (user: string) => {
     if (!user) return;
     try {
-      const res = await fetch(`/api/scores/best?username=${encodeURIComponent(user)}`);
+      const res = await fetch(`/api/scores/best?username=${encodeURIComponent(user)}`, {
+        cache: 'no-store'
+      });
       let serverBest: Record<string, any> = {};
       if (res.ok) {
         const data = await res.json();
@@ -109,6 +111,7 @@ export default function Home() {
         try {
           const localList: HistoryItem[] = JSON.parse(localRaw);
           for (const item of localList) {
+            if (item.username && item.username !== user) continue;
             const curr = serverBest[item.blockId];
             if (!curr) {
               serverBest[item.blockId] = {
@@ -642,6 +645,7 @@ export default function Home() {
         isOpen={showHistory}
         onClose={() => setShowHistory(false)}
         onSelectReview={item => enterSubView(() => setReviewItem(item))}
+        currentUser={username}
       />
     </main>
   );

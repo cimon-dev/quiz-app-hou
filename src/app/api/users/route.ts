@@ -1,9 +1,15 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, connection } from 'next/server';
 import { getAllUsers, addUser } from '@/lib/db';
+import { noCacheJson } from '@/lib/apiResponse';
 
 export async function GET() {
-  const users = await getAllUsers();
-  return NextResponse.json({ users });
+  await connection();
+  try {
+    const users = await getAllUsers();
+    return noCacheJson({ users });
+  } catch (err: any) {
+    return noCacheJson({ error: err?.message || 'Lỗi tải danh sách người dùng' }, 500);
+  }
 }
 
 export async function POST(req: Request) {
